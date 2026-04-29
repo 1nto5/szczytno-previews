@@ -232,15 +232,15 @@ header.chart-header::after {
 .margin-note.left::before { content: "↙"; }
 
 .karta .annotation-1 {
-  position: absolute;
-  top: 8px; right: -120px;
-  font: italic 400 15px/1.3 var(--serif);
+  display: inline-block;
+  margin: 14px 0 0;
+  font: italic 400 15px/1.4 var(--serif);
   color: var(--rubber);
-  width: 180px;
-  transform: rotate(-3deg);
-  pointer-events: none;
+  max-width: 42ch;
+  transform: rotate(-0.6deg);
+  transform-origin: left top;
 }
-.karta .annotation-1::before { content: "← "; font-style: normal; }
+.karta .annotation-1::before { content: "↘ "; font-style: normal; }
 
 .intake-form {
   margin-top: 48px;
@@ -613,83 +613,79 @@ section.section { padding: 80px 0; position: relative; }
 
 .appt-form {
   border: 2px solid var(--ink);
-  background: var(--page-2);
+  background: var(--page);
   position: relative;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  background-image:
-    linear-gradient(to bottom, var(--grid-soft) 1px, transparent 1px);
-  background-size: 100% 32px;
-  background-position: 0 0;
 }
-.appt-form::before {
-  content: "FORMULARZ REZERWACJI WIZYTY · LM-DENT/2026/05";
-  position: absolute; top: -12px; left: 24px;
-  background: var(--page-2);
-  padding: 0 12px;
-  font: 600 11px/1 var(--mono);
-  letter-spacing: 0.16em;
-  color: var(--ink);
-}
-.appt-form .pane { padding: 36px; }
+.appt-form .pane { padding: 32px; }
 .appt-form .pane + .pane { border-left: 2px solid var(--ink); }
 
 .appt-cal-head {
-  display: flex; align-items: baseline; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--ink-2);
   margin-bottom: 16px;
 }
-.appt-cal-head .month { font: italic 500 28px/1 var(--serif); letter-spacing: -0.01em; }
-.appt-cal-head .year { font: 500 12px/1 var(--mono); color: var(--ink-3); margin-left: 10px; letter-spacing: 0.14em; }
+.appt-cal-head .title { display: flex; align-items: baseline; gap: 8px; }
+.appt-cal-head .month { font: 500 26px/1 var(--serif); letter-spacing: -0.01em; color: var(--ink); }
+.appt-cal-head .year { font: 500 26px/1 var(--serif); letter-spacing: -0.01em; color: var(--ink-2); font-feature-settings: "onum" 1; }
 .appt-cal-head .nav { display: flex; gap: 6px; }
 .appt-cal-head .nav button {
   width: 32px; height: 32px;
-  border: 1.5px solid var(--ink);
+  border: 1px solid var(--ink-2);
   background: var(--page);
   font: 500 16px/1 var(--serif); color: var(--ink);
   display: grid; place-items: center;
   transition: all .15s;
+  border-radius: 4px;
 }
-.appt-cal-head .nav button:hover { background: var(--ink); color: var(--page); }
+.appt-cal-head .nav button:hover { background: var(--ink); color: var(--page); border-color: var(--ink); }
 
-.appt-week, .appt-days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
-.appt-week { margin-bottom: 6px; }
-.appt-week span { text-align: center; font: 500 10px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); padding: 6px 0; }
+.appt-week, .appt-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.appt-week { margin-bottom: 4px; }
+.appt-week span { text-align: center; font: 600 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); padding: 6px 0; }
+.appt-week span.we { color: var(--rubber); }
 .appt-days button {
-  height: 56px;
-  border: 1px solid var(--ink-2);
-  background: var(--page);
-  font: 500 17px/1 var(--serif);
+  height: 44px;
+  border: 1px solid transparent;
+  background: transparent;
+  font: 500 15px/1 var(--serif);
   color: var(--ink);
   font-variant-numeric: tabular-nums;
   font-feature-settings: "onum" 1;
   transition: all .14s;
   position: relative;
+  border-radius: 4px;
 }
-.appt-days button:hover { background: var(--highlight); border-color: var(--ink); }
+.appt-days button:hover:not(:disabled) { background: var(--highlight); border-color: var(--ink); }
 .appt-days button.picked {
   background: var(--rubber); color: var(--page); border-color: var(--rubber-2);
+  font-weight: 600;
 }
-.appt-days button.picked::before {
-  content: "";
-  position: absolute; inset: 4px;
-  border: 1px solid var(--page);
-  pointer-events: none;
+.appt-days button.picked:hover { background: var(--rubber); }
+.appt-days button.muted {
+  color: var(--ink-3);
+  opacity: 0.45;
+  cursor: default;
 }
+.appt-days button.muted:hover { background: transparent; border-color: transparent; }
+.appt-days button.closed {
+  color: var(--ink-3);
+  background: transparent;
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.appt-days button.closed:hover { background: transparent; border-color: transparent; }
 .appt-days button.full {
-  background: var(--page-3);
   color: var(--ink-3);
   cursor: not-allowed;
-  position: relative;
+  text-decoration: line-through;
+  text-decoration-color: var(--rubber);
+  text-decoration-thickness: 1.5px;
 }
-.appt-days button.full::after {
-  content: "";
-  position: absolute; inset: 4px;
-  background: repeating-linear-gradient(135deg, transparent 0 4px, var(--ink-3) 4px 5px);
-  opacity: 0.4;
-}
-.appt-days button.full:hover { background: var(--page-3); }
+.appt-days button.full:hover { background: transparent; border-color: transparent; }
+.appt-days button.today { border-color: var(--ink); }
 
 .appt-slots-head {
   display: flex; justify-content: space-between; align-items: baseline;
@@ -697,9 +693,9 @@ section.section { padding: 80px 0; position: relative; }
   border-bottom: 1px solid var(--ink-2);
   margin-bottom: 18px;
 }
-.appt-slots-head .day { font: italic 500 24px/1 var(--serif); letter-spacing: -0.005em; }
-.appt-slots-head .day b { font-style: normal; font-weight: 500; color: var(--rubber-2); }
-.appt-slots-head .ref-no { font: 500 11px/1 var(--mono); letter-spacing: 0.14em; color: var(--ink-3); }
+.appt-slots-head .day { font: 500 22px/1 var(--serif); letter-spacing: -0.005em; }
+.appt-slots-head .day b { font-weight: 500; color: var(--rubber-2); }
+.appt-slots-head .lbl { font: 600 10px/1 var(--mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
 
 .appt-slots {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
@@ -743,23 +739,59 @@ section.section { padding: 80px 0; position: relative; }
 }
 
 .confirm-row {
+  margin-top: 22px;
   border: 1.5px solid var(--ink);
   background: var(--page);
-  padding: 16px;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 14px;
-  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  gap: 0;
+  align-items: stretch;
 }
-.confirm-row .summary { font: 500 12px/1.4 var(--mono); letter-spacing: 0.06em; color: var(--ink-2); text-transform: uppercase; }
-.confirm-row .summary b { color: var(--ink); font-weight: 600; display: block; font-size: 16px; font-family: var(--serif); font-style: italic; letter-spacing: -0.01em; text-transform: none; margin-top: 2px; }
+.confirm-row .event-date {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 14px 22px;
+  border-right: 1.5px solid var(--ink);
+  background: var(--page-2);
+}
+.confirm-row .event-date .dnum {
+  font: 500 36px/0.95 var(--serif);
+  letter-spacing: -0.02em;
+  color: var(--rubber-2);
+  font-feature-settings: "onum" 1;
+}
+.confirm-row .event-date .dmonth {
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.16em;
+  color: var(--ink-2);
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+.confirm-row .event-info {
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
+  padding: 14px 18px;
+  min-width: 0;
+}
+.confirm-row .event-info .title {
+  font: 500 17px/1.2 var(--serif);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.confirm-row .event-info .meta {
+  font: 500 12px/1.4 var(--mono);
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+}
+.confirm-row .event-info .loc {
+  font: 400 12px/1.4 var(--mono);
+  color: var(--ink-3);
+}
 .confirm-row .submit {
   background: var(--ink);
   color: var(--page);
   border: 0;
-  padding: 14px 24px;
-  font: 600 12px/1 var(--mono);
-  letter-spacing: 0.16em;
+  padding: 0 22px;
+  font: 600 11px/1 var(--mono);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
@@ -768,29 +800,6 @@ section.section { padding: 80px 0; position: relative; }
 }
 .confirm-row .submit:hover { background: var(--rubber); }
 .confirm-row .submit .arrow { font-family: var(--serif); font-style: italic; font-size: 16px; text-transform: none; letter-spacing: 0; }
-
-.appt-features {
-  margin-top: 24px;
-  padding: 22px 24px;
-  background: var(--page);
-  border: 1px solid var(--ink-2);
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 28px;
-}
-.appt-features .feat {
-  display: flex; gap: 12px; align-items: flex-start;
-  font: 400 13px/1.5 var(--mono);
-  color: var(--ink-2);
-}
-.appt-features .feat .sq {
-  flex-shrink: 0;
-  width: 16px; height: 16px;
-  border: 1.5px solid var(--ink);
-  display: grid; place-items: center;
-  font: 600 11px/1 var(--mono);
-  background: var(--page);
-}
-.appt-features .feat .sq::after { content: "✓"; color: var(--rubber); }
-.appt-features .feat b { color: var(--ink); font-weight: 600; font-family: var(--serif); font-style: italic; font-size: 15px; letter-spacing: -0.005em; }
 
 /* ─── KONTAKT ─── */
 .contact {
@@ -917,12 +926,10 @@ footer.chart-footer .doc { text-transform: uppercase; }
   .appt-form { grid-template-columns: 1fr; }
   .appt-form .pane { padding: 28px; }
   .appt-form .pane + .pane { border-left: 0; border-top: 2px solid var(--ink); }
-  .appt-features { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-grid .crow { border-right: 0; border-bottom: 1px solid rgba(244,241,232,0.25); padding-left: 0 !important; padding-right: 0; }
   .contact-grid .stamp-cell { padding: 24px 0 0; }
   .chart-meta { display: none; }
-  .karta .annotation-1 { display: none; }
   footer.chart-footer .row { gap: 8px; }
   footer.chart-footer .doc { font-size: 10px; }
 }
@@ -965,16 +972,19 @@ footer.chart-footer .doc { text-transform: uppercase; }
   .booking .head { grid-template-columns: 44px 1fr; gap: 12px; }
   .booking .head .num { font-size: 38px; }
   .booking .head h2 { font-size: 26px; }
-  .appt-form { background-size: 100% 28px; }
-  .appt-form::before { font-size: 9.5px; letter-spacing: 0.12em; left: 14px; }
   .appt-form .pane { padding: 22px 18px; }
-  .appt-cal-head .month { font-size: 22px; }
-  .appt-week, .appt-days { gap: 3px; }
-  .appt-days button { height: 44px; font-size: 14px; }
+  .appt-cal-head .month, .appt-cal-head .year { font-size: 22px; }
+  .appt-week, .appt-days { gap: 2px; }
+  .appt-week span { font-size: 9px; padding: 4px 0; }
+  .appt-days button { height: 38px; font-size: 13px; }
   .appt-slots { grid-template-columns: repeat(2, 1fr); gap: 5px; }
   .appt-slots button { height: 44px; font-size: 14px; }
-  .confirm-row { grid-template-columns: 1fr; gap: 12px; }
-  .confirm-row .submit { justify-content: center; padding: 12px 16px; }
+  .confirm-row { grid-template-columns: auto 1fr; grid-template-rows: auto auto; }
+  .confirm-row .event-date { padding: 12px 18px; grid-column: 1; grid-row: 1; }
+  .confirm-row .event-date .dnum { font-size: 30px; }
+  .confirm-row .event-info { padding: 12px 16px; grid-column: 2; grid-row: 1; }
+  .confirm-row .event-info .title { font-size: 16px; }
+  .confirm-row .submit { grid-column: 1 / -1; grid-row: 2; padding: 14px; justify-content: center; border-top: 1.5px solid var(--ink); }
   .contact { padding: 40px 0 32px; }
   .contact .head { grid-template-columns: 44px 1fr; gap: 12px; }
   .contact .head .num { font-size: 38px; }
@@ -1242,35 +1252,60 @@ footer.chart-footer .doc { text-transform: uppercase; }
     <div class="appt-form">
       <div class="pane">
         <div class="appt-cal-head">
-          <div>
-            <span class="month">Maj</span><span class="year">/ MMXXVI</span>
+          <div class="title">
+            <span class="month">Maj</span><span class="year">2026</span>
           </div>
           <div class="nav">
-            <button type="button" aria-label="Poprzedni">‹</button>
-            <button type="button" aria-label="Następny">›</button>
+            <button type="button" aria-label="Poprzedni miesiąc">‹</button>
+            <button type="button" aria-label="Następny miesiąc">›</button>
           </div>
         </div>
         <div class="appt-week">
-          <span>Pn</span><span>Wt</span><span>Śr</span><span>Cz</span><span>Pt</span>
+          <span>Pn</span><span>Wt</span><span>Śr</span><span>Cz</span><span>Pt</span><span class="we">So</span><span class="we">Nd</span>
         </div>
         <div class="appt-days">
+          <button type="button" class="muted" disabled>27</button>
+          <button type="button" class="muted" disabled>28</button>
+          <button type="button" class="muted" disabled>29</button>
+          <button type="button" class="muted" disabled>30</button>
+          <button type="button" class="closed" disabled>1</button>
+          <button type="button" class="closed" disabled>2</button>
+          <button type="button" class="closed" disabled>3</button>
           <button type="button">4</button>
           <button type="button">5</button>
           <button type="button" class="picked" aria-current="date">6</button>
           <button type="button">7</button>
-          <button type="button" class="full" aria-disabled="true">8</button>
+          <button type="button" class="full" disabled>8</button>
+          <button type="button" class="closed" disabled>9</button>
+          <button type="button" class="closed" disabled>10</button>
           <button type="button">11</button>
           <button type="button">12</button>
           <button type="button">13</button>
-          <button type="button" class="full" aria-disabled="true">14</button>
+          <button type="button" class="full" disabled>14</button>
           <button type="button">15</button>
+          <button type="button" class="closed" disabled>16</button>
+          <button type="button" class="closed" disabled>17</button>
+          <button type="button">18</button>
+          <button type="button">19</button>
+          <button type="button">20</button>
+          <button type="button">21</button>
+          <button type="button">22</button>
+          <button type="button" class="closed" disabled>23</button>
+          <button type="button" class="closed" disabled>24</button>
+          <button type="button">25</button>
+          <button type="button">26</button>
+          <button type="button">27</button>
+          <button type="button">28</button>
+          <button type="button">29</button>
+          <button type="button" class="closed" disabled>30</button>
+          <button type="button" class="closed" disabled>31</button>
         </div>
       </div>
 
       <div class="pane">
         <div class="appt-slots-head">
           <span class="day">Środa, <b>6 maja</b></span>
-          <span class="ref-no">REF · 06/05/01</span>
+          <span class="lbl">Dostępne godziny</span>
         </div>
         <div class="appt-slots">
           <button type="button">09:00</button>
@@ -1281,19 +1316,18 @@ footer.chart-footer .doc { text-transform: uppercase; }
           <button type="button">16:30</button>
         </div>
         <div class="confirm-row">
-          <span class="summary">
-            Wybrana wizyta
-            <b>06.05.2026 · godz. 11:30</b>
-          </span>
+          <div class="event-date">
+            <span class="dnum">06</span>
+            <span class="dmonth">Maj</span>
+          </div>
+          <div class="event-info">
+            <span class="title">Wizyta stomatologiczna</span>
+            <span class="meta">środa, 11:30 - 12:30</span>
+            <span class="loc">LM Dent · Krasickiego 3, Szczytno</span>
+          </div>
           <a class="submit" href="tel:+48896246645">
             Potwierdź <span class="arrow">↗</span>
           </a>
-        </div>
-        <div class="appt-features">
-          <div class="feat"><span class="sq"></span><span><b>Synchronizacja kalendarza.</b><br>Google, iCloud, Outlook - od razu.</span></div>
-          <div class="feat"><span class="sq"></span><span><b>SMS i e-mail.</b><br>Potwierdzenia oraz przypomnienia.</span></div>
-          <div class="feat"><span class="sq"></span><span><b>ZnanyLekarz / Booksy.</b><br>Integracja bez dublowania.</span></div>
-          <div class="feat"><span class="sq"></span><span><b>Zgodność z RODO.</b><br>Dane zostają u Państwa.</span></div>
         </div>
       </div>
     </div>
@@ -1314,17 +1348,14 @@ footer.chart-footer .doc { text-transform: uppercase; }
       <div class="crow">
         <span class="k">- Telefon</span>
         <span class="v"><a href="tel:+48896246645">+48 89 624 66 45</a></span>
-        <span class="sub">PN-PT · GODZINY PRACY GABINETU</span>
       </div>
       <div class="crow">
         <span class="k">- Adres</span>
         <span class="v">ul. Krasickiego 3<br>12-100 Szczytno</span>
-        <span class="sub">POWIAT SZCZYCIEŃSKI · WARMIA-MAZURY</span>
       </div>
       <div class="crow">
         <span class="k">- Mapa</span>
         <span class="v"><a href="https://www.google.com/maps/search/?api=1&amp;query=LM+Dent+Krasickiego+3+Szczytno" target="_blank" rel="noopener">Otwórz w Mapach Google</a></span>
-        <span class="sub">PARKING POD BUDYNKIEM</span>
       </div>
       <div class="stamp-cell">
         <div class="stamp-circle">
