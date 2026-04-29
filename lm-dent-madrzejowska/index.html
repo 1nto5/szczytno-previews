@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LM Dent Lidia Madrzejowska - Stomatolog Szczytno</title>
+<meta name="description" content="Gabinet stomatologiczny LM Dent w Szczytnie - stomatologia zachowawcza, estetyczna, protetyka, RTG. Krasickiego 3.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="LM Dent Lidia Madrzejowska - Stomatolog Szczytno">
+<meta property="og:description" content="Gabinet stomatologiczny w Szczytnie. Stomatologia zachowawcza, estetyczna, protetyka, RTG.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<style>
+:root {
+  --accent: #0d7a6a;
+  --accent-soft: #e6f2ef;
+  --ink: #14211f;
+  --muted: #5a6b69;
+  --line: #d9e3e1;
+  --bg: #fafbfa;
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+img, svg { display: block; max-width: 100%; }
+section { padding: 56px 20px; }
+.wrap { max-width: 880px; margin: 0 auto; }
+
+header.site {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  position: sticky; top: 0; z-index: 5;
+}
+header.site .inner {
+  max-width: 880px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 600; letter-spacing: 0.2px;
+}
+.brand .mark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--accent); color: #fff;
+  display: grid; place-items: center; font-weight: 700; font-size: 15px;
+}
+header.site .phone {
+  font-variant-numeric: tabular-nums;
+  font-size: 14px; color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 8px 14px; background: #fff;
+}
+header.site .phone:hover { border-color: var(--accent); }
+
+.hero {
+  background:
+    radial-gradient(1200px 400px at 90% -10%, var(--accent-soft) 0%, transparent 60%),
+    linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+  padding-top: 72px; padding-bottom: 72px;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.15; margin: 0 0 18px;
+  letter-spacing: -0.01em;
+}
+.hero p.lead {
+  font-size: clamp(16px, 2.2vw, 19px);
+  color: var(--muted);
+  margin: 0 0 28px;
+  max-width: 60ch;
+}
+.cta-row {
+  display: flex; flex-wrap: wrap; gap: 12px;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 22px;
+  border-radius: var(--radius);
+  font-weight: 600; font-size: 16px;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--accent); color: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 8px 20px rgba(13,122,106,0.18);
+}
+.btn-primary:hover { background: #0a655a; }
+.btn-ghost {
+  border: 1px solid var(--line); color: var(--ink); background: #fff;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.facts {
+  display: grid; gap: 12px; margin-top: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.fact {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 14px 16px;
+}
+.fact .k { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.fact .v { font-size: 15px; font-weight: 500; margin-top: 2px; }
+
+h2 {
+  font-size: clamp(22px, 3.4vw, 28px);
+  margin: 0 0 18px; letter-spacing: -0.005em;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.about p { color: var(--muted); max-width: 65ch; margin: 0 0 12px; }
+
+.services {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.cards {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  background: var(--bg);
+  transition: transform .15s ease, border-color .15s ease;
+}
+.card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.card .ico {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--accent-soft); color: var(--accent);
+  display: grid; place-items: center; margin-bottom: 12px;
+}
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.55; }
+
+.contact .grid {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.row {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.row .k { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.row .v { font-size: 16px; font-weight: 500; }
+.row a.v { color: var(--accent); text-decoration: none; }
+.row a.v:hover { text-decoration: underline; }
+
+.booking { background: linear-gradient(180deg, var(--bg) 0%, #fff 100%); }
+.booking-card {
+  margin-top: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 18px 40px rgba(20,33,31,0.05);
+}
+.booking-grid {
+  display: grid; gap: 24px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 700px) { .booking-grid { grid-template-columns: 1fr; } }
+.cal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  font-weight: 600; margin-bottom: 14px;
+}
+.cal-nav { color: var(--muted); font-size: 18px; user-select: none; }
+.cal-week, .cal-days {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;
+}
+.cal-week span {
+  text-align: center; font-size: 11px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;
+  padding: 4px 0;
+}
+.cal-days button {
+  height: 44px; border-radius: 8px;
+  border: 1px solid var(--line); background: #fff;
+  font: inherit; font-size: 15px; color: var(--ink);
+  cursor: pointer; transition: all .12s ease;
+  font-variant-numeric: tabular-nums;
+}
+.cal-days button:hover { border-color: var(--accent); color: var(--accent); }
+.cal-days button.picked { background: var(--accent); color: #fff; border-color: var(--accent); }
+.cal-days button.picked:hover { background: #0a655a; color: #fff; }
+.cal-days button.full {
+  background: var(--bg); color: var(--muted);
+  text-decoration: line-through; cursor: not-allowed;
+}
+.cal-days button.full:hover { border-color: var(--line); color: var(--muted); }
+
+.slots-pane { display: flex; flex-direction: column; }
+.slot-label {
+  font-size: 11px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;
+  display: block; margin-bottom: 10px;
+}
+.slot-list {
+  display: grid; gap: 8px; grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 16px;
+}
+.slot-list button {
+  height: 44px; border-radius: 8px;
+  border: 1px solid var(--line); background: #fff;
+  font: inherit; font-size: 14px; color: var(--ink);
+  cursor: pointer; transition: all .12s ease;
+  font-variant-numeric: tabular-nums;
+}
+.slot-list button:hover { border-color: var(--accent); color: var(--accent); }
+.slot-list button.picked { background: var(--accent); color: #fff; border-color: var(--accent); }
+.slot-list button.taken {
+  background: var(--bg); color: var(--muted);
+  text-decoration: line-through; cursor: not-allowed;
+}
+.book-btn { width: 100%; }
+.booking-note {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  font-size: 13.5px; color: var(--ink);
+}
+.booking-features {
+  display: grid; gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 22px;
+}
+.feature {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 14px; color: var(--muted);
+}
+.feature svg { flex-shrink: 0; color: var(--accent); margin-top: 2px; }
+
+.note {
+  margin-top: 22px;
+  padding: 14px 16px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--ink);
+  font-size: 14.5px;
+}
+
+footer.site {
+  padding: 28px 20px 36px;
+  border-top: 1px solid var(--line);
+  background: #fff;
+  font-size: 13.5px; color: var(--muted);
+}
+footer.site .inner {
+  max-width: 880px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center;
+}
+footer.site .badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+}
+footer.site a { color: var(--ink); }
+
+@media (max-width: 600px) {
+  section { padding: 40px 18px; }
+  .hero { padding-top: 48px; padding-bottom: 56px; }
+  header.site .phone span.lbl { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="inner">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">LM</span>
+      <span>LM Dent <span style="color:var(--muted); font-weight:400;">- Lidia Mądrzejowska</span></span>
+    </div>
+    <a class="phone" href="tel:+48896246645" aria-label="Zadzwoń">
+      <span class="lbl">Tel. </span>89 624 66 45
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Gabinet stomatologiczny w Szczytnie</span>
+    <h1>Spokojna stomatologia z ulicy Krasickiego.</h1>
+    <p class="lead">Stomatologia zachowawcza, estetyczna, protetyka i diagnostyka RTG. Umówmy wizytę telefonicznie - powiemy Państwu, czego się spodziewać i ile to potrwa.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:+48896246645">Zadzwoń: 89 624 66 45</a>
+      <a class="btn btn-ghost" href="#rezerwacja">Umów wizytę online</a>
+    </div>
+    <div class="facts" aria-label="Najważniejsze informacje">
+      <div class="fact"><div class="k">Adres</div><div class="v">ul. Krasickiego 3, Szczytno</div></div>
+      <div class="fact"><div class="k">Telefon</div><div class="v">+48 89 624 66 45</div></div>
+      <div class="fact"><div class="k">Zakres</div><div class="v">Zachowawcza, estetyczna, protetyka, RTG</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <span class="eyebrow">O gabinecie</span>
+    <h2>Stomatologia w spokojnej części Szczytna.</h2>
+    <p>LM Dent prowadzi prywatną praktykę stomatologiczną przy ulicy Krasickiego 3 w Szczytnie. W gabinecie wykonujemy leczenie zachowawcze, prace protetyczne, zabiegi z zakresu stomatologii estetycznej oraz diagnostykę RTG na miejscu. Pracujemy na umówione wizyty - tempo dostosowujemy do potrzeb pacjenta, a plan leczenia omawiamy zanim cokolwiek zaczniemy.</p>
+    <p>Wszystkie szczegóły, kalendarz przyjęć i koszty wizyt potwierdzamy telefonicznie. Najprościej zadzwonić pod numer 89 624 66 45.</p>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <span class="eyebrow">Zakres leczenia</span>
+    <h2>Co wykonujemy w gabinecie</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="ico" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 6 5 6 8c0 5 3 6 3 11 0 1 1 2 2 2h2c1 0 2-1 2-2 0-5 3-6 3-11 0-3-2-6-6-6z"/></svg>
+        </div>
+        <h3>Stomatologia zachowawcza</h3>
+        <p>Leczenie próchnicy, wymiana wypełnień, opracowanie i ochrona zębów żywych.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/></svg>
+        </div>
+        <h3>Stomatologia estetyczna</h3>
+        <p>Korekta kształtu i koloru, licówki, wybielanie - decyzję planujemy pod konkretny uśmiech.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+        </div>
+        <h3>Protetyka</h3>
+        <p>Korony, mosty, uzupełnienia stałe i ruchome. Dopasowanie do zgryzu i komfortu codziennego użytkowania.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18"/></svg>
+        </div>
+        <h3>Diagnostyka RTG</h3>
+        <p>Zdjęcia punktowe wykonywane na miejscu, jako pomoc przy planowaniu leczenia.</p>
+      </article>
+    </div>
+    <p class="note">Pełny zakres usług, terminy i koszty potwierdzamy telefonicznie - opis powyżej jest poglądowy.</p>
+  </div>
+</section>
+
+<section class="booking" id="rezerwacja">
+  <div class="wrap">
+    <span class="eyebrow">Rezerwacja online</span>
+    <h2>Umów wizytę bez telefonu, w kilka sekund.</h2>
+    <p style="color:var(--muted); max-width:60ch; margin:0 0 24px;">Pacjent wybiera wolny dzień i godzinę, a potwierdzenie trafia od razu na e-mail oraz do kalendarza w gabinecie. Mogę podpiąć ZnanyLekarz lub Booksy, jeśli już Państwo z nich korzystają, albo zbudować rezerwację na własnej domenie.</p>
+
+    <div class="booking-card">
+      <div class="booking-grid">
+        <div class="cal-pane">
+          <div class="cal-head">
+            <span>Maj 2026</span>
+            <span class="cal-nav" aria-hidden="true">&lsaquo; &nbsp; &rsaquo;</span>
+          </div>
+          <div class="cal-week" aria-hidden="true">
+            <span>Pn</span><span>Wt</span><span>Śr</span><span>Cz</span><span>Pt</span>
+          </div>
+          <div class="cal-days" role="list">
+            <button type="button" role="listitem">4</button>
+            <button type="button" role="listitem">5</button>
+            <button type="button" class="picked" role="listitem" aria-current="date">6</button>
+            <button type="button" role="listitem">7</button>
+            <button type="button" class="full" role="listitem" aria-disabled="true">8</button>
+            <button type="button" role="listitem">11</button>
+            <button type="button" role="listitem">12</button>
+            <button type="button" role="listitem">13</button>
+            <button type="button" class="full" role="listitem" aria-disabled="true">14</button>
+            <button type="button" role="listitem">15</button>
+          </div>
+        </div>
+        <div class="slots-pane">
+          <span class="slot-label">Środa, 6 maja</span>
+          <div class="slot-list" role="list">
+            <button type="button" role="listitem">09:00</button>
+            <button type="button" role="listitem">10:00</button>
+            <button type="button" class="picked" role="listitem" aria-pressed="true">11:30</button>
+            <button type="button" class="taken" role="listitem" aria-disabled="true">13:00</button>
+            <button type="button" role="listitem">15:00</button>
+            <button type="button" role="listitem">16:30</button>
+          </div>
+          <a class="btn btn-primary book-btn" href="tel:+48896246645">Potwierdź wizytę o 11:30</a>
+          <p class="booking-note">Powyższy widget jest poglądowy - w docelowej wersji pacjenci wybierają termin samodzielnie, a Państwo dostają powiadomienie i wpis w kalendarzu.</p>
+        </div>
+      </div>
+
+      <div class="booking-features">
+        <div class="feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Synchronizacja z Państwa kalendarzem (Google, iCloud, Outlook).</span>
+        </div>
+        <div class="feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Automatyczne potwierdzenia i przypomnienia SMS lub e-mail.</span>
+        </div>
+        <div class="feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Integracja z ZnanyLekarz lub Booksy, jeśli już są w użyciu.</span>
+        </div>
+        <div class="feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Zgodność z RODO - dane pacjenta zostają u Państwa.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <span class="eyebrow">Kontakt</span>
+    <h2>Jak nas znaleźć</h2>
+    <div class="grid">
+      <div class="row">
+        <span class="k">Telefon</span>
+        <a class="v" href="tel:+48896246645">+48 89 624 66 45</a>
+      </div>
+      <div class="row">
+        <span class="k">Adres</span>
+        <span class="v">ul. Krasickiego 3<br>12-100 Szczytno</span>
+      </div>
+      <div class="row">
+        <span class="k">Mapa</span>
+        <a class="v" href="https://www.google.com/maps/search/?api=1&amp;query=LM+Dent+Krasickiego+3+Szczytno" target="_blank" rel="noopener">Otwórz w Mapach Google</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="inner">
+    <span>LM Dent Lidia Mądrzejowska, ul. Krasickiego 3, 12-100 Szczytno</span>
+    <span>
+      <span class="badge">podgląd roboczy - nie jest finalnym projektem</span>
+      &nbsp;
+      Projekt: <a href="https://adrianantosiak.pl">Adrian Antosiak</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
