@@ -176,10 +176,7 @@ header.chart-header::after {
 .karta .file-bar .right { display: flex; gap: 24px; align-items: baseline; }
 
 .karta .grid {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 56px;
-  align-items: start;
+  display: block;
 }
 
 .karta h1 {
@@ -266,86 +263,6 @@ header.chart-header::after {
   color: var(--ink-3);
   letter-spacing: 0.06em;
 }
-
-/* tooth diagram on right */
-.tooth-card {
-  background: var(--tooth-fill);
-  border: 2px solid var(--ink);
-  padding: 24px;
-  position: relative;
-}
-.tooth-card::before {
-  content: "DIAGRAM ZĘBOWY · WHO 11-48";
-  position: absolute; top: -10px; left: 16px;
-  background: var(--tooth-fill);
-  padding: 0 10px;
-  font: 600 10px/1 var(--mono);
-  letter-spacing: 0.16em;
-  color: var(--ink-2);
-}
-.tooth-card .legend {
-  display: flex; justify-content: space-between; align-items: baseline;
-  font: 500 10px/1 var(--mono);
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed var(--ink-3);
-}
-.tooth-card .legend .center { font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: -0.005em; color: var(--ink-2); font-size: 13px; }
-.tooth-card .legend .r { font-feature-settings: "onum" 1; }
-
-.tooth-grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 4px;
-  margin-bottom: 4px;
-}
-.tooth {
-  aspect-ratio: 1;
-  border: 1px solid var(--ink-2);
-  background: var(--page);
-  display: grid; place-items: center;
-  font: 500 10px/1 var(--mono);
-  color: var(--ink-2);
-  font-feature-settings: "onum" 1;
-  position: relative;
-  border-radius: 6px 6px 14px 14px;
-  cursor: pointer;
-  transition: all .15s;
-}
-.tooth-grid.lower .tooth { border-radius: 14px 14px 6px 6px; }
-.tooth:hover { background: var(--highlight); border-color: var(--ink); }
-.tooth.marked { background: var(--rubber); color: var(--page); border-color: var(--rubber-2); }
-.tooth.marked::after {
-  content: "×";
-  position: absolute;
-  font-size: 14px; font-weight: 600;
-  color: var(--page);
-}
-.tooth.healed { background: var(--teal); color: var(--page); border-color: var(--teal-2); }
-.tooth-axis {
-  text-align: center;
-  font: 500 10px/1 var(--mono);
-  letter-spacing: 0.16em;
-  color: var(--ink-3);
-  padding: 8px 0;
-  text-transform: uppercase;
-}
-.tooth-card .legend-key {
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--ink-3);
-  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-  font: 500 10.5px/1.3 var(--mono);
-  letter-spacing: 0.06em;
-  color: var(--ink-2);
-}
-.tooth-card .legend-key .row { display: flex; align-items: center; gap: 8px; }
-.tooth-card .legend-key .swatch { width: 14px; height: 14px; border: 1px solid var(--ink-2); }
-.tooth-card .legend-key .swatch.marked { background: var(--rubber); border-color: var(--rubber-2); }
-.tooth-card .legend-key .swatch.healed { background: var(--teal); border-color: var(--teal-2); }
-.tooth-card .legend-key .swatch.healthy { background: var(--page); }
 
 .cta-row {
   margin-top: 24px;
@@ -890,7 +807,6 @@ footer.chart-footer .doc { text-transform: uppercase; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 920px) {
-  .karta .grid { grid-template-columns: 1fr; gap: 36px; }
   .intake-form { grid-template-columns: 1fr 1fr; }
   .karta h1 { font-size: 56px; }
   .karta { padding: 40px 0 56px; }
@@ -951,10 +867,6 @@ footer.chart-footer .doc { text-transform: uppercase; }
   .intake-form .field .v.hand { font-size: 15px; }
   .cta-row { flex-direction: column; }
   .btn-cta { padding: 14px 16px; font-size: 11px; }
-  .tooth-card { padding: 18px 14px; }
-  .tooth-card::before { font-size: 9px; letter-spacing: 0.12em; }
-  .tooth { font-size: 9px; }
-  .tooth-card .legend-key { font-size: 9.5px; }
   section.section { padding: 40px 0; }
   .section-header { grid-template-columns: 44px 1fr; gap: 12px; padding-bottom: 12px; margin-bottom: 22px; }
   .section-header .num { font-size: 38px; }
@@ -1093,41 +1005,6 @@ footer.chart-footer .doc { text-transform: uppercase; }
         </div>
       </div>
 
-      <aside class="tooth-card" aria-hidden="true">
-        <div class="legend">
-          <span>Górny</span>
-          <span class="center">- diagram poglądowy -</span>
-          <span class="r">P · L</span>
-        </div>
-        <div class="tooth-grid">
-          <span class="tooth">18</span><span class="tooth">17</span><span class="tooth">16</span><span class="tooth">15</span>
-          <span class="tooth">14</span><span class="tooth marked">13</span><span class="tooth">12</span><span class="tooth">11</span>
-        </div>
-        <div class="tooth-grid">
-          <span class="tooth">21</span><span class="tooth">22</span><span class="tooth healed">23</span><span class="tooth">24</span>
-          <span class="tooth">25</span><span class="tooth">26</span><span class="tooth">27</span><span class="tooth">28</span>
-        </div>
-        <div class="tooth-axis">- LINIA ZGRYZU -</div>
-        <div class="tooth-grid lower">
-          <span class="tooth">48</span><span class="tooth healed">47</span><span class="tooth">46</span><span class="tooth">45</span>
-          <span class="tooth">44</span><span class="tooth">43</span><span class="tooth">42</span><span class="tooth">41</span>
-        </div>
-        <div class="tooth-grid lower">
-          <span class="tooth">31</span><span class="tooth">32</span><span class="tooth">33</span><span class="tooth">34</span>
-          <span class="tooth marked">35</span><span class="tooth">36</span><span class="tooth">37</span><span class="tooth">38</span>
-        </div>
-        <div class="legend">
-          <span>Dolny</span>
-          <span class="center it">środa, 6 maja 2026</span>
-          <span class="r">P · L</span>
-        </div>
-        <div class="legend-key">
-          <div class="row"><span class="swatch healthy"></span><span>Zdrowy / kontrola</span></div>
-          <div class="row"><span class="swatch marked"></span><span>Do leczenia</span></div>
-          <div class="row"><span class="swatch healed"></span><span>Po zabiegu</span></div>
-          <div class="row"><span class="swatch" style="background: var(--highlight);"></span><span>Obserwacja</span></div>
-        </div>
-      </aside>
     </div>
   </div>
 </section>
