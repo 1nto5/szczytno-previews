@@ -3,779 +3,1177 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LM Dent Lidia Mądrzejowska - Stomatolog Szczytno (od 1985 r.)</title>
-<meta name="description" content="Gabinet stomatologiczny LM Dent w Szczytnie od 1985 roku. Leczenie pod mikroskopem ZEISS, RTG na miejscu, protetyka, stomatologia zachowawcza, estetyczna i chirurgiczna. ul. Krasickiego 3.">
 <meta name="robots" content="noindex,nofollow">
-<meta property="og:title" content="LM Dent Lidia Mądrzejowska - Stomatolog Szczytno (od 1985 r.)">
-<meta property="og:description" content="Gabinet stomatologiczny w Szczytnie nieprzerwanie od 1985 r. Leczenie pod mikroskopem ZEISS, RTG na miejscu, dwóch specjalistów.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pl_PL">
+<title>LM Dent Lidia Mądrzejowska - Stomatolog Szczytno</title>
+<meta name="description" content="Gabinet stomatologiczny LM Dent przy Krasickiego 3 w Szczytnie. Stomatologia zachowawcza, estetyczna, protetyka i diagnostyka RTG na miejscu.">
 <style>
 :root {
-  --paper:        #f5efe2;
-  --paper-deep:   #ece5d3;
-  --ink:          #1a1916;
-  --ink-soft:     #5e5a51;
-  --ink-faint:    #8c8678;
-  --line:         #d3c8b1;
-  --line-soft:    #e3dac3;
-  --forest:       #2b4a39;
-  --forest-deep:  #1f3829;
-  --forest-soft:  #d6dfd2;
-  --brass:        #997644;
-  --brass-soft:   #e8d9b4;
-  --warn:         #b15a3a;
+  --page:      #f4f1e8;     /* manila / file-folder paper */
+  --page-2:    #ede7d6;
+  --page-3:    #e1d8c0;
+  --grid:      #c9beae;       /* graph paper line */
+  --grid-soft: #d8d0bd;
+  --ink:       #1f1d1a;       /* black ink */
+  --ink-2:     #4a4640;
+  --ink-3:     #7d7869;
+  --pencil:    #8c826e;
+  --rubber:    #b14a3e;       /* red stamp / margin pen */
+  --rubber-2:  #8d3a30;
+  --teal:      #2f5e5a;       /* clinical teal accent (very sparing) */
+  --teal-2:    #1f4642;
+  --highlight: #f0d869;       /* highlighter yellow */
+  --tooth-fill:#fbf7e9;
 
-  --serif:    ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
-  --sans:     system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --mono:     ui-monospace, "SF Mono", "JetBrains Mono", "Source Code Pro", Menlo, monospace;
-
-  --r-sm: 4px;
-  --r:    8px;
-  --r-lg: 14px;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --serif: "Newsreader", ui-serif, Charter, Cambria, serif;
 }
-
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; }
 body {
-  margin: 0;
-  background: var(--paper);
+  background: var(--page);
   color: var(--ink);
-  font: 16px/1.65 var(--sans);
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font: 14px/1.5 var(--mono);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  overflow-x: hidden;
 }
-/* warm paper grain - inline SVG noise */
+/* graph paper */
 body::before {
   content: "";
-  position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.09  0 0 0 0 0.07  0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.50'/></svg>");
-  background-size: 240px 240px;
-  opacity: 0.15;
-  mix-blend-mode: multiply;
+  position: fixed; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--grid-soft) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-soft) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  opacity: 0.55;
   pointer-events: none;
-  z-index: 0;
+}
+/* major grid every 5 lines */
+body::after {
+  content: "";
+  position: fixed; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: 0.35;
+  pointer-events: none;
 }
 body > * { position: relative; z-index: 1; }
 
-a { color: var(--forest); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover { text-decoration-thickness: 2px; color: var(--forest-deep); }
-img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; cursor: pointer; }
+::selection { background: var(--highlight); color: var(--ink); }
 
-::selection { background: var(--brass); color: var(--paper); }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-
-/* ---------- typography helpers ---------- */
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--brass);
-}
-.eyebrow::before {
-  content: "";
-  width: 28px; height: 1px;
-  background: var(--brass);
-  display: inline-block;
-}
-h1, h2, h3 {
-  font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin: 0;
-}
-h1 { font-size: clamp(38px, 6.4vw, 76px); line-height: 1.02; }
-h2 { font-size: clamp(28px, 3.6vw, 42px); line-height: 1.1; }
-h3 { font-size: 19px; line-height: 1.3; font-weight: 600; }
-.serif-it { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--ink-soft); }
-
-/* ---------- header ---------- */
-header.site {
-  border-bottom: 1px solid var(--line);
-  background: rgba(245, 239, 226, 0.92);
-  backdrop-filter: saturate(140%) blur(6px);
-  -webkit-backdrop-filter: saturate(140%) blur(6px);
-  position: sticky; top: 0; z-index: 50;
-}
-header.site .inner {
-  max-width: 1080px; margin: 0 auto;
-  padding: 16px 28px;
-  display: flex; align-items: center; justify-content: space-between; gap: 18px;
-}
-.brand {
-  display: flex; align-items: center; gap: 14px;
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-.brand .mark {
-  width: 38px; height: 38px;
-  border: 1px solid var(--brass);
-  display: grid; place-items: center;
-  font-family: var(--serif); font-style: italic;
-  font-size: 17px; font-weight: 500;
-  color: var(--brass);
-  border-radius: 50%;
-}
-.brand .name { font-style: italic; }
-.brand .name b { font-style: normal; font-weight: 600; }
-.brand .name span { font-family: var(--sans); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); display: block; line-height: 1.2; margin-top: 2px; font-style: normal; font-weight: 600;}
-
-.phone-pill {
-  display: inline-flex; align-items: center; gap: 10px;
-  text-decoration: none;
-  font-family: var(--sans);
-  font-size: 13px;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink);
+/* shared form-card look */
+.field {
   border: 1px solid var(--ink);
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: var(--paper);
-  transition: background .18s ease, color .18s ease, border-color .18s ease;
-}
-.phone-pill:hover { background: var(--ink); color: var(--paper); }
-.phone-pill .lbl { font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 10px; color: var(--brass); }
-
-@media (max-width: 600px) {
-  .brand .name span { display: none; }
-  .phone-pill .lbl { display: none; }
-}
-
-/* ---------- hero ---------- */
-.hero {
-  padding: 84px 0 100px;
+  background: var(--page-2);
   position: relative;
-  overflow: hidden;
 }
-.hero .grid {
+.field-label {
+  position: absolute; top: -7px; left: 12px;
+  background: var(--page-2);
+  padding: 0 8px;
+  font: 500 10px/1 var(--mono);
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-2);
+}
+.field .body { padding: 20px 22px; }
+
+.label { font: 500 10px/1 var(--mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); }
+.handwritten { font: italic 400 18px/1.35 var(--serif); color: var(--rubber-2); letter-spacing: 0; }
+
+/* ─── HEADER ─── */
+header.chart-header {
+  position: sticky; top: 0; z-index: 60;
+  background: var(--page);
+  border-bottom: 2px solid var(--ink);
+}
+header.chart-header::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -6px; height: 4px;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 8px, transparent 8px 14px);
+}
+.chart-header .row {
+  max-width: 1280px; margin: 0 auto; padding: 14px 32px;
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 56px;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
   align-items: center;
 }
-@media (max-width: 900px) {
-  .hero .grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero { padding: 56px 0 64px; }
+.file-tab {
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none; color: var(--ink);
 }
-.hero h1 .accent {
+.file-tab .seal {
+  width: 46px; height: 46px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font: 600 13px/1 var(--mono);
+  letter-spacing: 0.08em;
+  background: var(--page);
+  position: relative;
+}
+.file-tab .seal::after {
+  content: "";
+  position: absolute; inset: 4px;
+  border: 0.5px dashed var(--ink-2);
+  border-radius: 50%;
+}
+.file-tab .titlestack { display: flex; flex-direction: column; gap: 3px; }
+.file-tab .titlestack .name { font: 500 16px/1 var(--serif); letter-spacing: -0.005em; }
+.file-tab .titlestack .num { font: 500 10px/1 var(--mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
+
+.chart-meta {
+  display: flex; gap: 22px;
+  font: 500 11px/1.3 var(--mono);
+  letter-spacing: 0.1em;
+  color: var(--ink-2);
+  justify-content: center;
+}
+.chart-meta .pair { display: flex; flex-direction: column; gap: 3px; align-items: center; text-transform: uppercase; }
+.chart-meta .pair .v { color: var(--ink); font-size: 12px; letter-spacing: 0.05em; }
+.chart-meta .pair .v.serif { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 16px; letter-spacing: -0.01em; text-transform: none; }
+
+.call-stamp {
+  border: 2px solid var(--rubber);
+  color: var(--rubber);
+  background: transparent;
+  padding: 9px 16px;
+  font: 600 12px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  transform: rotate(-1.5deg);
+  transition: transform .18s, background .18s, color .18s;
+}
+.call-stamp:hover { background: var(--rubber); color: var(--page); transform: rotate(-1.5deg) translateY(-1px); }
+.call-stamp .num { font-family: var(--serif); font-style: italic; font-size: 16px; letter-spacing: -0.01em; text-transform: none; font-weight: 500; }
+
+/* ─── HERO / KARTA ─── */
+.karta {
+  padding: 56px 0 80px;
+}
+.karta .file-bar {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 14px;
+  margin-bottom: 36px;
+  font: 500 11px/1 var(--mono);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-2);
+}
+.karta .file-bar .left { display: flex; gap: 32px; align-items: baseline; }
+.karta .file-bar .doc-no { font: 500 11px/1 var(--mono); }
+.karta .file-bar .doc-no b { color: var(--ink); font-weight: 600; }
+.karta .file-bar .right { display: flex; gap: 24px; align-items: baseline; }
+
+.karta .grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 56px;
+  align-items: start;
+}
+
+.karta h1 {
+  margin: 0;
+  font: 500 76px/0.96 var(--serif);
+  letter-spacing: -0.025em;
+  font-feature-settings: "onum" 1;
+}
+.karta h1 em {
   font-style: italic;
-  color: var(--forest);
+  color: var(--rubber-2);
   font-weight: 400;
 }
-.hero .lede {
-  margin-top: 22px;
-  font-size: clamp(17px, 2vw, 19px);
-  line-height: 1.55;
-  color: var(--ink-soft);
-  max-width: 46ch;
+.karta h1 .underline {
+  position: relative;
+  display: inline-block;
 }
-.hero .lede .first-line {
-  font-family: var(--serif);
-  font-style: italic;
+.karta h1 .underline::after {
+  content: "";
+  position: absolute;
+  left: -2px; right: -4px; bottom: 6px;
+  height: 12px;
+  background: var(--highlight);
+  z-index: -1;
+  transform: skew(-2deg);
+}
+
+.karta .deck {
+  margin: 28px 0 0;
+  font: 400 19px/1.5 var(--serif);
   color: var(--ink);
-  font-size: 20px;
-  display: block;
+  max-width: 50ch;
+}
+.karta .deck strong { font-weight: 500; }
+
+/* margin annotations */
+.margin-note {
+  position: absolute;
+  font: italic 400 16px/1.3 var(--serif);
+  color: var(--rubber);
+  pointer-events: none;
+}
+.margin-note::before {
+  content: "↘";
+  display: inline-block;
+  margin-right: 6px;
+  transform: rotate(-15deg);
+  font-style: normal;
+}
+.margin-note.left::before { content: "↙"; }
+
+.karta .annotation-1 {
+  position: absolute;
+  top: 8px; right: -120px;
+  font: italic 400 15px/1.3 var(--serif);
+  color: var(--rubber);
+  width: 180px;
+  transform: rotate(-3deg);
+  pointer-events: none;
+}
+.karta .annotation-1::before { content: "← "; font-style: normal; }
+
+.intake-form {
+  margin-top: 48px;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.intake-form .field .body {
+  padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 6px;
+  min-height: 84px;
+}
+.intake-form .field .v {
+  font: 500 16px/1.3 var(--serif);
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.intake-form .field .v.hand {
+  font: italic 400 17px/1.3 var(--serif);
+  color: var(--rubber-2);
+}
+.intake-form .field .sub {
+  font: 500 10.5px/1.3 var(--mono);
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+}
+
+/* tooth diagram on right */
+.tooth-card {
+  background: var(--tooth-fill);
+  border: 2px solid var(--ink);
+  padding: 24px;
+  position: relative;
+}
+.tooth-card::before {
+  content: "DIAGRAM ZĘBOWY · WHO 11-48";
+  position: absolute; top: -10px; left: 16px;
+  background: var(--tooth-fill);
+  padding: 0 10px;
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.16em;
+  color: var(--ink-2);
+}
+.tooth-card .legend {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font: 500 10px/1 var(--mono);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--ink-3);
+}
+.tooth-card .legend .center { font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: -0.005em; color: var(--ink-2); font-size: 13px; }
+.tooth-card .legend .r { font-feature-settings: "onum" 1; }
+
+.tooth-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
   margin-bottom: 4px;
 }
-.hero .ctas {
-  margin-top: 36px;
-  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
-}
-.hero .meta-strip {
-  margin-top: 56px;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 36px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-}
-@media (max-width: 720px) {
-  .hero .meta-strip { grid-template-columns: 1fr; gap: 16px; }
-}
-.meta {
-  display: flex; flex-direction: column; gap: 4px;
-  font-family: var(--sans);
-}
-.meta .k {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--brass);
-}
-.meta .v { font-size: 14.5px; color: var(--ink); font-weight: 500; }
-.meta .v.serif { font-family: var(--serif); font-size: 17px; font-weight: 500; letter-spacing: 0.005em; }
-
-/* botanical mark */
-.bot {
-  position: relative;
+.tooth {
+  aspect-ratio: 1;
+  border: 1px solid var(--ink-2);
+  background: var(--page);
   display: grid; place-items: center;
-}
-.bot svg { width: 100%; max-width: 380px; height: auto; }
-.bot::after {
-  content: "Gabinet stomatologiczny od 1985 roku";
-  position: absolute;
-  bottom: -8px; right: 4px;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 13px;
-  color: var(--ink-faint);
-  max-width: 220px; text-align: right;
-}
-@media (max-width: 900px) {
-  .bot { padding-left: 8px; }
-  .bot::after { position: static; text-align: left; margin-top: 14px; max-width: none; }
-  .bot svg { max-width: 280px; margin-left: -16px; }
-}
-
-/* buttons */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 10px;
-  min-height: 50px; padding: 0 24px;
-  font-family: var(--sans);
-  font-size: 14.5px; font-weight: 600;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  border-radius: 999px;
-  transition: transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+  font: 500 10px/1 var(--mono);
+  color: var(--ink-2);
+  font-feature-settings: "onum" 1;
+  position: relative;
+  border-radius: 6px 6px 14px 14px;
   cursor: pointer;
+  transition: all .15s;
 }
-.btn .arrow { font-family: var(--serif); font-style: italic; font-size: 16px; }
-.btn-primary {
-  background: var(--ink);
-  color: var(--paper);
-  border: 1px solid var(--ink);
+.tooth-grid.lower .tooth { border-radius: 14px 14px 6px 6px; }
+.tooth:hover { background: var(--highlight); border-color: var(--ink); }
+.tooth.marked { background: var(--rubber); color: var(--page); border-color: var(--rubber-2); }
+.tooth.marked::after {
+  content: "×";
+  position: absolute;
+  font-size: 14px; font-weight: 600;
+  color: var(--page);
+}
+.tooth.healed { background: var(--teal); color: var(--page); border-color: var(--teal-2); }
+.tooth-axis {
+  text-align: center;
+  font: 500 10px/1 var(--mono);
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+  padding: 8px 0;
+  text-transform: uppercase;
+}
+.tooth-card .legend-key {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--ink-3);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  font: 500 10.5px/1.3 var(--mono);
+  letter-spacing: 0.06em;
+  color: var(--ink-2);
+}
+.tooth-card .legend-key .row { display: flex; align-items: center; gap: 8px; }
+.tooth-card .legend-key .swatch { width: 14px; height: 14px; border: 1px solid var(--ink-2); }
+.tooth-card .legend-key .swatch.marked { background: var(--rubber); border-color: var(--rubber-2); }
+.tooth-card .legend-key .swatch.healed { background: var(--teal); border-color: var(--teal-2); }
+.tooth-card .legend-key .swatch.healthy { background: var(--page); }
+
+.cta-row {
+  margin-top: 24px;
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.btn-cta {
+  flex: 1;
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 16px 20px;
+  font: 600 12.5px/1.2 var(--mono);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  background: var(--page);
+  color: var(--ink);
+  transition: all .18s;
   font-variant-numeric: tabular-nums;
 }
-.btn-primary:hover { background: var(--forest-deep); border-color: var(--forest-deep); transform: translateY(-1px); }
-.btn-ghost {
-  background: transparent;
-  color: var(--ink);
-  border: 1px solid var(--ink);
+.btn-cta:hover { background: var(--ink); color: var(--page); }
+.btn-cta.solid { background: var(--ink); color: var(--page); }
+.btn-cta.solid:hover { background: var(--rubber); border-color: var(--rubber); }
+.btn-cta .arrow { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 0.8; text-transform: none; letter-spacing: 0; }
+
+/* ─── PROCEDURY (services as ICD-style coded list) ─── */
+section.section { padding: 80px 0; position: relative; }
+.section-header {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 24px;
+  align-items: end;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 36px;
 }
-.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+.section-header .num {
+  font: 500 64px/0.85 var(--serif);
+  font-feature-settings: "onum" 1;
+  color: var(--rubber);
+  letter-spacing: -0.04em;
+}
+.section-header .title h2 {
+  margin: 0;
+  font: 500 44px/1.05 var(--serif);
+  letter-spacing: -0.02em;
+}
+.section-header .title h2 em { font-style: italic; color: var(--rubber-2); }
+.section-header .title .lbl { font: 500 10.5px/1 var(--mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; display: block; }
+.section-header .ref {
+  font: 500 11px/1.4 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-align: right;
+}
+.section-header .ref b { display: block; color: var(--ink); font-size: 16px; font-family: var(--serif); font-style: italic; font-weight: 500; letter-spacing: -0.005em; text-transform: none; margin-top: 4px; }
 
-/* ---------- about ---------- */
-section { padding: 80px 0; position: relative; }
-@media (max-width: 720px) { section { padding: 56px 0; } }
+.proc-list { border-top: 1px solid var(--ink); }
+.proc {
+  display: grid;
+  grid-template-columns: 90px 60px 1fr 1.4fr 120px 32px;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--ink-2);
+  align-items: baseline;
+  position: relative;
+}
+.proc:nth-child(odd) { background: rgba(225, 216, 192, 0.18); margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+.proc .code {
+  font: 500 12px/1 var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--rubber);
+  font-variant-numeric: tabular-nums;
+}
+.proc .icd {
+  font: 500 11px/1 var(--mono);
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+}
+.proc .name {
+  font: 500 22px/1.2 var(--serif);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.proc .desc {
+  font: 400 13px/1.55 var(--mono);
+  color: var(--ink-2);
+  letter-spacing: 0;
+}
+.proc .duration {
+  font: 500 12px/1 var(--mono);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-2);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.proc .check {
+  width: 22px; height: 22px;
+  border: 1.5px solid var(--ink);
+  display: grid; place-items: center;
+  font: 600 14px/1 var(--mono);
+  background: var(--page-2);
+  color: transparent;
+  transition: all .18s;
+}
+.proc:hover .check { background: var(--rubber); border-color: var(--rubber); color: var(--page); }
+.proc:hover .check::after { content: "✓"; }
 
+.proc-footer {
+  margin-top: 28px;
+  padding: 18px 22px;
+  background: var(--page-2);
+  border: 1px dashed var(--ink-2);
+  font: 400 13px/1.5 var(--mono);
+  color: var(--ink-2);
+  display: flex; gap: 18px; align-items: center;
+  letter-spacing: 0;
+}
+.proc-footer .stamp {
+  flex-shrink: 0;
+  border: 1.5px solid var(--rubber);
+  color: var(--rubber);
+  padding: 8px 12px;
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+.proc-footer .hand { font: italic 400 16px/1.3 var(--serif); color: var(--rubber-2); }
+
+/* ─── O LEKARZU (Karta lekarza prowadzącego) ─── */
+.about { background: var(--page-2); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
 .about .grid {
   display: grid;
-  grid-template-columns: 4fr 7fr;
+  grid-template-columns: 320px 1fr 280px;
   gap: 48px;
   align-items: start;
 }
-@media (max-width: 820px) {
-  .about .grid { grid-template-columns: 1fr; gap: 24px; }
-}
-.about .side {
-  position: sticky; top: 100px;
-  font-family: var(--serif); font-style: italic;
-  color: var(--ink-soft);
-  font-size: 17px; line-height: 1.6;
-  padding-right: 24px;
-}
-.about .side .num {
-  display: block;
-  font-family: var(--serif); font-style: normal;
-  font-size: 64px; line-height: 1;
-  color: var(--brass);
-  margin-bottom: 12px;
-  font-feature-settings: "onum" 1;
-}
-.about .body p {
-  font-family: var(--serif);
-  font-size: clamp(20px, 2.2vw, 24px);
-  line-height: 1.5;
-  color: var(--ink);
-  margin: 0 0 20px;
-  letter-spacing: -0.005em;
-}
-.about .body p.lead-para::first-letter {
-  initial-letter: 3 2;
-  -webkit-initial-letter: 3 2;
-  font-family: var(--serif);
-  font-weight: 500;
-  color: var(--forest);
-  margin-right: 10px;
-  padding-top: 6px;
-  font-size: 3em;
-  line-height: 0.85;
-}
-.about .body p + p {
-  font-family: var(--sans);
-  font-size: 16.5px;
-  color: var(--ink-soft);
-  line-height: 1.7;
-}
-.section-rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
-.section-rule.brass { border-color: var(--brass); border-top-width: 2px; max-width: 60px; margin: 0 auto; }
-
-/* ---------- services ---------- */
-.services { background: var(--paper-deep); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
-.services .head {
-  display: grid; grid-template-columns: 4fr 7fr; gap: 48px;
-  align-items: end;
-  margin-bottom: 56px;
-}
-@media (max-width: 820px) { .services .head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; } }
-.services .head .pre p {
-  margin: 14px 0 0;
-  font-family: var(--serif); font-style: italic;
-  color: var(--ink-soft); font-size: 17px;
-  max-width: 38ch;
-}
-.serv-list { display: flex; flex-direction: column; }
-.serv {
-  display: grid;
-  grid-template-columns: 80px 1fr auto;
-  gap: 28px;
-  align-items: baseline;
-  padding: 28px 0;
-  border-top: 1px solid var(--line);
+.about .photo-card {
+  background: var(--page);
+  border: 1.5px solid var(--ink);
+  padding: 14px;
   position: relative;
+  transform: rotate(-1.5deg);
+  box-shadow: 4px 5px 0 var(--page-3);
 }
-.serv:last-child { border-bottom: 1px solid var(--line); }
-.serv .idx {
-  font-family: var(--serif);
-  font-size: 30px; font-weight: 500;
-  font-feature-settings: "onum" 1;
-  color: var(--brass);
-}
-.serv .body h3 { margin: 0 0 6px; font-family: var(--serif); font-weight: 500; font-size: clamp(22px, 2.4vw, 28px); letter-spacing: -0.005em; }
-.serv .body p { margin: 0; color: var(--ink-soft); font-size: 15px; max-width: 60ch; line-height: 1.6; }
-.serv .meta-tag {
-  font-family: var(--sans);
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint);
-  white-space: nowrap;
-  align-self: center;
-}
-.serv:hover { background: rgba(255,253,248,0.55); }
-@media (max-width: 720px) {
-  .serv { grid-template-columns: 60px 1fr; gap: 16px; padding: 22px 0; }
-  .serv .meta-tag { display: none; }
-}
-
-.tiny-note {
-  margin-top: 36px;
-  font-family: var(--serif); font-style: italic;
-  font-size: 14.5px;
-  color: var(--ink-faint);
-  text-align: center;
-}
-
-/* ---------- equipment ---------- */
-.equipment .head {
-  display: grid; grid-template-columns: 4fr 7fr; gap: 48px;
-  align-items: end;
-  margin-bottom: 48px;
-}
-@media (max-width: 820px) { .equipment .head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; } }
-.equipment .head .pre p {
-  margin: 14px 0 0;
-  font-family: var(--serif); font-style: italic;
-  color: var(--ink-soft); font-size: 17px;
-  max-width: 38ch;
-}
-.eq-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-@media (max-width: 900px) { .eq-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .eq-grid { grid-template-columns: 1fr; } }
-.eq {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--r);
-  padding: 24px 22px 22px;
-  display: flex; flex-direction: column; gap: 14px;
-  position: relative;
-  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
-}
-.eq:hover {
-  border-color: var(--brass);
-  transform: translateY(-2px);
-  box-shadow: 0 18px 30px -20px rgba(40, 30, 0, 0.18);
-}
-.eq .icon {
-  width: 42px; height: 42px;
-  border: 1px solid var(--brass);
-  border-radius: 50%;
+.about .photo-card .frame {
+  aspect-ratio: 4/5;
+  background: var(--page-3);
+  background-image: repeating-linear-gradient(135deg, transparent 0 14px, rgba(31,29,26,0.06) 14px 15px);
+  border: 1px solid var(--ink-2);
   display: grid; place-items: center;
-  color: var(--brass);
-}
-.eq h3 {
-  font-family: var(--serif);
-  font-size: 17px; font-weight: 500;
-  letter-spacing: -0.005em;
-  margin: 0;
-}
-.eq p {
-  margin: 0;
-  font-family: var(--sans);
-  font-size: 13.5px; line-height: 1.55;
-  color: var(--ink-soft);
-}
-.eq .brand {
-  font-family: var(--serif); font-style: italic;
-  color: var(--brass);
-  font-size: 14.5px;
-  font-weight: 500;
-}
-
-/* ---------- booking ---------- */
-.booking .head {
   text-align: center;
-  margin-bottom: 48px;
-  display: flex; flex-direction: column; align-items: center; gap: 14px;
 }
-.booking .head p {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(17px, 2vw, 20px);
-  font-style: italic;
-  color: var(--ink-soft);
-  max-width: 60ch;
-  line-height: 1.55;
+.about .photo-card .frame .ph {
+  font: 500 10.5px/1.5 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: var(--page);
+  border: 1px dashed var(--ink-2);
+  padding: 14px 18px;
 }
-.booking-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
-  padding: 8px;
-  box-shadow:
-    0 1px 0 rgba(0,0,0,0.02),
-    0 30px 60px -30px rgba(40, 30, 0, 0.18),
-    0 12px 24px -12px rgba(40, 30, 0, 0.10);
-  position: relative;
-}
-.booking-card::before {
-  content: "";
-  position: absolute; inset: 4px;
-  border: 1px dashed var(--line);
-  border-radius: 11px;
-  pointer-events: none;
-}
-.booking-card .inner {
-  position: relative;
-  padding: 28px;
-  background: linear-gradient(180deg, #fbf6e8 0%, var(--paper) 100%);
-  border-radius: 11px;
-}
-.booking-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 36px;
-}
-@media (max-width: 760px) { .booking-grid { grid-template-columns: 1fr; gap: 24px; } }
-
-.cal-head {
-  display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 12px;
-}
-.cal-head .month {
-  font-family: var(--serif); font-size: 22px; font-weight: 500;
+.about .photo-card .frame .ph .big {
+  display: block;
+  font: italic 400 18px/1.2 var(--serif);
+  color: var(--ink-2);
   letter-spacing: -0.005em;
-}
-.cal-head .year {
-  font-family: var(--serif); font-style: italic; font-size: 16px;
-  color: var(--ink-faint); margin-left: 6px;
-  font-feature-settings: "onum" 1;
-}
-.cal-head .nav {
-  display: flex; gap: 8px;
-  font-family: var(--serif); color: var(--ink-faint);
-}
-.cal-head .nav span { width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; font-size: 13px; cursor: pointer; }
-.cal-head .nav span:hover { border-color: var(--ink); color: var(--ink); }
-
-.cal-week, .cal-days {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;
-}
-.cal-week {
+  text-transform: none;
   margin-bottom: 8px;
 }
-.cal-week span {
+.about .photo-card .caption {
+  margin-top: 10px;
+  font: italic 400 14px/1.3 var(--serif);
+  color: var(--ink-2);
   text-align: center;
-  font-family: var(--sans);
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--ink-faint);
-  padding: 4px 0;
+  border-top: 1px dashed var(--ink-3);
+  padding-top: 8px;
 }
-.cal-days button {
-  height: 48px; border-radius: 6px;
-  border: 1px solid transparent;
-  background: transparent;
-  font: 500 17px/1 var(--serif);
-  color: var(--ink);
-  cursor: pointer;
-  transition: all .14s ease;
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "onum" 1;
-}
-.cal-days button:hover {
-  border-color: var(--brass);
-  color: var(--brass);
-}
-.cal-days button.picked {
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--ink);
-}
-.cal-days button.full {
-  color: var(--ink-faint);
-  text-decoration: line-through;
-  cursor: not-allowed;
-}
-.cal-days button.full:hover { border-color: transparent; color: var(--ink-faint); }
 
-.slots-pane { display: flex; flex-direction: column; }
-.slots-pane .day {
-  font-family: var(--serif); font-size: 18px; font-weight: 500;
-  margin-bottom: 4px;
+.about .body .lbl { font: 500 10.5px/1 var(--mono); letter-spacing: 0.2em; text-transform: uppercase; color: var(--rubber); margin-bottom: 14px; display: block; }
+.about .body h2 {
+  margin: 0 0 24px;
+  font: 500 44px/1.05 var(--serif);
+  letter-spacing: -0.02em;
 }
-.slots-pane .day em {
-  font-style: italic; color: var(--ink-faint); font-weight: 400;
+.about .body h2 em { font-style: italic; color: var(--rubber-2); }
+.about .body .lead {
+  font: 400 19px/1.5 var(--serif);
+  color: var(--ink);
+  margin: 0 0 18px;
 }
-.slots-pane .label-mini {
-  font-family: var(--sans);
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--brass);
+.about .body .body-text p {
+  font: 400 13.5px/1.65 var(--mono);
+  color: var(--ink-2);
+  margin: 0 0 14px;
+}
+.about .body .signature {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ink-2);
+  display: flex; gap: 24px; align-items: baseline;
+}
+.about .body .signature .sig {
+  font: italic 400 28px/1 var(--serif);
+  color: var(--rubber-2);
+  letter-spacing: -0.01em;
+}
+.about .body .signature .meta {
+  font: 500 11px/1.4 var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  text-transform: uppercase;
+}
+.about .body .signature .meta b { color: var(--ink); display: block; font-weight: 600; }
+
+.about .sidecar { display: flex; flex-direction: column; gap: 18px; }
+.about .sidecar .stamp-card {
+  border: 1.5px solid var(--ink);
+  background: var(--page);
+  padding: 16px 18px;
+}
+.about .sidecar .stamp-card .lbl { font: 500 10px/1 var(--mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; display: block; }
+.about .sidecar .stamp-card .v { font: 500 18px/1.3 var(--serif); letter-spacing: -0.005em; }
+.about .sidecar .stamp-card .v em { font-style: italic; color: var(--rubber-2); }
+
+.about .sidecar .real-stamp {
+  border: 2px solid var(--rubber);
+  color: var(--rubber);
+  padding: 18px 20px;
+  text-align: center;
+  font: 600 11px/1.4 var(--mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transform: rotate(2deg);
+  position: relative;
+  background: var(--page);
+}
+.about .sidecar .real-stamp::before {
+  content: "";
+  position: absolute; inset: 4px;
+  border: 1px solid var(--rubber);
+  pointer-events: none;
+}
+.about .sidecar .real-stamp .big {
+  display: block;
+  font: italic 400 22px/1.1 var(--serif);
+  color: var(--rubber-2);
+  letter-spacing: -0.01em;
+  text-transform: none;
+  margin: 6px 0;
+}
+
+/* ─── REZERWACJA (Wpis kalendarzowy) ─── */
+.booking { padding: 100px 0; }
+.booking .head {
+  display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: end;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 36px;
+}
+.booking .head .num { font: 500 64px/0.85 var(--serif); color: var(--rubber); letter-spacing: -0.04em; font-feature-settings: "onum" 1; }
+.booking .head h2 { margin: 0; font: 500 44px/1.05 var(--serif); letter-spacing: -0.02em; }
+.booking .head h2 em { font-style: italic; color: var(--rubber-2); }
+.booking .head .lbl { font: 500 10.5px/1 var(--mono); letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; display: block; }
+
+.appt-form {
+  border: 2px solid var(--ink);
+  background: var(--page-2);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background-image:
+    linear-gradient(to bottom, var(--grid-soft) 1px, transparent 1px);
+  background-size: 100% 32px;
+  background-position: 0 0;
+}
+.appt-form::before {
+  content: "FORMULARZ REZERWACJI WIZYTY · LM-DENT/2026/05";
+  position: absolute; top: -12px; left: 24px;
+  background: var(--page-2);
+  padding: 0 12px;
+  font: 600 11px/1 var(--mono);
+  letter-spacing: 0.16em;
+  color: var(--ink);
+}
+.appt-form .pane { padding: 36px; }
+.appt-form .pane + .pane { border-left: 2px solid var(--ink); }
+
+.appt-cal-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink-2);
   margin-bottom: 16px;
 }
-.slot-list {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+.appt-cal-head .month { font: italic 500 28px/1 var(--serif); letter-spacing: -0.01em; }
+.appt-cal-head .year { font: 500 12px/1 var(--mono); color: var(--ink-3); margin-left: 10px; letter-spacing: 0.14em; }
+.appt-cal-head .nav { display: flex; gap: 6px; }
+.appt-cal-head .nav button {
+  width: 32px; height: 32px;
+  border: 1.5px solid var(--ink);
+  background: var(--page);
+  font: 500 16px/1 var(--serif); color: var(--ink);
+  display: grid; place-items: center;
+  transition: all .15s;
+}
+.appt-cal-head .nav button:hover { background: var(--ink); color: var(--page); }
+
+.appt-week, .appt-days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+.appt-week { margin-bottom: 6px; }
+.appt-week span { text-align: center; font: 500 10px/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); padding: 6px 0; }
+.appt-days button {
+  height: 56px;
+  border: 1px solid var(--ink-2);
+  background: var(--page);
+  font: 500 17px/1 var(--serif);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "onum" 1;
+  transition: all .14s;
+  position: relative;
+}
+.appt-days button:hover { background: var(--highlight); border-color: var(--ink); }
+.appt-days button.picked {
+  background: var(--rubber); color: var(--page); border-color: var(--rubber-2);
+}
+.appt-days button.picked::before {
+  content: "";
+  position: absolute; inset: 4px;
+  border: 1px solid var(--page);
+  pointer-events: none;
+}
+.appt-days button.full {
+  background: var(--page-3);
+  color: var(--ink-3);
+  cursor: not-allowed;
+  position: relative;
+}
+.appt-days button.full::after {
+  content: "";
+  position: absolute; inset: 4px;
+  background: repeating-linear-gradient(135deg, transparent 0 4px, var(--ink-3) 4px 5px);
+  opacity: 0.4;
+}
+.appt-days button.full:hover { background: var(--page-3); }
+
+.appt-slots-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink-2);
+  margin-bottom: 18px;
+}
+.appt-slots-head .day { font: italic 500 24px/1 var(--serif); letter-spacing: -0.005em; }
+.appt-slots-head .day b { font-style: normal; font-weight: 500; color: var(--rubber-2); }
+.appt-slots-head .ref-no { font: 500 11px/1 var(--mono); letter-spacing: 0.14em; color: var(--ink-3); }
+
+.appt-slots {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
   margin-bottom: 22px;
 }
-.slot-list button {
-  height: 46px; border-radius: 6px;
-  border: 1px solid var(--line);
-  background: var(--paper);
-  font: 500 15px/1 var(--serif);
+.appt-slots button {
+  height: 52px;
+  border: 1px solid var(--ink-2);
+  background: var(--page);
+  font: 500 16px/1 var(--serif);
   color: var(--ink);
-  cursor: pointer;
-  transition: all .14s ease;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px;
+  position: relative;
+  transition: all .14s;
 }
-.slot-list button:hover { border-color: var(--brass); color: var(--brass); }
-.slot-list button.picked {
-  background: var(--forest);
-  color: var(--paper);
-  border-color: var(--forest);
+.appt-slots button:hover { background: var(--highlight); border-color: var(--ink); }
+.appt-slots button.picked {
+  background: var(--rubber); color: var(--page); border-color: var(--rubber-2);
 }
-.slot-list button.taken {
-  color: var(--ink-faint);
-  text-decoration: line-through;
+.appt-slots button.taken {
+  background: var(--page-3);
+  color: var(--ink-3);
   cursor: not-allowed;
-  background: var(--paper-deep);
+  text-decoration: line-through;
 }
-.slot-list button.taken:hover { border-color: var(--line); color: var(--ink-faint); }
-.book-cta {
-  width: 100%;
-  background: var(--forest);
-  color: var(--paper);
-  border: 1px solid var(--forest);
-  font-variant-numeric: tabular-nums;
-}
-.book-cta:hover { background: var(--forest-deep); border-color: var(--forest-deep); transform: translateY(-1px); }
-
-.booking-features {
-  margin-top: 28px;
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-}
-@media (max-width: 600px) { .booking-features { grid-template-columns: 1fr; } }
-.feature {
-  display: flex; gap: 12px; align-items: flex-start;
-  font-family: var(--sans);
-  font-size: 14px; line-height: 1.45;
-  color: var(--ink-soft);
-}
-.feature .dot {
-  flex-shrink: 0;
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--brass);
-  margin-top: 8px;
-}
-.feature b { color: var(--ink); font-weight: 600; }
-
-/* ---------- contact ---------- */
-.contact { background: var(--ink); color: var(--paper); }
-.contact h2 { color: var(--paper); }
-.contact .eyebrow { color: var(--brass-soft); }
-.contact .eyebrow::before { background: var(--brass-soft); }
-.contact .head {
-  display: grid; grid-template-columns: 4fr 7fr; gap: 48px;
-  margin-bottom: 56px; align-items: end;
-}
-@media (max-width: 820px) { .contact .head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; } }
-.contact .head p {
-  font-family: var(--serif); font-style: italic;
-  font-size: 18px; line-height: 1.5;
-  color: rgba(245,239,226,0.72);
-  margin: 0;
-}
-.contact .grid {
-  display: grid; gap: 0;
-  grid-template-columns: repeat(3, 1fr);
-}
-@media (max-width: 760px) { .contact .grid { grid-template-columns: 1fr; } }
-.crow {
-  padding: 28px 0;
-  border-top: 1px solid rgba(245,239,226,0.18);
-  display: flex; flex-direction: column; gap: 8px;
-}
-.contact .grid > .crow + .crow { border-left: 1px solid rgba(245,239,226,0.18); padding-left: 28px; }
-@media (max-width: 760px) {
-  .contact .grid > .crow + .crow { border-left: 0; padding-left: 0; }
-}
-.crow .k {
-  font-family: var(--sans);
-  font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--brass-soft);
-}
-.crow .v { font-family: var(--serif); font-size: 22px; font-weight: 500; line-height: 1.25; }
-.crow .v a { color: var(--paper); text-decoration: none; border-bottom: 1px solid rgba(245,239,226,0.3); padding-bottom: 2px; }
-.crow .v a:hover { border-bottom-color: var(--brass-soft); }
-.crow .sub { font-family: var(--sans); font-size: 13px; color: rgba(245,239,226,0.55); margin-top: 2px; }
-
-.contact .grid .crow:first-child { padding-right: 28px; }
-@media (max-width: 760px) {
-  .contact .grid .crow:first-child { padding-right: 0; }
+.appt-slots button.taken::after {
+  content: "ZAJĘTE";
+  position: absolute;
+  font: 600 8px/1 var(--mono);
+  letter-spacing: 0.18em;
+  color: var(--rubber);
+  top: 50%; right: 6px;
+  transform: translateY(-50%) rotate(-4deg);
+  text-decoration: none;
+  border: 1px solid var(--rubber);
+  padding: 2px 4px;
+  background: var(--page);
 }
 
-/* ---------- footer ---------- */
-footer.site {
+.confirm-row {
+  border: 1.5px solid var(--ink);
+  background: var(--page);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+}
+.confirm-row .summary { font: 500 12px/1.4 var(--mono); letter-spacing: 0.06em; color: var(--ink-2); text-transform: uppercase; }
+.confirm-row .summary b { color: var(--ink); font-weight: 600; display: block; font-size: 16px; font-family: var(--serif); font-style: italic; letter-spacing: -0.01em; text-transform: none; margin-top: 2px; }
+.confirm-row .submit {
   background: var(--ink);
-  color: rgba(245,239,226,0.72);
-  border-top: 1px solid rgba(245,239,226,0.12);
-  padding: 28px 0 36px;
-  font-size: 13px;
+  color: var(--page);
+  border: 0;
+  padding: 14px 24px;
+  font: 600 12px/1 var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: background .18s;
 }
-footer.site .inner {
-  max-width: 1080px; margin: 0 auto; padding: 0 28px;
+.confirm-row .submit:hover { background: var(--rubber); }
+.confirm-row .submit .arrow { font-family: var(--serif); font-style: italic; font-size: 16px; text-transform: none; letter-spacing: 0; }
+
+.appt-features {
+  margin-top: 24px;
+  padding: 22px 24px;
+  background: var(--page);
+  border: 1px solid var(--ink-2);
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 28px;
+}
+.appt-features .feat {
+  display: flex; gap: 12px; align-items: flex-start;
+  font: 400 13px/1.5 var(--mono);
+  color: var(--ink-2);
+}
+.appt-features .feat .sq {
+  flex-shrink: 0;
+  width: 16px; height: 16px;
+  border: 1.5px solid var(--ink);
+  display: grid; place-items: center;
+  font: 600 11px/1 var(--mono);
+  background: var(--page);
+}
+.appt-features .feat .sq::after { content: "✓"; color: var(--rubber); }
+.appt-features .feat b { color: var(--ink); font-weight: 600; font-family: var(--serif); font-style: italic; font-size: 15px; letter-spacing: -0.005em; }
+
+/* ─── KONTAKT ─── */
+.contact {
+  background: var(--ink);
+  color: var(--page);
+  padding: 80px 0 48px;
+  position: relative;
+}
+.contact::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: repeating-linear-gradient(90deg, var(--page) 0 12px, transparent 12px 24px);
+}
+.contact .head {
+  display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: end;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--page);
+  margin-bottom: 36px;
+}
+.contact .head .num { color: var(--highlight); font: 500 64px/0.85 var(--serif); letter-spacing: -0.04em; font-feature-settings: "onum" 1; }
+.contact .head h2 { color: var(--page); margin: 0; font: 500 44px/1.05 var(--serif); letter-spacing: -0.02em; }
+.contact .head h2 em { color: var(--highlight); font-style: italic; }
+.contact .head .lbl { font: 500 10.5px/1 var(--mono); letter-spacing: 0.2em; text-transform: uppercase; color: rgba(244,241,232,0.55); margin-bottom: 8px; display: block; }
+
+.contact-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr) 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(244,241,232,0.25);
+}
+.contact-grid .crow {
+  padding: 28px 28px 28px 0;
+  display: flex; flex-direction: column; gap: 10px;
+  border-right: 1px solid rgba(244,241,232,0.25);
+}
+.contact-grid .crow:last-child { border-right: 0; padding-right: 0; }
+.contact-grid .crow + .crow { padding-left: 28px; }
+.contact-grid .crow .k { font: 500 10px/1 var(--mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--highlight); }
+.contact-grid .crow .v { font: 500 22px/1.2 var(--serif); letter-spacing: -0.005em; }
+.contact-grid .crow .v a { color: var(--page); text-decoration: none; border-bottom: 1px solid rgba(244,241,232,0.4); padding-bottom: 2px; }
+.contact-grid .crow .v a:hover { border-bottom-color: var(--highlight); }
+.contact-grid .crow .sub { font: 400 12px/1.4 var(--mono); color: rgba(244,241,232,0.55); letter-spacing: 0.04em; }
+.contact-grid .stamp-cell {
+  padding: 28px;
+  display: grid; place-items: center;
+}
+.contact-grid .stamp-cell .stamp-circle {
+  width: 130px; height: 130px;
+  border: 2px solid var(--highlight);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  position: relative;
+  transform: rotate(-4deg);
+  font: 600 9px/1.3 var(--mono);
+  letter-spacing: 0.16em;
+  color: var(--highlight);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 12px;
+}
+.contact-grid .stamp-cell .stamp-circle::before {
+  content: "";
+  position: absolute; inset: 5px;
+  border: 1px dashed var(--highlight);
+  border-radius: 50%;
+}
+.contact-grid .stamp-cell .stamp-circle .big {
+  display: block;
+  font: italic 400 22px/1.05 var(--serif);
+  color: var(--page);
+  letter-spacing: -0.01em;
+  text-transform: none;
+  margin: 4px 0;
+}
+
+footer.chart-footer {
+  background: var(--ink);
+  color: rgba(244,241,232,0.7);
+  padding: 18px 0 32px;
+  font: 400 11px/1.5 var(--mono);
+  letter-spacing: 0.06em;
+  border-top: 1px solid rgba(244,241,232,0.18);
+}
+footer.chart-footer .row {
+  max-width: 1280px; margin: 0 auto; padding: 0 32px;
   display: flex; gap: 18px; flex-wrap: wrap; justify-content: space-between; align-items: center;
 }
-footer.site a { color: var(--paper); text-decoration: none; border-bottom: 1px solid rgba(245,239,226,0.3); }
-footer.site a:hover { border-bottom-color: var(--brass-soft); }
-.footer-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--serif); font-style: italic;
-  border: 1px dashed rgba(245,239,226,0.32);
-  padding: 6px 14px; border-radius: 999px;
-  font-size: 12px;
-  color: rgba(245,239,226,0.7);
-}
-.footer-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brass); }
+footer.chart-footer a { color: var(--page); text-decoration: none; border-bottom: 1px solid rgba(244,241,232,0.3); }
+footer.chart-footer .doc { text-transform: uppercase; }
 
-/* page-load reveal */
-@keyframes rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: none; }
+/* ─── RESPONSIVE ─── */
+@media (max-width: 920px) {
+  .karta .grid { grid-template-columns: 1fr; gap: 36px; }
+  .intake-form { grid-template-columns: 1fr 1fr; }
+  .karta h1 { font-size: 56px; }
+  .karta { padding: 40px 0 56px; }
+  .about .grid { grid-template-columns: 1fr; gap: 32px; }
+  .about .photo-card { max-width: 280px; }
+  .about .sidecar { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .about .sidecar .real-stamp { grid-column: 1 / -1; }
+  section.section { padding: 56px 0; }
+  .section-header { grid-template-columns: 56px 1fr; gap: 16px; }
+  .section-header .num { font-size: 48px; }
+  .section-header .title h2 { font-size: 32px; }
+  .section-header .ref { display: none; }
+  .booking { padding: 56px 0; }
+  .booking .head .num { font-size: 48px; }
+  .booking .head h2 { font-size: 32px; }
+  .contact { padding: 56px 0 40px; }
+  .contact .head .num { font-size: 48px; }
+  .contact .head h2 { font-size: 32px; }
+  .proc {
+    grid-template-columns: auto auto 1fr 32px;
+    grid-template-rows: auto auto auto;
+    gap: 4px 12px;
+    align-items: baseline;
+    padding: 18px 0;
+  }
+  .proc .code { grid-column: 1; grid-row: 1; }
+  .proc .icd { grid-column: 2; grid-row: 1; font-size: 10px; padding-left: 6px; border-left: 1px solid var(--ink-3); }
+  .proc .icd br { display: none; }
+  .proc .duration { grid-column: 3; grid-row: 1; text-align: right; font-size: 10px; }
+  .proc .name { grid-column: 1 / span 3; grid-row: 2; font-size: 19px; margin-top: 2px; }
+  .proc .desc { grid-column: 1 / span 3; grid-row: 3; font-size: 12px; line-height: 1.55; }
+  .proc .check { grid-column: 4; grid-row: 1 / span 3; align-self: start; margin-top: 4px; }
+  .appt-form { grid-template-columns: 1fr; }
+  .appt-form .pane { padding: 28px; }
+  .appt-form .pane + .pane { border-left: 0; border-top: 2px solid var(--ink); }
+  .appt-features { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid .crow { border-right: 0; border-bottom: 1px solid rgba(244,241,232,0.25); padding-left: 0 !important; padding-right: 0; }
+  .contact-grid .stamp-cell { padding: 24px 0 0; }
+  .chart-meta { display: none; }
+  .karta .annotation-1 { display: none; }
+  footer.chart-footer .row { gap: 8px; }
+  footer.chart-footer .doc { font-size: 10px; }
 }
-.hero h1, .hero .lede, .hero .ctas, .hero .meta-strip, .hero .bot {
-  animation: rise 720ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-.hero h1            { animation-delay: 60ms; }
-.hero .lede         { animation-delay: 220ms; }
-.hero .ctas         { animation-delay: 360ms; }
-.hero .meta-strip   { animation-delay: 500ms; }
-.hero .bot          { animation-delay: 140ms; }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 0 18px; }
+  .chart-header .row { padding: 12px 18px; gap: 10px; grid-template-columns: auto 1fr; }
+  .chart-header .row > .call-stamp { grid-column: 1 / -1; justify-self: stretch; justify-content: center; }
+  .file-tab .seal { width: 38px; height: 38px; font-size: 11px; }
+  .file-tab .titlestack .name { font-size: 14px; }
+  .karta { padding: 28px 0 40px; }
+  .karta h1 { font-size: 38px; line-height: 1.02; }
+  .karta .file-bar { font-size: 9.5px; flex-wrap: wrap; gap: 8px 18px; }
+  .karta .file-bar .left { gap: 18px; flex-wrap: wrap; }
+  .karta .deck { font-size: 16px; }
+  .intake-form { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .intake-form .field .body { padding: 14px 14px; min-height: 72px; }
+  .intake-form .field .v { font-size: 14px; }
+  .intake-form .field .v.hand { font-size: 15px; }
+  .cta-row { flex-direction: column; }
+  .btn-cta { padding: 14px 16px; font-size: 11px; }
+  .tooth-card { padding: 18px 14px; }
+  .tooth-card::before { font-size: 9px; letter-spacing: 0.12em; }
+  .tooth { font-size: 9px; }
+  .tooth-card .legend-key { font-size: 9.5px; }
+  section.section { padding: 40px 0; }
+  .section-header { grid-template-columns: 44px 1fr; gap: 12px; padding-bottom: 12px; margin-bottom: 22px; }
+  .section-header .num { font-size: 38px; }
+  .section-header .title h2 { font-size: 26px; line-height: 1.1; }
+  .section-header .title .lbl { font-size: 9.5px; }
+  .proc { padding: 14px 0; gap: 3px 10px; }
+  .proc:nth-child(odd) { margin: 0 -12px; padding-left: 12px; padding-right: 12px; }
+  .proc .name { font-size: 17px; }
+  .proc-footer { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px; font-size: 12px; }
+  .about { padding: 40px 0; }
+  .about .body h2 { font-size: 26px; }
+  .about .body .lead { font-size: 16px; }
+  .about .sidecar { grid-template-columns: 1fr 1fr; }
+  .booking { padding: 40px 0; }
+  .booking .head { grid-template-columns: 44px 1fr; gap: 12px; }
+  .booking .head .num { font-size: 38px; }
+  .booking .head h2 { font-size: 26px; }
+  .appt-form { background-size: 100% 28px; }
+  .appt-form::before { font-size: 9.5px; letter-spacing: 0.12em; left: 14px; }
+  .appt-form .pane { padding: 22px 18px; }
+  .appt-cal-head .month { font-size: 22px; }
+  .appt-week, .appt-days { gap: 3px; }
+  .appt-days button { height: 44px; font-size: 14px; }
+  .appt-slots { grid-template-columns: repeat(2, 1fr); gap: 5px; }
+  .appt-slots button { height: 44px; font-size: 14px; }
+  .confirm-row { grid-template-columns: 1fr; gap: 12px; }
+  .confirm-row .submit { justify-content: center; padding: 12px 16px; }
+  .contact { padding: 40px 0 32px; }
+  .contact .head { grid-template-columns: 44px 1fr; gap: 12px; }
+  .contact .head .num { font-size: 38px; }
+  .contact .head h2 { font-size: 26px; }
+  .contact-grid .crow { padding: 18px 0; }
+  .contact-grid .crow .v { font-size: 18px; }
+  .contact-grid .stamp-cell .stamp-circle { width: 110px; height: 110px; font-size: 8.5px; }
+  footer.chart-footer .row { padding: 0 18px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  footer.chart-footer .doc { font-size: 9.5px; }
 }
 </style>
 </head>
 <body>
 
-<header class="site">
-  <div class="inner">
-    <a class="brand" href="#" aria-label="LM Dent - strona główna">
-      <span class="mark" aria-hidden="true">LM</span>
-      <span class="name"><b>LM Dent</b><span>Lidia Mądrzejowska</span></span>
+<header class="chart-header">
+  <div class="row">
+    <a class="file-tab" href="#">
+      <span class="seal">LM</span>
+      <span class="titlestack">
+        <span class="name">LM Dent · L. Mądrzejowska</span>
+        <span class="num">Karta gabinetu nr 03/2026</span>
+      </span>
     </a>
-    <a class="phone-pill" href="tel:+48896246645">
-      <span class="lbl">tel.</span>
-      <span>89 624 66 45</span>
+    <div class="chart-meta">
+      <div class="pair">
+        <span>Adres</span>
+        <span class="v serif">Krasickiego 3</span>
+      </div>
+      <div class="pair">
+        <span>Miasto</span>
+        <span class="v">12-100 Szczytno</span>
+      </div>
+      <div class="pair">
+        <span>Status</span>
+        <span class="v">Czynny pn-pt</span>
+      </div>
+    </div>
+    <a class="call-stamp" href="tel:+48896246645">
+      Tel. <span class="num">89 624 66 45</span>
     </a>
   </div>
 </header>
 
-<section class="hero">
+<section class="karta">
   <div class="wrap">
+    <div class="file-bar">
+      <div class="left">
+        <span class="doc-no">Dok. <b>LM-DENT / 2026 / 05 / 06</b></span>
+        <span>Strona 1 z 1</span>
+      </div>
+      <div class="right">
+        <span>Wydruk: 06.05.2026</span>
+        <span>Status: Aktualny</span>
+      </div>
+    </div>
+
     <div class="grid">
-      <div>
-        <span class="eyebrow">Gabinet stomatologiczny - Szczytno</span>
-        <h1 style="margin-top: 22px;">
-          Spokojna stomatologia<br>
-          z ulicy <span class="accent">Krasickiego.</span>
+      <div style="position: relative;">
+        <span class="label" style="display:block; margin-bottom: 18px;">- Karta główna · sekcja A</span>
+        <h1>
+          Gabinet <em>stomatologiczny</em><br>
+          przy <span class="underline">Krasickiego 3.</span>
         </h1>
-        <p class="lede">
-          <span class="first-line">Gabinet stomatologiczny w Szczytnie - nieprzerwanie od 1985 roku.</span>
-          Leczenie pod mikroskopem ZEISS, RTG i piaskowanie na miejscu. Protetyka, stomatologia estetyczna, zachowawcza, kanałowa i chirurgiczna - dorośli i dzieci.
+        <span class="annotation-1">prywatna praktyka, jeden lekarz prowadzący, plan ustalany przed wizytą</span>
+
+        <p class="deck">
+          <strong>LM Dent</strong> - leczenie zachowawcze, estetyka, protetyka oraz diagnostyka RTG na miejscu. Tempo dostosowujemy do pacjenta, plan leczenia omawiamy <em style="font-style:italic; color: var(--rubber-2);">zanim cokolwiek zaczniemy</em>.
         </p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="tel:+48692086395">
-            Zadzwoń: 692 086 395 <span class="arrow">&rsaquo;</span>
-          </a>
-          <a class="btn btn-ghost" href="#rezerwacja">
-            Umów wizytę online
-          </a>
+
+        <div class="intake-form">
+          <div class="field">
+            <span class="field-label">01 · Adres</span>
+            <div class="body">
+              <span class="v">ul. Krasickiego 3</span>
+              <span class="v hand">12-100 Szczytno</span>
+              <span class="sub">PARKING POD BUDYNKIEM</span>
+            </div>
+          </div>
+          <div class="field">
+            <span class="field-label">02 · Zakres</span>
+            <div class="body">
+              <span class="v">Zachowawcza · Estetyka</span>
+              <span class="v">Protetyka · RTG</span>
+              <span class="sub">CZTERY OBSZARY · JEDEN ZESPÓŁ</span>
+            </div>
+          </div>
+          <div class="field">
+            <span class="field-label">03 · Wizyty</span>
+            <div class="body">
+              <span class="v">Telefonicznie i online</span>
+              <span class="v hand">pn-pt, w godz. pracy</span>
+              <span class="sub">POTWIERDZENIE OD RAZU NA E-MAIL</span>
+            </div>
+          </div>
         </div>
 
-        <div class="meta-strip">
-          <div class="meta">
-            <span class="k">Od roku</span>
-            <span class="v serif">1985</span>
-            <span class="v" style="color:var(--ink-soft); font-size:13px;">41 lat ciągłej praktyki</span>
-          </div>
-          <div class="meta">
-            <span class="k">Adres</span>
-            <span class="v">ul. Krasickiego 3<br>12-100 Szczytno</span>
-          </div>
-          <div class="meta">
-            <span class="k">Specjaliści</span>
-            <span class="v">Lidia Mądrzejowska<br>Daria Romanczuk</span>
-          </div>
+        <div class="cta-row">
+          <a class="btn-cta solid" href="tel:+48896246645">
+            <span>Zadzwoń · 89 624 66 45</span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="btn-cta" href="#rezerwacja">
+            <span>Wpis kalendarzowy</span>
+            <span class="arrow">↘</span>
+          </a>
         </div>
       </div>
 
-      <div class="bot" aria-hidden="true">
-        <svg viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#997644" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-          <!-- central stem -->
-          <path d="M160 360 C 160 280, 158 220, 156 160 C 154 110, 148 70, 142 38" />
-          <!-- pair of leaves, mirrored -->
-          <path d="M156 160 C 120 158, 88 170, 70 196 C 96 200, 132 192, 156 178" />
-          <path d="M156 160 C 192 158, 224 170, 242 196 C 216 200, 180 192, 156 178" />
-          <path d="M152 218 C 116 222, 86 238, 72 264 C 100 264, 132 252, 154 240" />
-          <path d="M152 218 C 188 222, 218 238, 232 264 C 204 264, 172 252, 150 240" />
-          <path d="M148 280 C 122 286, 102 300, 92 318 C 116 316, 138 308, 152 298" />
-          <path d="M148 280 C 174 286, 194 300, 204 318 C 180 316, 158 308, 146 298" />
-          <!-- top bud (abstract tooth-flower) -->
-          <path d="M142 38 C 130 30, 120 22, 116 8 C 124 4, 134 4, 142 14 C 150 4, 160 4, 168 8 C 164 22, 154 30, 142 38 Z" fill="#f5efe2" />
-          <!-- inner mark on bud -->
-          <path d="M142 18 L 142 30" stroke-width="0.8" />
-          <!-- ground line with shadow dots -->
-          <path d="M40 360 L 280 360" stroke-dasharray="0.5 6" stroke-width="0.8" />
-          <!-- accent rays -->
-          <path d="M270 60 L 290 50 M278 76 L 302 74 M256 50 L 264 28" stroke-width="0.8" opacity="0.7" />
-          <path d="M50 60 L 30 50 M42 76 L 18 74 M64 50 L 56 28" stroke-width="0.8" opacity="0.7" />
-        </svg>
+      <aside class="tooth-card" aria-hidden="true">
+        <div class="legend">
+          <span>Górny</span>
+          <span class="center">- diagram poglądowy -</span>
+          <span class="r">P · L</span>
+        </div>
+        <div class="tooth-grid">
+          <span class="tooth">18</span><span class="tooth">17</span><span class="tooth">16</span><span class="tooth">15</span>
+          <span class="tooth">14</span><span class="tooth marked">13</span><span class="tooth">12</span><span class="tooth">11</span>
+        </div>
+        <div class="tooth-grid">
+          <span class="tooth">21</span><span class="tooth">22</span><span class="tooth healed">23</span><span class="tooth">24</span>
+          <span class="tooth">25</span><span class="tooth">26</span><span class="tooth">27</span><span class="tooth">28</span>
+        </div>
+        <div class="tooth-axis">- LINIA ZGRYZU -</div>
+        <div class="tooth-grid lower">
+          <span class="tooth">48</span><span class="tooth healed">47</span><span class="tooth">46</span><span class="tooth">45</span>
+          <span class="tooth">44</span><span class="tooth">43</span><span class="tooth">42</span><span class="tooth">41</span>
+        </div>
+        <div class="tooth-grid lower">
+          <span class="tooth">31</span><span class="tooth">32</span><span class="tooth">33</span><span class="tooth">34</span>
+          <span class="tooth marked">35</span><span class="tooth">36</span><span class="tooth">37</span><span class="tooth">38</span>
+        </div>
+        <div class="legend">
+          <span>Dolny</span>
+          <span class="center it">środa, 6 maja 2026</span>
+          <span class="r">P · L</span>
+        </div>
+        <div class="legend-key">
+          <div class="row"><span class="swatch healthy"></span><span>Zdrowy / kontrola</span></div>
+          <div class="row"><span class="swatch marked"></span><span>Do leczenia</span></div>
+          <div class="row"><span class="swatch healed"></span><span>Po zabiegu</span></div>
+          <div class="row"><span class="swatch" style="background: var(--highlight);"></span><span>Obserwacja</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="zakres">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="num">02</span>
+      <div class="title">
+        <span class="lbl">- Zakres procedur · sekcja B</span>
+        <h2>Co wykonujemy <em>w gabinecie.</em></h2>
       </div>
+      <div class="ref">
+        Wykaz<br>
+        <b>cztery obszary</b>
+      </div>
+    </div>
+
+    <div class="proc-list">
+      <article class="proc">
+        <span class="code">01 · ZACH</span>
+        <span class="icd">ICD-10<br>K02</span>
+        <span class="name">Stomatologia zachowawcza</span>
+        <span class="desc">Leczenie próchnicy, wymiana wypełnień, opracowanie i ochrona zębów żywych. Materiały kompozytowe dopasowane kolorystycznie.</span>
+        <span class="duration">30-60 min</span>
+        <span class="check"></span>
+      </article>
+      <article class="proc">
+        <span class="code">02 · EST</span>
+        <span class="icd">ICD-10<br>K03</span>
+        <span class="name">Stomatologia estetyczna</span>
+        <span class="desc">Korekta kształtu i koloru, licówki, wybielanie. Decyzję planujemy pod konkretny uśmiech, a nie pod katalog rozwiązań.</span>
+        <span class="duration">konsultacja</span>
+        <span class="check"></span>
+      </article>
+      <article class="proc">
+        <span class="code">03 · PROT</span>
+        <span class="icd">ICD-10<br>K08</span>
+        <span class="name">Protetyka</span>
+        <span class="desc">Korony, mosty, uzupełnienia stałe i ruchome. Dopasowanie do zgryzu i komfortu codziennego użytkowania.</span>
+        <span class="duration">plan etapowy</span>
+        <span class="check"></span>
+      </article>
+      <article class="proc">
+        <span class="code">04 · RTG</span>
+        <span class="icd">ICD-9<br>87.61</span>
+        <span class="name">Diagnostyka RTG</span>
+        <span class="desc">Zdjęcia punktowe wykonywane na miejscu - bez konieczności jazdy do innej pracowni - jako pomoc przy planowaniu leczenia.</span>
+        <span class="duration">od ręki</span>
+        <span class="check"></span>
+      </article>
+    </div>
+
+    <div class="proc-footer">
+      <span class="stamp">Uwaga · poglądowo</span>
+      <span class="hand">Pełen wykaz procedur, terminy i koszty potwierdzamy telefonicznie - opis powyżej jest poglądowy.</span>
     </div>
   </div>
 </section>
@@ -783,140 +1181,50 @@ footer.site a:hover { border-bottom-color: var(--brass-soft); }
 <section class="about" id="o-nas">
   <div class="wrap">
     <div class="grid">
-      <aside class="side">
-        <span class="num">01</span>
-        <span class="eyebrow" style="margin-bottom:10px;">O gabinecie</span><br><br>
-        <em>Niepubliczny Zakład Opieki Zdrowotnej Lidia Mądrzejowska. Krasickiego 3, Szczytno - gabinet prowadzony nieprzerwanie od 1985 roku.</em>
-      </aside>
+      <div class="photo-card">
+        <div class="frame">
+          <div class="ph">
+            <span class="big">Portret<br>lek. dent.</span>
+            DODAJ ZDJĘCIE · 4:5 · MIN. 1600px
+          </div>
+        </div>
+        <div class="caption">- lek. dent. Lidia Mądrzejowska -</div>
+      </div>
+
       <div class="body">
-        <p class="lead-para">
-          W gabinecie przy ulicy Krasickiego 3 w Szczytnie leczymy nieprzerwanie od 1985 roku. Pracują u nas dwie lekarki stomatolog: Lidia Mądrzejowska, specjalista stomatologii ogólnej i protetyki stomatologicznej, oraz Daria Romanczuk - leczenie zachowawcze, chirurgiczne i kanałowe, dla dorosłych i dzieci.
+        <span class="lbl">- Lekarz prowadzący · sekcja C</span>
+        <h2>Lidia Mądrzejowska, <em>lek. dent.</em></h2>
+        <p class="lead">
+          Praktyka prywatna od ponad dwudziestu pięciu lat. Pracujemy na umówione wizyty, jeden lekarz prowadzący, plan leczenia ustalamy z pacjentem przed rozpoczęciem zabiegu.
         </p>
-        <p>
-          Dbając o zdrowie naszych pacjentów stale podwyższamy kwalifikacje oraz zachowujemy najwyższy standard wyposażenia gabinetów. Nadrzędnym celem naszych działań jest zachowanie zębów własnych pacjentów i szeroko rozumiana profilaktyka stomatologiczna.
-        </p>
-        <p>
-          Wizyty umawiamy telefonicznie pod numerami 692 086 395 i 89 624 66 45 albo bezpośrednio przez rezerwację online.
-        </p>
+        <div class="body-text">
+          <p>Wszystkie szczegóły, kalendarz przyjęć i koszty wizyt potwierdzamy telefonicznie. Najprościej zadzwonić pod numer 89 624 66 45 albo skorzystać z wpisu kalendarzowego online (sekcja D).</p>
+          <p>Gabinet znajduje się przy ulicy Krasickiego 3 w Szczytnie - kilka kroków od centrum, parking pod budynkiem, dojazd dogodny dla pacjentów z całego powiatu szczycieńskiego.</p>
+        </div>
+        <div class="signature">
+          <span class="sig">L. Mądrzejowska</span>
+          <span class="meta"><b>Lek. dent. · NIL XXXXXX</b>Podpis lekarza prowadzącego</span>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<section class="services" id="zakres">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <span class="eyebrow">Zakres leczenia</span>
-        <h2 style="margin-top: 14px;">Co wykonujemy <em class="serif-it">w gabinecie</em></h2>
-      </div>
-      <div class="pre">
-        <p>Cztery główne obszary, jeden zespół. Pełną listę procedur i koszty wizyt potwierdzamy telefonicznie.</p>
-      </div>
-    </div>
-
-    <div class="serv-list">
-      <article class="serv">
-        <span class="idx">01</span>
-        <div class="body">
-          <h3>Stomatologia zachowawcza</h3>
-          <p>Leczenie próchnicy i ochrona zębów żywych. Dorośli i dzieci.</p>
+      <aside class="sidecar">
+        <div class="real-stamp">
+          Czynny<span class="big">Pn-Pt</span>
+          po umówieniu
         </div>
-      </article>
-
-      <article class="serv">
-        <span class="idx">02</span>
-        <div class="body">
-          <h3>Leczenie kanałowe pod mikroskopem</h3>
-          <p>Endodoncja prowadzona z użyciem mikroskopu firmy ZEISS - lidera rynku optyki medycznej.</p>
+        <div class="stamp-card">
+          <span class="lbl">Praktyka</span>
+          <span class="v"><em>25+ lat</em> w zawodzie</span>
         </div>
-      </article>
-
-      <article class="serv">
-        <span class="idx">03</span>
-        <div class="body">
-          <h3>Chirurgia stomatologiczna</h3>
-          <p>Zabiegi chirurgiczne wykonywane w gabinecie przez lek. Darię Romanczuk.</p>
+        <div class="stamp-card">
+          <span class="lbl">Lokalizacja</span>
+          <span class="v">Krasickiego 3<br>Szczytno · powiat szczycieński</span>
         </div>
-      </article>
-
-      <article class="serv">
-        <span class="idx">04</span>
-        <div class="body">
-          <h3>Stomatologia estetyczna</h3>
-          <p>Prace z zakresu poprawy wyglądu uśmiechu, prowadzone przez lek. Lidię Mądrzejowską.</p>
+        <div class="stamp-card">
+          <span class="lbl">Diagnostyka</span>
+          <span class="v"><em>RTG</em> na miejscu</span>
         </div>
-      </article>
-
-      <article class="serv">
-        <span class="idx">05</span>
-        <div class="body">
-          <h3>Protetyka stomatologiczna</h3>
-          <p>Pełen zakres uzupełnień stałych i ruchomych. Specjalizacja właścicielki gabinetu.</p>
-        </div>
-      </article>
-
-      <article class="serv">
-        <span class="idx">06</span>
-        <div class="body">
-          <h3>Rentgenodiagnostyka stomatologiczna</h3>
-          <p>Aparat RTG na miejscu - bez konieczności wyjazdu do innej pracowni.</p>
-        </div>
-      </article>
-    </div>
-
-    <p class="tiny-note">Pełen zakres usług i koszty wizyt potwierdzamy telefonicznie.</p>
-  </div>
-</section>
-
-<section class="equipment" id="wyposazenie">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <span class="eyebrow">Wyposażenie</span>
-        <h2 style="margin-top: 14px;">Sprzęt, którym <em class="serif-it">pracujemy</em></h2>
-      </div>
-      <div class="pre">
-        <p>Troska o najwyższy poziom usług wymaga najnowocześniejszego sprzętu - cztery elementy, które robią różnicę w codziennej pracy.</p>
-      </div>
-    </div>
-
-    <div class="eq-grid">
-      <article class="eq">
-        <div class="icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="3.5"/><circle cx="12" cy="9" r="1.2"/><path d="M12 12.5v3"/><path d="M9 17h6"/><path d="M10 17v3h4v-3"/><path d="M5 5l2 2M19 5l-2 2"/></svg>
-        </div>
-        <h3>Mikroskop</h3>
-        <span class="brand">ZEISS</span>
-        <p>Lider rynku optyki medycznej - pozwala na precyzyjne leczenie kanałowe i pracę pod powiększeniem.</p>
-      </article>
-
-      <article class="eq">
-        <div class="icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13h12l-2 5H7z"/><path d="M11 13V8h2v5"/><path d="M12 8c0-2 1-4 1-5"/><path d="M19 16l3 1M19 13l3-1M18 19l2 2"/></svg>
-        </div>
-        <h3>Laser diodowy</h3>
-        <span class="brand">Lastronix</span>
-        <p>Wspomaganie zabiegów stomatologicznych - mniej inwazyjne procedury, krótszy czas gojenia.</p>
-      </article>
-
-      <article class="eq">
-        <div class="icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="14" rx="2"/><path d="M9 8h6M9 11h6M9 14h4"/><path d="M10 18v3M14 18v3"/></svg>
-        </div>
-        <h3>Aparat RTG</h3>
-        <span class="brand">Diagnostyka na miejscu</span>
-        <p>Rentgenodiagnostyka stomatologiczna bez konieczności wizyty w innej pracowni.</p>
-      </article>
-
-      <article class="eq">
-        <div class="icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/><path d="M5 16c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/><circle cx="9" cy="7" r="1"/><circle cx="14" cy="6" r="1"/><circle cx="11" cy="9" r="1"/><circle cx="17" cy="8" r="1"/></svg>
-        </div>
-        <h3>Piaskowanie zębów</h3>
-        <span class="brand">Higienizacja</span>
-        <p>Profesjonalne urządzenie do piaskowania - skuteczne usuwanie nalotu i kamienia.</p>
-      </article>
+      </aside>
     </div>
   </div>
 </section>
@@ -924,119 +1232,116 @@ footer.site a:hover { border-bottom-color: var(--brass-soft); }
 <section class="booking" id="rezerwacja">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Rezerwacja online</span>
-      <h2>Umów wizytę bez telefonu, w kilka sekund.</h2>
-      <p>Pacjent wybiera wolny dzień i godzinę z Państwa kalendarza. Potwierdzenie trafia od razu na e-mail oraz do gabinetu - bez dodatkowych połączeń.</p>
-    </div>
-
-    <div class="booking-card">
-      <div class="inner">
-        <div class="booking-grid">
-          <div class="cal-pane">
-            <div class="cal-head">
-              <div>
-                <span class="month">Maj</span><span class="year">2026</span>
-              </div>
-              <div class="nav" aria-hidden="true">
-                <span>&lsaquo;</span>
-                <span>&rsaquo;</span>
-              </div>
-            </div>
-            <div class="cal-week" aria-hidden="true">
-              <span>Pn</span><span>Wt</span><span>Śr</span><span>Cz</span><span>Pt</span>
-            </div>
-            <div class="cal-days" role="list">
-              <button type="button" role="listitem">4</button>
-              <button type="button" role="listitem">5</button>
-              <button type="button" class="picked" role="listitem" aria-current="date">6</button>
-              <button type="button" role="listitem">7</button>
-              <button type="button" class="full" role="listitem" aria-disabled="true">8</button>
-              <button type="button" role="listitem">11</button>
-              <button type="button" role="listitem">12</button>
-              <button type="button" role="listitem">13</button>
-              <button type="button" class="full" role="listitem" aria-disabled="true">14</button>
-              <button type="button" role="listitem">15</button>
-            </div>
-          </div>
-
-          <div class="slots-pane">
-            <span class="label-mini">Wybrany dzień</span>
-            <div class="day">Środa, <em>6 maja</em></div>
-            <div class="slot-list" role="list" style="margin-top: 18px;">
-              <button type="button" role="listitem">09:00</button>
-              <button type="button" role="listitem">10:00</button>
-              <button type="button" class="picked" role="listitem" aria-pressed="true">11:30</button>
-              <button type="button" class="taken" role="listitem" aria-disabled="true">13:00</button>
-              <button type="button" role="listitem">15:00</button>
-              <button type="button" role="listitem">16:30</button>
-            </div>
-            <a class="btn book-cta" href="tel:+48896246645">
-              Potwierdź wizytę o 11:30 <span class="arrow">&rsaquo;</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="booking-features">
-          <div class="feature">
-            <span class="dot" aria-hidden="true"></span>
-            <span><b>Synchronizacja kalendarza.</b> Google, iCloud lub Outlook - rezerwacje pojawiają się od razu.</span>
-          </div>
-          <div class="feature">
-            <span class="dot" aria-hidden="true"></span>
-            <span><b>Powiadomienia SMS i e-mail.</b> Automatyczne potwierdzenia, przypomnienia dzień przed wizytą.</span>
-          </div>
-          <div class="feature">
-            <span class="dot" aria-hidden="true"></span>
-            <span><b>ZnanyLekarz lub Booksy.</b> Jeśli już są w użyciu - integrujemy bez dublowania terminów.</span>
-          </div>
-          <div class="feature">
-            <span class="dot" aria-hidden="true"></span>
-            <span><b>Zgodność z RODO.</b> Konfigurujemy zakres pól i polityki retencji zgodnie z wymogami obowiązującymi w gabinecie.</span>
-          </div>
-        </div>
+      <span class="num">04</span>
+      <div>
+        <span class="lbl">- Wpis kalendarzowy · sekcja D</span>
+        <h2>Rezerwacja wizyty <em>online.</em></h2>
       </div>
     </div>
 
-    <p class="tiny-note">Powyższy widget jest poglądowy - w docelowej wersji pacjenci wybierają termin samodzielnie, a Państwo dostają wpis w kalendarzu.</p>
+    <div class="appt-form">
+      <div class="pane">
+        <div class="appt-cal-head">
+          <div>
+            <span class="month">Maj</span><span class="year">/ MMXXVI</span>
+          </div>
+          <div class="nav">
+            <button type="button" aria-label="Poprzedni">‹</button>
+            <button type="button" aria-label="Następny">›</button>
+          </div>
+        </div>
+        <div class="appt-week">
+          <span>Pn</span><span>Wt</span><span>Śr</span><span>Cz</span><span>Pt</span>
+        </div>
+        <div class="appt-days">
+          <button type="button">4</button>
+          <button type="button">5</button>
+          <button type="button" class="picked" aria-current="date">6</button>
+          <button type="button">7</button>
+          <button type="button" class="full" aria-disabled="true">8</button>
+          <button type="button">11</button>
+          <button type="button">12</button>
+          <button type="button">13</button>
+          <button type="button" class="full" aria-disabled="true">14</button>
+          <button type="button">15</button>
+        </div>
+      </div>
+
+      <div class="pane">
+        <div class="appt-slots-head">
+          <span class="day">Środa, <b>6 maja</b></span>
+          <span class="ref-no">REF · 06/05/01</span>
+        </div>
+        <div class="appt-slots">
+          <button type="button">09:00</button>
+          <button type="button">10:00</button>
+          <button type="button" class="picked">11:30</button>
+          <button type="button" class="taken">13:00</button>
+          <button type="button">15:00</button>
+          <button type="button">16:30</button>
+        </div>
+        <div class="confirm-row">
+          <span class="summary">
+            Wybrana wizyta
+            <b>06.05.2026 · godz. 11:30</b>
+          </span>
+          <a class="submit" href="tel:+48896246645">
+            Potwierdź <span class="arrow">↗</span>
+          </a>
+        </div>
+        <div class="appt-features">
+          <div class="feat"><span class="sq"></span><span><b>Synchronizacja kalendarza.</b><br>Google, iCloud, Outlook - od razu.</span></div>
+          <div class="feat"><span class="sq"></span><span><b>SMS i e-mail.</b><br>Potwierdzenia oraz przypomnienia.</span></div>
+          <div class="feat"><span class="sq"></span><span><b>ZnanyLekarz / Booksy.</b><br>Integracja bez dublowania.</span></div>
+          <div class="feat"><span class="sq"></span><span><b>Zgodność z RODO.</b><br>Dane zostają u Państwa.</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="contact" id="kontakt">
   <div class="wrap">
     <div class="head">
+      <span class="num">05</span>
       <div>
-        <span class="eyebrow">Kontakt</span>
-        <h2 style="margin-top: 14px;">Jak nas znaleźć</h2>
+        <span class="lbl" style="color: rgba(244,241,232,0.55);">- Dane kontaktowe · sekcja E</span>
+        <h2>Jak nas <em>znaleźć.</em></h2>
       </div>
-      <p>Numer telefonu odbieramy w godzinach pracy gabinetu. Najszybciej umówić wizytę dzwoniąc lub korzystając z rezerwacji online powyżej.</p>
     </div>
 
-    <div class="grid">
+    <div class="contact-grid">
       <div class="crow">
-        <span class="k">Umów wizytę</span>
-        <span class="v"><a href="tel:+48692086395">692 086 395</a></span>
-        <span class="v"><a href="tel:+48896246645" style="font-size:18px;">89 624 66 45</a></span>
-        <span class="sub">lek. Daria Romanczuk - Pn, Cz, Pt: 8:15-14:00, Wt: 10:00-16:00, Śr: 11:00-17:00. Godziny lek. Lidii Mądrzejowskiej potwierdzamy telefonicznie.</span>
+        <span class="k">- Telefon</span>
+        <span class="v"><a href="tel:+48896246645">+48 89 624 66 45</a></span>
+        <span class="sub">PN-PT · GODZINY PRACY GABINETU</span>
       </div>
       <div class="crow">
-        <span class="k">Adres</span>
+        <span class="k">- Adres</span>
         <span class="v">ul. Krasickiego 3<br>12-100 Szczytno</span>
-        <span class="sub">NZOZ Lidia Mądrzejowska, powiat szczycieński, Warmia-Mazury</span>
+        <span class="sub">POWIAT SZCZYCIEŃSKI · WARMIA-MAZURY</span>
       </div>
       <div class="crow">
-        <span class="k">Mapa</span>
+        <span class="k">- Mapa</span>
         <span class="v"><a href="https://www.google.com/maps/search/?api=1&amp;query=LM+Dent+Krasickiego+3+Szczytno" target="_blank" rel="noopener">Otwórz w Mapach Google</a></span>
-        <span class="sub">Gabinet istnieje od 1985 roku.</span>
+        <span class="sub">PARKING POD BUDYNKIEM</span>
+      </div>
+      <div class="stamp-cell">
+        <div class="stamp-circle">
+          LM Dent
+          <span class="big">Krasickiego 3</span>
+          Szczytno · 2026
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="site">
-  <div class="inner">
-    <span>LM Dent Lidia Mądrzejowska, ul. Krasickiego 3, 12-100 Szczytno</span>
-    <span class="footer-badge"><span class="dot" aria-hidden="true"></span>podgląd roboczy - nie jest finalnym projektem</span>
-    <span>Projekt: <a href="https://adrianantosiak.pl">Adrian Antosiak</a></span>
+<footer class="chart-footer">
+  <div class="row">
+    <span class="doc">LM Dent · Lidia Mądrzejowska · ul. Krasickiego 3 · 12-100 Szczytno</span>
+    <span class="doc">Dok. LM-DENT/2026/05 · V3 - Karta Pacjenta · podgląd roboczy - nie jest finalnym projektem</span>
+    <span class="doc">Projekt: <a href="https://adrianantosiak.pl">Adrian Antosiak</a></span>
   </div>
 </footer>
 
