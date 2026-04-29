@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LM Dent Lidia Mądrzejowska - Stomatolog Szczytno</title>
-<meta name="description" content="Gabinet stomatologiczny LM Dent w Szczytnie - stomatologia zachowawcza, estetyczna, protetyka, RTG. ul. Krasickiego 3.">
+<title>LM Dent Lidia Mądrzejowska - Stomatolog Szczytno (od 1985 r.)</title>
+<meta name="description" content="Gabinet stomatologiczny LM Dent w Szczytnie od 1985 roku. Leczenie pod mikroskopem ZEISS, RTG na miejscu, protetyka, stomatologia zachowawcza, estetyczna i chirurgiczna. ul. Krasickiego 3.">
 <meta name="robots" content="noindex,nofollow">
-<meta property="og:title" content="LM Dent Lidia Mądrzejowska - Stomatolog Szczytno">
-<meta property="og:description" content="Gabinet stomatologiczny w Szczytnie. Stomatologia zachowawcza, estetyczna, protetyka, RTG.">
+<meta property="og:title" content="LM Dent Lidia Mądrzejowska - Stomatolog Szczytno (od 1985 r.)">
+<meta property="og:description" content="Gabinet stomatologiczny w Szczytnie nieprzerwanie od 1985 r. Leczenie pod mikroskopem ZEISS, RTG na miejscu, dwóch specjalistów.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <style>
@@ -220,7 +220,7 @@ header.site .inner {
 }
 .bot svg { width: 100%; max-width: 380px; height: auto; }
 .bot::after {
-  content: "Pracownia stomatologiczna na Krasickiego";
+  content: "Gabinet stomatologiczny od 1985 roku";
   position: absolute;
   bottom: -8px; right: 4px;
   font-family: var(--serif);
@@ -371,6 +371,66 @@ section { padding: 80px 0; position: relative; }
   font-size: 14.5px;
   color: var(--ink-faint);
   text-align: center;
+}
+
+/* ---------- equipment ---------- */
+.equipment .head {
+  display: grid; grid-template-columns: 4fr 7fr; gap: 48px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+@media (max-width: 820px) { .equipment .head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; } }
+.equipment .head .pre p {
+  margin: 14px 0 0;
+  font-family: var(--serif); font-style: italic;
+  color: var(--ink-soft); font-size: 17px;
+  max-width: 38ch;
+}
+.eq-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 900px) { .eq-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .eq-grid { grid-template-columns: 1fr; } }
+.eq {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 24px 22px 22px;
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative;
+  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.eq:hover {
+  border-color: var(--brass);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px -20px rgba(40, 30, 0, 0.18);
+}
+.eq .icon {
+  width: 42px; height: 42px;
+  border: 1px solid var(--brass);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  color: var(--brass);
+}
+.eq h3 {
+  font-family: var(--serif);
+  font-size: 17px; font-weight: 500;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.eq p {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 13.5px; line-height: 1.55;
+  color: var(--ink-soft);
+}
+.eq .brand {
+  font-family: var(--serif); font-style: italic;
+  color: var(--brass);
+  font-size: 14.5px;
+  font-weight: 500;
 }
 
 /* ---------- booking ---------- */
@@ -665,12 +725,12 @@ footer.site a:hover { border-bottom-color: var(--brass-soft); }
           z ulicy <span class="accent">Krasickiego.</span>
         </h1>
         <p class="lede">
-          <span class="first-line">Leczymy z głową, bez pośpiechu i bez zaskoczenia.</span>
-          Stomatologia zachowawcza, estetyczna, protetyka i diagnostyka RTG na miejscu. Plan leczenia omawiamy zanim cokolwiek zaczniemy.
+          <span class="first-line">Gabinet stomatologiczny w Szczytnie - nieprzerwanie od 1985 roku.</span>
+          Leczenie pod mikroskopem ZEISS, RTG i piaskowanie na miejscu. Protetyka, stomatologia estetyczna, zachowawcza, kanałowa i chirurgiczna - dorośli i dzieci.
         </p>
         <div class="ctas">
-          <a class="btn btn-primary" href="tel:+48896246645">
-            Zadzwoń: 89 624 66 45 <span class="arrow">&rsaquo;</span>
+          <a class="btn btn-primary" href="tel:+48692086395">
+            Zadzwoń: 692 086 395 <span class="arrow">&rsaquo;</span>
           </a>
           <a class="btn btn-ghost" href="#rezerwacja">
             Umów wizytę online
@@ -679,17 +739,17 @@ footer.site a:hover { border-bottom-color: var(--brass-soft); }
 
         <div class="meta-strip">
           <div class="meta">
+            <span class="k">Od roku</span>
+            <span class="v serif">1985</span>
+            <span class="v" style="color:var(--ink-soft); font-size:13px;">41 lat ciągłej praktyki</span>
+          </div>
+          <div class="meta">
             <span class="k">Adres</span>
-            <span class="v serif">Krasickiego 3</span>
-            <span class="v" style="color:var(--ink-soft); font-size:13px;">12-100 Szczytno</span>
+            <span class="v">ul. Krasickiego 3<br>12-100 Szczytno</span>
           </div>
           <div class="meta">
-            <span class="k">Zakres</span>
-            <span class="v">Zachowawcza, estetyczna,<br>protetyka, RTG</span>
-          </div>
-          <div class="meta">
-            <span class="k">Wizyty</span>
-            <span class="v">Telefonicznie<br>i online</span>
+            <span class="k">Specjaliści</span>
+            <span class="v">Lidia Mądrzejowska<br>Daria Romanczuk</span>
           </div>
         </div>
       </div>
@@ -726,14 +786,17 @@ footer.site a:hover { border-bottom-color: var(--brass-soft); }
       <aside class="side">
         <span class="num">01</span>
         <span class="eyebrow" style="margin-bottom:10px;">O gabinecie</span><br><br>
-        <em>Krasickiego 3 - kilka kroków od centrum, parking pod budynkiem, godziny ustalane przy rezerwacji.</em>
+        <em>Niepubliczny Zakład Opieki Zdrowotnej Lidia Mądrzejowska. Krasickiego 3, Szczytno - gabinet prowadzony nieprzerwanie od 1985 roku.</em>
       </aside>
       <div class="body">
         <p class="lead-para">
-          LM Dent prowadzi prywatną praktykę stomatologiczną przy ulicy Krasickiego 3 w Szczytnie. W gabinecie wykonujemy leczenie zachowawcze, prace protetyczne, zabiegi z zakresu stomatologii estetycznej oraz diagnostykę RTG na miejscu.
+          W gabinecie przy ulicy Krasickiego 3 w Szczytnie leczymy nieprzerwanie od 1985 roku. Pracują u nas dwie lekarki stomatolog: Lidia Mądrzejowska, specjalista stomatologii ogólnej i protetyki stomatologicznej, oraz Daria Romanczuk - leczenie zachowawcze, chirurgiczne i kanałowe, dla dorosłych i dzieci.
         </p>
         <p>
-          Pracujemy na umówione wizyty - tempo dostosowujemy do potrzeb pacjenta, a plan leczenia omawiamy zanim cokolwiek zaczniemy. Wszystkie szczegóły, kalendarz przyjęć i koszty wizyt potwierdzamy telefonicznie. Najprościej zadzwonić pod numer 89 624 66 45 albo zarezerwować termin online.
+          Dbając o zdrowie naszych pacjentów stale podwyższamy kwalifikacje oraz zachowujemy najwyższy standard wyposażenia gabinetów. Nadrzędnym celem naszych działań jest zachowanie zębów własnych pacjentów i szeroko rozumiana profilaktyka stomatologiczna.
+        </p>
+        <p>
+          Wizyty umawiamy telefonicznie pod numerami 692 086 395 i 89 624 66 45 albo bezpośrednio przez rezerwację online.
         </p>
       </div>
     </div>
@@ -757,40 +820,104 @@ footer.site a:hover { border-bottom-color: var(--brass-soft); }
         <span class="idx">01</span>
         <div class="body">
           <h3>Stomatologia zachowawcza</h3>
-          <p>Leczenie próchnicy, wymiana wypełnień, opracowanie i ochrona zębów żywych. Materiały kompozytowe dopasowane kolorystycznie.</p>
+          <p>Leczenie próchnicy i ochrona zębów żywych. Dorośli i dzieci.</p>
         </div>
-        <span class="meta-tag">Wizyta podstawowa</span>
       </article>
 
       <article class="serv">
         <span class="idx">02</span>
         <div class="body">
-          <h3>Stomatologia estetyczna</h3>
-          <p>Korekta kształtu i koloru, licówki, wybielanie. Decyzję planujemy pod konkretny uśmiech, nie pod katalog.</p>
+          <h3>Leczenie kanałowe pod mikroskopem</h3>
+          <p>Endodoncja prowadzona z użyciem mikroskopu firmy ZEISS - lidera rynku optyki medycznej.</p>
         </div>
-        <span class="meta-tag">Konsultacja wizualna</span>
       </article>
 
       <article class="serv">
         <span class="idx">03</span>
         <div class="body">
-          <h3>Protetyka</h3>
-          <p>Korony, mosty, uzupełnienia stałe i ruchome. Dopasowanie do zgryzu i komfortu codziennego użytkowania.</p>
+          <h3>Chirurgia stomatologiczna</h3>
+          <p>Zabiegi chirurgiczne wykonywane w gabinecie przez lek. Darię Romanczuk.</p>
         </div>
-        <span class="meta-tag">Plan etapowy</span>
       </article>
 
       <article class="serv">
         <span class="idx">04</span>
         <div class="body">
-          <h3>Diagnostyka RTG</h3>
-          <p>Zdjęcia punktowe wykonywane na miejscu - bez konieczności jazdy do innej pracowni - jako pomoc przy planowaniu leczenia.</p>
+          <h3>Stomatologia estetyczna</h3>
+          <p>Prace z zakresu poprawy wyglądu uśmiechu, prowadzone przez lek. Lidię Mądrzejowską.</p>
         </div>
-        <span class="meta-tag">Na miejscu</span>
+      </article>
+
+      <article class="serv">
+        <span class="idx">05</span>
+        <div class="body">
+          <h3>Protetyka stomatologiczna</h3>
+          <p>Pełen zakres uzupełnień stałych i ruchomych. Specjalizacja właścicielki gabinetu.</p>
+        </div>
+      </article>
+
+      <article class="serv">
+        <span class="idx">06</span>
+        <div class="body">
+          <h3>Rentgenodiagnostyka stomatologiczna</h3>
+          <p>Aparat RTG na miejscu - bez konieczności wyjazdu do innej pracowni.</p>
+        </div>
       </article>
     </div>
 
-    <p class="tiny-note">Pełen zakres usług, terminy i koszty potwierdzamy telefonicznie - opis powyżej jest poglądowy.</p>
+    <p class="tiny-note">Pełen zakres usług i koszty wizyt potwierdzamy telefonicznie.</p>
+  </div>
+</section>
+
+<section class="equipment" id="wyposazenie">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow">Wyposażenie</span>
+        <h2 style="margin-top: 14px;">Sprzęt, którym <em class="serif-it">pracujemy</em></h2>
+      </div>
+      <div class="pre">
+        <p>Troska o najwyższy poziom usług wymaga najnowocześniejszego sprzętu - cztery elementy, które robią różnicę w codziennej pracy.</p>
+      </div>
+    </div>
+
+    <div class="eq-grid">
+      <article class="eq">
+        <div class="icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="3.5"/><circle cx="12" cy="9" r="1.2"/><path d="M12 12.5v3"/><path d="M9 17h6"/><path d="M10 17v3h4v-3"/><path d="M5 5l2 2M19 5l-2 2"/></svg>
+        </div>
+        <h3>Mikroskop</h3>
+        <span class="brand">ZEISS</span>
+        <p>Lider rynku optyki medycznej - pozwala na precyzyjne leczenie kanałowe i pracę pod powiększeniem.</p>
+      </article>
+
+      <article class="eq">
+        <div class="icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13h12l-2 5H7z"/><path d="M11 13V8h2v5"/><path d="M12 8c0-2 1-4 1-5"/><path d="M19 16l3 1M19 13l3-1M18 19l2 2"/></svg>
+        </div>
+        <h3>Laser diodowy</h3>
+        <span class="brand">Lastronix</span>
+        <p>Wspomaganie zabiegów stomatologicznych - mniej inwazyjne procedury, krótszy czas gojenia.</p>
+      </article>
+
+      <article class="eq">
+        <div class="icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="14" rx="2"/><path d="M9 8h6M9 11h6M9 14h4"/><path d="M10 18v3M14 18v3"/></svg>
+        </div>
+        <h3>Aparat RTG</h3>
+        <span class="brand">Diagnostyka na miejscu</span>
+        <p>Rentgenodiagnostyka stomatologiczna bez konieczności wizyty w innej pracowni.</p>
+      </article>
+
+      <article class="eq">
+        <div class="icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/><path d="M5 16c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/><circle cx="9" cy="7" r="1"/><circle cx="14" cy="6" r="1"/><circle cx="11" cy="9" r="1"/><circle cx="17" cy="8" r="1"/></svg>
+        </div>
+        <h3>Piaskowanie zębów</h3>
+        <span class="brand">Higienizacja</span>
+        <p>Profesjonalne urządzenie do piaskowania - skuteczne usuwanie nalotu i kamienia.</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -864,7 +991,7 @@ footer.site a:hover { border-bottom-color: var(--brass-soft); }
           </div>
           <div class="feature">
             <span class="dot" aria-hidden="true"></span>
-            <span><b>Zgodność z RODO.</b> Dane pacjenta zostają u Państwa, nie u zewnętrznego pośrednika.</span>
+            <span><b>Zgodność z RODO.</b> Konfigurujemy zakres pól i polityki retencji zgodnie z wymogami obowiązującymi w gabinecie.</span>
           </div>
         </div>
       </div>
@@ -886,19 +1013,20 @@ footer.site a:hover { border-bottom-color: var(--brass-soft); }
 
     <div class="grid">
       <div class="crow">
-        <span class="k">Telefon</span>
-        <span class="v"><a href="tel:+48896246645">+48 89 624 66 45</a></span>
-        <span class="sub">Pn-Pt - w godzinach pracy gabinetu</span>
+        <span class="k">Umów wizytę</span>
+        <span class="v"><a href="tel:+48692086395">692 086 395</a></span>
+        <span class="v"><a href="tel:+48896246645" style="font-size:18px;">89 624 66 45</a></span>
+        <span class="sub">lek. Daria Romanczuk - Pn, Cz, Pt: 8:15-14:00, Wt: 10:00-16:00, Śr: 11:00-17:00. Godziny lek. Lidii Mądrzejowskiej potwierdzamy telefonicznie.</span>
       </div>
       <div class="crow">
         <span class="k">Adres</span>
         <span class="v">ul. Krasickiego 3<br>12-100 Szczytno</span>
-        <span class="sub">Powiat szczycieński, Warmia-Mazury</span>
+        <span class="sub">NZOZ Lidia Mądrzejowska, powiat szczycieński, Warmia-Mazury</span>
       </div>
       <div class="crow">
         <span class="k">Mapa</span>
         <span class="v"><a href="https://www.google.com/maps/search/?api=1&amp;query=LM+Dent+Krasickiego+3+Szczytno" target="_blank" rel="noopener">Otwórz w Mapach Google</a></span>
-        <span class="sub">Parking pod budynkiem</span>
+        <span class="sub">Gabinet istnieje od 1985 roku.</span>
       </div>
     </div>
   </div>
