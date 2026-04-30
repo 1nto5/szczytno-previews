@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<title>Kancelaria Adwokacka Adw. Julita Sikorska - Kancelaria adwokacka Szczytno</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kancelaria Adwokacka adw. Julity Sikorskiej w Szczytnie. Prawo karne, cywilne, rodzinne, opiekuńcze i administracyjne. Klienci indywidualni i biznesowi.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Kancelaria Adwokacka Adw. Julita Sikorska - Szczytno">
+<meta property="og:description" content="Kancelaria adwokacka w Szczytnie prowadzona przez adw. Julitę Sikorską. Prawo karne, cywilne, rodzinne, opiekuńcze i administracyjne.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<style>
+  :root{
+    --ink:#15181d;
+    --ink-soft:#3b4150;
+    --muted:#6b7280;
+    --rule:#e3e1da;
+    --paper:#f6f3ec;
+    --paper-2:#efeadf;
+    --accent:#1c2a47;
+    --accent-2:#0f1a32;
+    --focus:#b08a3e;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:80px}
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    color:var(--ink);
+    background:var(--paper);
+    font-feature-settings:"liga","kern","onum";
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--accent);color:var(--paper)}
+  .serif{font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  a:hover{color:var(--accent-2)}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--focus);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* Top bar */
+  .topbar{
+    border-bottom:1px solid var(--rule);
+    background:var(--paper);
+    position:sticky; top:0; z-index:5;
+  }
+  .topbar-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 22px;
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink);
+  }
+  .brand-mark{
+    width:36px; height:36px; flex:none; display:block;
+  }
+  .brand-text{
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-size:16px;
+    letter-spacing:0.01em;
+    line-height:1.15;
+  }
+  .brand-text small{
+    display:block;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:11px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+    margin-top:2px;
+  }
+  .topnav{display:none; gap:28px}
+  .topnav a{
+    color:var(--ink-soft); text-decoration:none; font-size:14px;
+    letter-spacing:0.02em;
+  }
+  .topnav a:hover{color:var(--accent)}
+  @media(min-width:780px){
+    .topnav{display:flex}
+  }
+
+  /* Hero */
+  .hero{
+    padding:72px 0 64px;
+    border-bottom:1px solid var(--rule);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:36px;
+    align-items:start;
+  }
+  @media(min-width:880px){
+    .hero{padding:120px 0 96px}
+    .hero-grid{grid-template-columns: 1.4fr 1fr; gap:64px}
+  }
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+    margin:0 0 24px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .eyebrow::before{
+    content:""; display:block; width:36px; height:1px; background:var(--ink-soft);
+  }
+  h1{
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-weight:500;
+    font-size: clamp(38px, 7vw, 68px);
+    line-height:1.05;
+    letter-spacing:-0.015em;
+    margin:0 0 24px;
+    color:var(--ink);
+    text-wrap:balance;
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--accent);
+  }
+  .lede{
+    font-size:clamp(17px, 2vw, 19px);
+    line-height:1.6;
+    color:var(--ink-soft);
+    max-width:42ch;
+    margin:0 0 36px;
+    text-wrap:pretty;
+  }
+  .cta-row{
+    display:flex; flex-wrap:wrap; gap:12px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-height:48px;
+    padding:0 22px;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:0.01em;
+    text-decoration:none;
+    border-radius:2px;
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+    background:var(--accent);
+    color:var(--paper);
+    border:1px solid var(--accent);
+  }
+  .btn:hover{background:var(--accent-2); border-color:var(--accent-2); color:#fff}
+  .btn-outline{
+    background:transparent;
+    color:var(--accent);
+    border:1px solid var(--accent);
+  }
+  .btn-outline:hover{background:var(--accent); color:var(--paper)}
+
+  /* Hero side card */
+  .card{
+    background:var(--paper-2);
+    border:1px solid var(--rule);
+    padding:28px 28px 24px;
+    position:relative;
+  }
+  .card-label{
+    font-size:11px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 18px;
+    font-weight:600;
+  }
+  .card dl{margin:0; display:grid; grid-template-columns:1fr; gap:18px}
+  .card dt{
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:4px;
+    font-weight:600;
+  }
+  .card dd{
+    margin:0;
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-size:18px;
+    line-height:1.4;
+  }
+  .card dd a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule); padding-bottom:1px}
+  .card dd a:hover{color:var(--accent); border-color:var(--accent)}
+
+  /* Section base */
+  section{padding:88px 0; border-bottom:1px solid var(--rule)}
+  @media(max-width:640px){section{padding:64px 0}}
+  .section-head{
+    display:grid; grid-template-columns:1fr; gap:8px;
+    margin-bottom:48px;
+    max-width:780px;
+  }
+  .section-num{
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--muted);
+    letter-spacing:0.02em;
+  }
+  h2{
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-weight:500;
+    font-size: clamp(30px, 4.5vw, 44px);
+    line-height:1.1;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--ink);
+    text-wrap:balance;
+  }
+
+  /* About */
+  .about{
+    display:grid; grid-template-columns:1fr; gap:36px;
+  }
+  @media(min-width:880px){
+    .about{grid-template-columns: 1fr 1.4fr; gap:80px}
+  }
+  .about-meta{
+    border-top:1px solid var(--ink);
+    padding-top:18px;
+  }
+  .about-meta .section-num{display:block; margin-bottom:4px}
+  .about-meta h2{font-size:clamp(26px,3.4vw,36px)}
+  .about-body{
+    font-size:18px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    text-wrap:pretty;
+    max-width:62ch;
+  }
+  .about-body p{margin:0 0 18px}
+  .about-body p:last-child{margin-bottom:0}
+  .dropcap::first-letter{
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-weight:500;
+    font-size:5.2em;
+    line-height:0.86;
+    float:left;
+    padding:6px 12px 0 0;
+    color:var(--accent);
+  }
+
+  /* Practice areas */
+  .practice-list{
+    list-style:none; padding:0; margin:0;
+    display:grid; grid-template-columns:1fr; gap:0;
+    border-top:1px solid var(--rule);
+  }
+  @media(min-width:780px){
+    .practice-list{grid-template-columns:repeat(2, 1fr)}
+    .practice-list > li:nth-child(odd){border-right:1px solid var(--rule)}
+  }
+  .practice-list > li{
+    border-bottom:1px solid var(--rule);
+    padding:28px 0;
+    display:grid;
+    grid-template-columns: 56px 1fr;
+    align-items:start;
+    gap:20px;
+  }
+  @media(min-width:780px){
+    .practice-list > li{padding:32px 32px 32px 0}
+    .practice-list > li:nth-child(even){padding-left:32px; padding-right:0}
+  }
+  .practice-num{
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-style:italic;
+    color:var(--muted);
+    font-size:18px;
+    padding-top:2px;
+  }
+  .practice-list h3{
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-weight:500;
+    font-size:22px;
+    margin:0 0 8px;
+    line-height:1.25;
+    letter-spacing:-0.005em;
+  }
+  .practice-list p{
+    margin:0;
+    font-size:15px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    text-wrap:pretty;
+  }
+
+  .practice-foot{
+    margin-top:32px;
+    font-size:14px;
+    color:var(--muted);
+    font-style:italic;
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+  }
+
+  /* Contact */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    border-top:1px solid var(--ink);
+  }
+  @media(min-width:780px){
+    .contact-grid{grid-template-columns:repeat(3, 1fr)}
+  }
+  .contact-grid > div{
+    padding:28px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  @media(min-width:780px){
+    .contact-grid > div{
+      padding:32px 28px 32px 0;
+      border-right:1px solid var(--rule);
+      border-bottom:none;
+    }
+    .contact-grid > div:last-child{border-right:none; padding-right:0}
+    .contact-grid > div + div{padding-left:28px}
+    .contact-grid > div:last-child{padding-left:28px}
+  }
+  .contact-label{
+    font-size:11px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:600;
+    margin:0 0 10px;
+  }
+  .contact-value{
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-size:20px;
+    line-height:1.4;
+    margin:0 0 8px;
+  }
+  .contact-value a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule); padding-bottom:2px}
+  .contact-value a:hover{color:var(--accent); border-color:var(--accent)}
+  .contact-aux{
+    margin:0;
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+  .contact-aux a{color:var(--accent)}
+
+  /* Footer */
+  footer{
+    padding:36px 0 48px;
+    background:var(--paper);
+  }
+  .footer-inner{
+    display:flex; flex-direction:column; gap:18px;
+    align-items:flex-start;
+  }
+  @media(min-width:640px){
+    .footer-inner{flex-direction:row; align-items:center; justify-content:space-between}
+  }
+  .badge{
+    display:inline-block;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    background:transparent;
+    padding:6px 12px;
+    font-size:11px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .credit{
+    font-size:13px;
+    color:var(--muted);
+  }
+  .credit a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--ink)}
+  .credit a:hover{color:var(--accent); border-color:var(--accent)}
+
+  /* Margin note (editorial detail) */
+  .margin-note{
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    font-style:italic;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.5;
+    border-left:2px solid var(--accent);
+    padding:6px 0 6px 16px;
+    margin:24px 0 0;
+    max-width:32ch;
+  }
+
+  /* Nav-driven section reveal */
+  .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+    will-change:opacity, transform;
+  }
+  .reveal.is-visible{opacity:1; transform:none}
+  .reveal-stagger > *{
+    opacity:0;
+    transform:translateY(10px);
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+    transition-delay: calc(var(--i, 0) * 60ms);
+  }
+  .reveal-stagger.is-visible > *{opacity:1; transform:none}
+
+  /* Top bar shadow on scroll */
+  .topbar{transition: box-shadow .3s ease, border-color .3s ease}
+  .topbar.is-scrolled{box-shadow: 0 1px 0 rgba(21,24,29,.04), 0 8px 24px -16px rgba(21,24,29,.18)}
+
+  /* Active nav indicator */
+  .topnav a{position:relative; padding-bottom:4px}
+  .topnav a::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0;
+    height:1px;
+    background:var(--accent);
+    transform:scaleX(0);
+    transform-origin:left center;
+    transition: transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .topnav a:hover::after,
+  .topnav a.is-active::after{transform:scaleX(1)}
+  .topnav a.is-active{color:var(--accent)}
+
+  /* Target flash on jump */
+  @keyframes target-flash{
+    0%{background-position: 0 100%}
+    40%{background-position: 0 0%}
+    100%{background-position: 0 -100%}
+  }
+  .target-flash{
+    background-image: linear-gradient(transparent 60%, rgba(176,138,62,.22) 60%, rgba(176,138,62,.22) 92%, transparent 92%);
+    background-size: 100% 300%;
+    background-repeat:no-repeat;
+    background-position: 0 -100%;
+    animation: target-flash 1.6s cubic-bezier(.4,.0,.2,1) both;
+  }
+
+  /* Button press */
+  .btn{transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease}
+  .btn:active{transform: translateY(1px)}
+
+  /* Brand mark micro-interaction */
+  .brand-mark{transition: transform .5s cubic-bezier(.2,.7,.2,1)}
+  .brand:hover .brand-mark{transform: rotate(-3deg)}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none !important; transition:none !important}
+    .reveal,.reveal-stagger > *{opacity:1 !important; transform:none !important}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a class="brand" href="#top" aria-label="Kancelaria Adwokacka Adw. Julita Sikorska - strona główna">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <rect x="0.5" y="0.5" width="39" height="39" fill="none" stroke="#1c2a47" stroke-width="1"></rect>
+        <text x="20" y="27" text-anchor="middle" font-family="ui-serif, 'Iowan Old Style', 'Apple Garamond', Charter, 'Source Serif Pro', Cambria, 'Times New Roman', Times, serif" font-size="18" font-style="italic" font-weight="500" fill="#1c2a47" letter-spacing="0.5">JS</text>
+      </svg>
+      <span class="brand-text">
+        Julita Sikorska
+        <small>Kancelaria Adwokacka</small>
+      </span>
+    </a>
+    <nav class="topnav" aria-label="Nawigacja główna">
+      <a href="#o-kancelarii">O kancelarii</a>
+      <a href="#zakres">Zakres pomocy</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-grid reveal">
+        <div>
+          <p class="eyebrow">Szczytno</p>
+          <h1 id="hero-title">Rzetelna pomoc prawna <em>w sprawach</em>, które wymagają uwagi.</h1>
+          <p class="lede">Kancelaria Adwokacka adw. Julity Sikorskiej prowadzi sprawy z zakresu prawa karnego, cywilnego, rodzinnego, opiekuńczego oraz administracyjnego. Obsługujemy Państwa zarówno indywidualnie, jak i w sprawach związanych z prowadzoną działalnością.</p>
+          <div class="cta-row">
+            <a class="btn" href="tel:+48664130515">Zadzwoń: 664 130 515</a>
+            <a class="btn btn-outline" href="mailto:julita.sikorska@gmail.com">Napisz e-mail</a>
+          </div>
+          <p class="margin-note">Spotkanie w siedzibie kancelarii przy ul. Sienkiewicza 4/1 prosimy uzgadniać telefonicznie.</p>
+        </div>
+
+        <aside class="card" aria-label="Dane kontaktowe kancelarii">
+          <p class="card-label">Kancelaria</p>
+          <dl>
+            <div>
+              <dt>Adres</dt>
+              <dd>ul. Henryka Sienkiewicza 4/1<br>12-100 Szczytno</dd>
+            </div>
+            <div>
+              <dt>Telefon</dt>
+              <dd><a href="tel:+48664130515">+48 664 130 515</a></dd>
+            </div>
+            <div>
+              <dt>E-mail</dt>
+              <dd><a href="mailto:julita.sikorska@gmail.com">julita.sikorska@gmail.com</a></dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="o-kancelarii" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about reveal">
+        <div class="about-meta">
+          <span class="section-num">01 / O kancelarii</span>
+          <h2 id="about-title">Praktyka prowadzona z rozwagą i zaangażowaniem.</h2>
+        </div>
+        <div class="about-body">
+          <p class="dropcap">Kancelarię Adwokacką prowadzi adwokat Julita Sikorska. Siedziba mieści się w Szczytnie, przy ulicy Henryka Sienkiewicza 4/1. Państwa sprawy prowadzone są w pięciu obszarach: prawo karne, prawo cywilne, prawo rodzinne, prawo opiekuńcze oraz prawo administracyjne.</p>
+          <p>Kancelaria świadczy pomoc prawną zarówno klientom indywidualnym, jak i podmiotom prowadzącym działalność gospodarczą. Każda sprawa traktowana jest z należytą starannością, dyskrecją i szacunkiem dla okoliczności, w jakich znajdują się Państwo w chwili kontaktu z kancelarią.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zakres" aria-labelledby="practice-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-num">02 / Zakres pomocy prawnej</span>
+        <h2 id="practice-title">Obszary, w których prowadzimy Państwa sprawy.</h2>
+      </div>
+
+      <ul class="practice-list reveal-stagger">
+        <li style="--i:0">
+          <span class="practice-num">i.</span>
+          <div>
+            <h3>Prawo karne</h3>
+            <p>Reprezentacja Państwa w postępowaniach karnych, na każdym etapie sprawy.</p>
+          </div>
+        </li>
+        <li style="--i:1">
+          <span class="practice-num">ii.</span>
+          <div>
+            <h3>Prawo cywilne</h3>
+            <p>Prowadzenie spraw cywilnych dotyczących klientów indywidualnych oraz podmiotów gospodarczych.</p>
+          </div>
+        </li>
+        <li style="--i:2">
+          <span class="practice-num">iii.</span>
+          <div>
+            <h3>Prawo rodzinne</h3>
+            <p>Pomoc prawna w sprawach rodzinnych prowadzonych z zachowaniem dyskrecji i staranności.</p>
+          </div>
+        </li>
+        <li style="--i:3">
+          <span class="practice-num">iv.</span>
+          <div>
+            <h3>Prawo opiekuńcze</h3>
+            <p>Wsparcie w sprawach z zakresu opieki, prowadzonych z myślą o dobru osób, których sprawa dotyczy.</p>
+          </div>
+        </li>
+        <li style="--i:4">
+          <span class="practice-num">v.</span>
+          <div>
+            <h3>Prawo administracyjne</h3>
+            <p>Reprezentacja w sprawach administracyjnych, w relacji z organami administracji publicznej.</p>
+          </div>
+        </li>
+        <li style="--i:5">
+          <span class="practice-num">vi.</span>
+          <div>
+            <h3>Klienci indywidualni i biznesowi</h3>
+            <p>Kancelaria prowadzi sprawy zarówno osób prywatnych, jak i podmiotów prowadzących działalność.</p>
+          </div>
+        </li>
+      </ul>
+
+      <p class="practice-foot">Szczegółowy zakres prowadzonej sprawy ustalany jest indywidualnie podczas kontaktu z kancelarią.</p>
+    </div>
+  </section>
+
+  <section id="kontakt" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-num">03 / Kontakt</span>
+        <h2 id="contact-title">Zapraszamy do kontaktu z kancelarią.</h2>
+      </div>
+
+      <div class="contact-grid reveal-stagger" style="--stagger:80ms">
+        <div style="--i:0">
+          <p class="contact-label">Telefon</p>
+          <p class="contact-value"><a href="tel:+48664130515">+48 664 130 515</a></p>
+          <p class="contact-aux">Najszybsza forma uzgodnienia spotkania.</p>
+        </div>
+        <div style="--i:1">
+          <p class="contact-label">E-mail</p>
+          <p class="contact-value"><a href="mailto:julita.sikorska@gmail.com">julita.sikorska@gmail.com</a></p>
+          <p class="contact-aux">Korespondencja w sprawach kierowanych do kancelarii.</p>
+        </div>
+        <div style="--i:2">
+          <p class="contact-label">Adres</p>
+          <p class="contact-value">ul. Henryka Sienkiewicza 4/1<br>12-100 Szczytno</p>
+          <p class="contact-aux"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kancelaria%20Adwokacka%20Julita%20Sikorska%20Szczytno" rel="noopener noreferrer" target="_blank">Pokaż lokalizację w Mapach Google</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="badge">podgląd roboczy - nie jest finalnym projektem</span>
+      <p class="credit">Projekt strony: <a href="https://adrianantosiak.pl" rel="noopener noreferrer" target="_blank">Adrian Antosiak</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Reveal-on-scroll
+  var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  if (prefersReduced || !('IntersectionObserver' in window)){
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  }
+
+  // Sticky topbar shadow
+  var topbar = document.querySelector('.topbar');
+  function updateTopbar(){
+    if (!topbar) return;
+    if (window.scrollY > 8) topbar.classList.add('is-scrolled');
+    else topbar.classList.remove('is-scrolled');
+  }
+  updateTopbar();
+  window.addEventListener('scroll', updateTopbar, { passive: true });
+
+  // Active nav link via scroll-spy
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.topnav a[href^="#"]'));
+  var sections = navLinks.map(function(a){
+    var id = a.getAttribute('href').slice(1);
+    return { link: a, el: document.getElementById(id) };
+  }).filter(function(s){ return s.el; });
+
+  if (sections.length && 'IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var match = sections.find(function(s){ return s.el === e.target; });
+        if (!match) return;
+        if (e.isIntersecting){
+          navLinks.forEach(function(l){ l.classList.remove('is-active'); });
+          match.link.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(function(s){ spy.observe(s.el); });
+  }
+
+  // Target-flash on hash navigation
+  function flashTarget(hash){
+    if (!hash || hash.length < 2) return;
+    var id = hash.slice(1);
+    var el = document.getElementById(id);
+    if (!el) return;
+    var heading = el.querySelector('h1, h2, h3') || el;
+    heading.classList.remove('target-flash');
+    // force reflow so the animation re-triggers
+    void heading.offsetWidth;
+    if (!prefersReduced) heading.classList.add('target-flash');
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var hash = a.getAttribute('href');
+      if (hash && hash.length > 1) {
+        // let smooth-scroll start, then flash the heading
+        setTimeout(function(){ flashTarget(hash); }, 60);
+      }
+    });
+  });
+
+  if (location.hash) {
+    setTimeout(function(){ flashTarget(location.hash); }, 200);
+  }
+})();
+</script>
+
+</body>
+</html>
