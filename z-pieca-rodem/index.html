@@ -1,0 +1,2151 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<title>Z Pieca Rodem Pizzeria - Pizzeria Szczytno</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Z Pieca Rodem Pizzeria w Szczytnie, ul. Piłsudskiego 22. Pizza neapolitańska, wtorek-niedziela 13:00-21:00. Telefon 572 317 851.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Z Pieca Rodem Pizzeria - Pizzeria Szczytno">
+<meta property="og:description" content="Pizza neapolitańska w Szczytnie. ul. Piłsudskiego 22, czynne wtorek-niedziela 13:00-21:00.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<style>
+  :root{
+    --bg:#f4ecdf;            /* warm Mediterranean paper */
+    --paper:#ede2cd;
+    --paper-deep:#e3d4b8;
+    --ink:#1a1410;
+    --ink-soft:#3a2f26;
+    --muted:#7a6a5a;
+    --line:#d2c2a6;
+    --line-soft:#e0d0b3;
+    --accent:#b8331c;          /* Pompeian / terracotta red */
+    --accent-deep:#7d2010;
+    --accent-soft:#f0d4c0;
+    --bay:#3d6e7e;             /* Bay of Naples blue */
+    --bay-deep:#264a58;
+    --bay-soft:#bcd0d8;
+    --vesuv:#7a5a48;           /* softer earthy Vesuvius silhouette */
+    --gold:#a8843a;
+    --basil:#5c7a44;
+    --plate:246,239,226;       /* RGB triplet for reading-plate gradient */
+
+    /* Type voice (default: Editoriale — stately serif + clean sans) */
+    --serif: ui-serif, "Iowan Old Style", "Apple Garamond", Charter, "Source Serif Pro", Cambria, "Times New Roman", Times, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  /* ============ TYPOGRAPHY VOICES ============ */
+  /* Trattoria — friendlier, more humanist serif + a touch of warmth */
+  :root[data-voice="trattoria"]{
+    --serif: "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+    --sans: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+  }
+  /* Moderno — contemporary high-contrast serif paired with a geometric sans */
+  :root[data-voice="moderno"]{
+    --serif: "Bodoni 72", "Didot", "Bodoni MT", "Playfair Display", Garamond, serif;
+    --sans: "Helvetica Neue", "Inter", "Arial", sans-serif;
+  }
+
+  /* ============ DARK MODE ============ */
+  :root[data-theme="dark"]{
+    --bg:#1a1612;
+    --paper:#241e18;
+    --paper-deep:#2a231c;
+    --ink:#f1e6d2;
+    --ink-soft:#d4c4ab;
+    --muted:#9c8f7a;
+    --line:#3d3326;
+    --line-soft:#322a1f;
+    --accent:#d9583e;
+    --accent-deep:#f0856a;
+    --accent-soft:#3a2218;
+    --bay:#7ea4b1;
+    --bay-deep:#a4c4cf;
+    --bay-soft:#2a3942;
+    --vesuv:#4a3a30;
+    --gold:#d4a85a;
+    --basil:#8aa468;
+    --plate:36,30,24;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+  body{
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.6;
+    font-feature-settings:"kern" 1, "liga" 1;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--accent);color:#fff}
+
+  a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  a:hover{color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-0.012em;color:var(--ink);margin:0 0 .5em}
+  h1{font-size:clamp(2.6rem, 9vw, 6.2rem);line-height:.96;letter-spacing:-0.026em;font-weight:700}
+  h2{font-size:clamp(1.9rem, 5vw, 3.4rem);line-height:1.05;letter-spacing:-0.015em}
+  h3{font-size:1.25rem;line-height:1.25;font-weight:600}
+  p{margin:0 0 1em;text-wrap:pretty;max-width:62ch}
+
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px;position:relative}
+  .wrap-narrow{max-width:980px;margin:0 auto;padding:0 24px}
+
+  /* ============ NAPLES BACKDROP - parallax layers ============ */
+  .backdrop{
+    position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+  }
+  .backdrop .layer{
+    position:absolute;left:0;right:0;will-change:transform;
+  }
+  /* sky band - top of viewport, with paper warmth */
+  .bd-sky{
+    top:0;height:62vh;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 0%, rgba(184,51,28,.05), transparent 60%),
+      radial-gradient(ellipse 90% 50% at 20% 10%, rgba(61,110,126,.06), transparent 60%),
+      linear-gradient(180deg, #f7efe1 0%, #f4ecdf 100%);
+  }
+  /* tile pattern stripe - Neapolitan majolica reference */
+  .bd-tile{
+    bottom:0;height:60vh;opacity:.32;
+  }
+  .bd-tile svg{width:100%;height:100%;display:block}
+  /* Vesuvius ridgeline parallax band */
+  .bd-vesuv{
+    bottom:0;height:46vh;opacity:.78;
+  }
+  .bd-vesuv svg{width:200%;height:100%;display:block;margin-left:-50%}
+  /* sea waves */
+  .bd-sea{
+    bottom:0;height:26vh;opacity:.7;
+  }
+  .bd-sea svg{width:100%;height:100%;display:block}
+  /* paper grain overlay */
+  .grain{
+    position:fixed;inset:0;pointer-events:none;opacity:.45;mix-blend-mode:multiply;z-index:1;
+  }
+  .grain svg{width:100%;height:100%}
+
+  /* All real content sits above backdrop */
+  header, main, footer{position:relative;z-index:2}
+
+  /* ============ NAV ============ */
+  .nav-shell{
+    position:sticky;top:0;z-index:50;
+    background:rgba(var(--plate),0);
+    transition:background .3s ease, backdrop-filter .3s ease, border-color .3s ease, box-shadow .3s ease;
+    border-bottom:1px solid transparent;
+  }
+  .nav-shell.is-scrolled{
+    background:rgba(var(--plate),.92);
+    backdrop-filter:saturate(1.1) blur(10px);
+    -webkit-backdrop-filter:saturate(1.1) blur(10px);
+    border-bottom-color:var(--line);
+    box-shadow:0 4px 20px -12px rgba(0,0,0,.18);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;max-width:1200px;margin:0 auto;transition:padding .3s ease}
+  .nav-shell.is-scrolled .nav{padding:14px 24px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:.005em;color:var(--ink);text-decoration:none}
+  .brand .mark{width:46px;height:46px;display:block}
+  .brand-text{display:flex;flex-direction:column;line-height:1}
+  .brand-text small{font-family:var(--sans);font-weight:500;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .navlinks{display:none;gap:30px;font-size:.95rem;align-items:center}
+  .navlinks a{color:var(--ink-soft);text-decoration:none;position:relative;padding:6px 0}
+  .navlinks a:hover{color:var(--accent-deep)}
+  .navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+  .navlinks a:hover::after{transform:scaleX(1)}
+  @media (min-width:820px){.navlinks{display:flex}}
+  .nav-call{display:none;font-family:var(--serif);font-weight:600;font-size:1rem;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid var(--ink);border-radius:999px}
+  .nav-call:hover{background:var(--ink);color:var(--bg)}
+  @media (min-width:1020px){.nav-call{display:inline-flex;align-items:center;gap:8px}}
+
+  /* theme toggle */
+  .theme-toggle{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:42px;height:42px;border-radius:50%;
+    background:transparent;border:1px solid var(--line);color:var(--ink);
+    cursor:pointer;margin-left:6px;transition:background .2s, color .2s, border-color .2s;
+  }
+  .theme-toggle:hover{background:var(--paper);border-color:var(--ink)}
+  .theme-toggle svg{width:18px;height:18px}
+  .theme-toggle .icon-moon{display:block}
+  .theme-toggle .icon-sun{display:none}
+  :root[data-theme="dark"] .theme-toggle .icon-moon{display:none}
+  :root[data-theme="dark"] .theme-toggle .icon-sun{display:block}
+
+  /* Dark mode adjustments for backdrop layers */
+  :root[data-theme="dark"] .bd-sky{
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 0%, rgba(217,88,62,.10), transparent 60%),
+      radial-gradient(ellipse 90% 50% at 20% 10%, rgba(126,164,177,.10), transparent 60%),
+      linear-gradient(180deg, #1f1a14 0%, #1a1612 100%);
+  }
+  :root[data-theme="dark"] .grain{opacity:.25}
+  :root[data-theme="dark"] .bd-tile{opacity:.16}
+  :root[data-theme="dark"] .bd-vesuv{opacity:.6}
+  :root[data-theme="dark"] .bd-sea{opacity:.4}
+  :root[data-theme="dark"] .vesuv-card{box-shadow:0 30px 60px -40px rgba(0,0,0,.7)}
+  :root[data-theme="dark"] .nav-call{color:var(--ink);border-color:var(--ink-soft)}
+
+  /* ============ MOOD VARIANTS (Pora dnia) ============ */
+  /* Mattino — cool morning light */
+  :root[data-mood="mattino"]:not([data-theme="dark"]){
+    --bg:#eef0e8;
+    --paper:#e6e8df;
+    --paper-deep:#d8dccd;
+    --ink:#1a1f1a;
+    --ink-soft:#3a3f38;
+    --accent:#8a4a3a;
+    --accent-deep:#5e2e22;
+    --accent-soft:#e0d2c8;
+    --bay:#5a8090;
+    --vesuv:#6a6058;
+    --gold:#9a8838;
+    --plate:238,240,232;
+  }
+  /* Sera — golden hour evening */
+  :root[data-mood="sera"]:not([data-theme="dark"]){
+    --bg:#f3dfc6;
+    --paper:#ecd2b0;
+    --paper-deep:#e0bf95;
+    --ink:#241410;
+    --ink-soft:#3e2418;
+    --accent:#c8401e;
+    --accent-deep:#8c2410;
+    --accent-soft:#f0c8a8;
+    --bay:#5a6878;
+    --vesuv:#5e3828;
+    --gold:#b88838;
+    --plate:243,223,198;
+  }
+
+  /* ============ BACKDROP CHARACTER ============ */
+  :root[data-backdrop="spokojne"] .bd-tile{opacity:.06}
+  :root[data-backdrop="spokojne"] .bd-vesuv{opacity:.32}
+  :root[data-backdrop="spokojne"] .bd-sea{opacity:.26}
+  :root[data-backdrop="spokojne"] .bd-sun{opacity:.18}
+  :root[data-backdrop="spokojne"] .grain{opacity:.22}
+
+  :root[data-backdrop="wulkaniczne"] .bd-tile{opacity:.5}
+  :root[data-backdrop="wulkaniczne"] .bd-vesuv{opacity:.92}
+  :root[data-backdrop="wulkaniczne"] .bd-sea{opacity:.78}
+  :root[data-backdrop="wulkaniczne"] .bd-sun{opacity:.55}
+  :root[data-backdrop="wulkaniczne"] .grain{opacity:.45}
+
+  /* ============ TWEAKS PANEL ============ */
+  .tweaks-panel{
+    position:fixed;right:24px;bottom:24px;z-index:100;
+    width:300px;max-width:calc(100vw - 32px);
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:0 24px 48px -16px rgba(0,0,0,.25), 0 4px 12px -4px rgba(0,0,0,.1);
+    font-family:var(--sans);color:var(--ink);
+    display:none;flex-direction:column;
+    overflow:hidden;
+  }
+  .tweaks-panel.is-open{display:flex}
+  .tweaks-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 16px;border-bottom:1px solid var(--line);
+    background:var(--paper);
+  }
+  .tweaks-title{
+    font-family:var(--serif);font-weight:600;font-size:1rem;
+    letter-spacing:.005em;
+  }
+  .tweaks-title small{
+    display:block;font-family:var(--sans);font-weight:600;
+    font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:2px;
+  }
+  .tweaks-close{
+    background:transparent;border:0;cursor:pointer;color:var(--muted);
+    width:28px;height:28px;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    transition:background .2s, color .2s;
+  }
+  .tweaks-close:hover{background:var(--line-soft);color:var(--ink)}
+  .tweaks-body{padding:8px 16px 16px}
+  .tweak-group{padding:14px 0;border-bottom:1px dotted var(--line)}
+  .tweak-group:last-child{border-bottom:0}
+  .tweak-label{
+    display:block;font-family:var(--sans);font-weight:600;
+    font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:8px;
+  }
+  .tweak-segments{
+    display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:0;
+    background:var(--paper);border:1px solid var(--line);border-radius:8px;
+    padding:3px;
+  }
+  .tweak-segments button{
+    appearance:none;background:transparent;border:0;cursor:pointer;
+    padding:7px 8px;font-family:var(--serif);font-size:.86rem;
+    color:var(--ink-soft);border-radius:6px;
+    transition:background .2s, color .2s;
+    line-height:1.1;
+  }
+  .tweak-segments button:hover{color:var(--ink)}
+  .tweak-segments button[aria-pressed="true"]{
+    background:var(--bg);color:var(--accent-deep);
+    box-shadow:0 1px 2px rgba(0,0,0,.06);
+    font-style:italic;font-weight:500;
+  }
+  .tweaks-toggle-fab{
+    position:fixed;right:24px;bottom:24px;z-index:99;
+    width:48px;height:48px;border-radius:50%;
+    background:var(--ink);color:var(--bg);
+    border:0;cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 28px -8px rgba(0,0,0,.35);
+    transition:transform .2s, background .2s;
+  }
+  .tweaks-toggle-fab:hover{transform:scale(1.06)}
+  .tweaks-toggle-fab svg{width:20px;height:20px}
+  .tweaks-toggle-fab.is-open{display:none}
+  @media (max-width:520px){
+    .tweaks-panel{right:12px;bottom:12px;left:12px;width:auto}
+    .tweaks-toggle-fab{right:16px;bottom:16px}
+  }
+
+  /* ============ HERO ============ */
+  .hero{padding:24px 0 60px;position:relative}
+  .hero-top{display:flex;align-items:center;gap:16px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:36px;flex-wrap:wrap}
+  .hero-top .sep{flex:1;height:1px;background:var(--line);min-width:30px}
+  .hero-top .est{color:var(--accent-deep);font-weight:600}
+  .status-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--paper);border:1px solid var(--line);border-radius:999px;
+    padding:6px 12px;font-size:.7rem;letter-spacing:.15em;
+  }
+  .status-pill.open{color:#1f5b3a;border-color:#bcd9c3;background:#e6f1e3}
+  .status-pill.closed{color:var(--accent-deep);border-color:var(--accent-soft);background:#f7e1d3}
+  .status-pill .pulse{width:8px;height:8px;border-radius:50%;background:currentColor;position:relative}
+  .status-pill.open .pulse::before{content:"";position:absolute;inset:-4px;border-radius:50%;background:currentColor;opacity:.35;animation:ringpulse 2.2s ease-out infinite}
+
+  /* hero headline + side art */
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:center}
+  @media (min-width:980px){.hero-grid{grid-template-columns:1.25fr .9fr;gap:56px}}
+  .hero-headline{font-family:var(--serif);margin:0}
+  .hero-headline .l1{display:block}
+  .hero-headline .l2{display:block;font-style:italic;font-weight:500;color:var(--accent-deep);margin-left:.4em}
+  .hero-headline em{font-style:italic;color:var(--bay-deep);font-weight:500}
+
+  /* Naples connection ribbon */
+  .ribbon{
+    display:inline-flex;align-items:center;gap:14px;
+    margin-top:32px;padding:10px 18px;
+    background:var(--paper);border:1px solid var(--line);border-radius:999px;
+    font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:1rem;
+    flex-wrap:wrap;
+  }
+  .ribbon .city{font-style:normal;font-weight:600;color:var(--ink)}
+  .ribbon .arrow{width:42px;height:14px;flex:none;color:var(--accent)}
+  .ribbon .km{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-style:normal}
+
+  /* Vesuvius card on the hero side */
+  .vesuv-card{
+    position:relative;aspect-ratio:5/4;max-width:480px;justify-self:center;width:100%;
+    background:var(--paper);border:1px solid var(--line);border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -40px rgba(26,20,16,.4);
+  }
+  .vesuv-card svg{width:100%;height:100%;display:block}
+  .vesuv-card .stamp{
+    position:absolute;top:18px;right:18px;
+    width:88px;height:88px;border:1.5px solid var(--accent);border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-family:var(--serif);color:var(--accent-deep);
+    transform:rotate(-8deg);background:rgba(244,236,223,.6);backdrop-filter:blur(2px);
+  }
+  .vesuv-card .stamp b{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .vesuv-card .stamp i{font-style:italic;font-weight:500;font-size:.95rem;line-height:1;margin:4px 0}
+  .vesuv-card .stamp small{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+  .vesuv-card .caption{
+    position:absolute;left:18px;bottom:14px;right:120px;
+    font-family:var(--serif);font-style:italic;font-size:.85rem;color:var(--paper);
+    text-shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+  .vesuv-card .caption b{font-style:normal;color:var(--paper);font-weight:600;letter-spacing:.05em}
+
+  .hero-meta-row{
+    display:grid;grid-template-columns:1fr;gap:32px;align-items:end;
+    margin-top:48px;padding-top:32px;border-top:1px solid var(--line);
+  }
+  @media (min-width:760px){.hero-meta-row{grid-template-columns:1.4fr .9fr .9fr;gap:40px}}
+  .lede{font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.45;color:var(--ink-soft);max-width:42ch;margin:0;font-style:italic}
+  .meta-block .label{font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:block;font-style:normal;font-weight:600}
+  .meta-block .value{font-family:var(--serif);font-size:1.1rem;line-height:1.35;color:var(--ink);font-style:normal}
+  .meta-block .value b{font-weight:600}
+
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:36px}
+
+  /* marquee strip with Italian phrases - always full viewport width,
+     even when nested inside the centered main card */
+  .hero-strip{
+    position:relative;
+    width:100vw;
+    left:50%;
+    margin-left:-50vw;
+    margin-top:64px;
+    margin-bottom:0;
+    height:88px;overflow:hidden;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--paper-deep);
+    display:flex;align-items:center;
+  }
+  .marquee{
+    display:flex;gap:0;align-items:center;
+    animation:slide 48s linear infinite;
+    white-space:nowrap;
+    font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--ink-soft);
+  }
+  .marquee span{display:inline-flex;align-items:center;gap:60px;padding-right:60px}
+  .marquee .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block}
+  .marquee .acc{color:var(--accent-deep);font-weight:600;font-style:normal;letter-spacing:.05em;font-size:1.15rem;text-transform:uppercase}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============ BUTTONS ============ */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:50px;padding:0 24px;border-radius:999px;
+    font-family:var(--sans);font-size:1rem;font-weight:600;letter-spacing:.005em;
+    text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+    transition:transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 1px 0 var(--accent-deep)}
+  .btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff;transform:translateY(-1px);box-shadow:0 6px 18px -8px rgba(125,32,16,.7)}
+  .btn-secondary{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-secondary:hover{background:var(--ink);color:var(--bg)}
+  .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .btn:active{transform:translateY(1px)}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  /* ============ SECTION CHROME ============ */
+  section{padding:96px 0;position:relative}
+  section + section{border-top:1px solid var(--line)}
+
+  /* Reading card: full window width, with horizontal opacity falloff -
+     opaque in the center for readability, fading toward the edges so the
+     Naples backdrop patterns become more visible at the gutters. */
+  main{
+    max-width:none;
+    width:100%;
+    margin:0;
+    background:
+      linear-gradient(90deg,
+        rgba(var(--plate),0) 0%,
+        rgba(var(--plate),.35) 8%,
+        rgba(var(--plate),.65) 16%,
+        rgba(var(--plate),.85) 28%,
+        rgba(var(--plate),.85) 72%,
+        rgba(var(--plate),.65) 84%,
+        rgba(var(--plate),.35) 92%,
+        rgba(var(--plate),0) 100%);
+    backdrop-filter:saturate(1.05) blur(2px);
+    -webkit-backdrop-filter:saturate(1.05) blur(2px);
+    position:relative;
+  }
+  @media (max-width:980px){
+    main{
+      background:
+        linear-gradient(90deg,
+          rgba(var(--plate),.7) 0%,
+          rgba(var(--plate),.9) 30%,
+          rgba(var(--plate),.9) 70%,
+          rgba(var(--plate),.7) 100%);
+    }
+  }
+  section#o-nas::before, section#oferta::before, section#kontakt::before{
+    content:"";position:absolute;left:0;right:0;top:0;height:1px;
+    background:linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
+    pointer-events:none;
+  }
+  .section-head{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:48px;align-items:end}
+  @media (min-width:760px){.section-head{grid-template-columns:auto 1fr;gap:48px}}
+  .kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-deep);
+    font-weight:600;
+  }
+  .kicker .num{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--gold);font-variant-numeric:oldstyle-nums;letter-spacing:.05em;font-size:.95rem;text-transform:none}
+  .kicker .bar{width:28px;height:1px;background:var(--accent)}
+  .section-head .lead{font-family:var(--serif);font-size:1.15rem;line-height:1.45;color:var(--ink-soft);max-width:48ch;margin:0;font-style:italic}
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.delay-1{transition-delay:.08s}
+  .reveal.delay-2{transition-delay:.16s}
+  .reveal.delay-3{transition-delay:.24s}
+
+  /* ============ O NAS ============ */
+  .about{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+  @media (min-width:880px){.about{grid-template-columns:1.05fr .95fr;gap:80px}}
+  .about-body{font-size:1.08rem;line-height:1.65;color:var(--ink-soft)}
+  .about-body p:first-of-type::first-letter{
+    font-family:var(--serif);float:left;font-size:4.6rem;line-height:.85;
+    padding:8px 14px 0 0;color:var(--accent-deep);font-weight:700;
+  }
+  .about-body strong{color:var(--ink);font-weight:600}
+  .about-aside{
+    background:var(--paper);border:1px solid var(--line);
+    padding:28px;border-radius:4px;position:relative;overflow:hidden;
+  }
+  .about-aside::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:8px;
+    background-image:
+      linear-gradient(90deg, var(--accent) 0 25%, transparent 25% 50%, var(--bay) 50% 75%, transparent 75% 100%);
+    background-size:32px 8px;
+  }
+  .about-aside .h{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-deep);font-family:var(--sans);font-weight:600;margin:14px 0 18px}
+  .about-aside .row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px dotted var(--line);font-size:.98rem}
+  .about-aside .row:last-child{border-bottom:0}
+  .about-aside .row .k{color:var(--muted);font-style:italic;font-family:var(--serif)}
+  .about-aside .row .v{color:var(--ink);font-weight:500;font-variant-numeric:oldstyle-nums;font-family:var(--serif)}
+  .about-aside .row.closed .v{color:var(--muted);font-style:italic;font-weight:400}
+
+  /* ============ OFERTA ============ */
+  .offer{display:grid;grid-template-columns:1fr;gap:0}
+  .offer-item{
+    display:grid;grid-template-columns:auto 1fr;gap:18px 24px;
+    padding:36px 0;border-bottom:1px solid var(--line);align-items:start;
+    transition:padding .3s ease, background .3s ease;
+    position:relative;
+  }
+  .offer-item:hover{padding-left:12px}
+  .offer-item:last-child{border-bottom:0}
+  .offer-item .num{
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    font-size:1.7rem;color:var(--accent-deep);line-height:1;
+    font-variant-numeric:oldstyle-nums;min-width:3ch;padding-top:4px;
+  }
+  .offer-item h3{margin:0 0 8px;font-size:clamp(1.3rem,2.4vw,1.7rem);letter-spacing:-.005em}
+  .offer-item p{margin:0;color:var(--ink-soft);max-width:62ch}
+  @media (min-width:880px){
+    .offer-item{grid-template-columns:auto 1fr 1.4fr;gap:32px 56px;align-items:baseline}
+    .offer-item h3{margin-bottom:0}
+  }
+  .offer-tag{display:inline-block;font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+
+  /* ============ MENU (karta) ============ */
+  .menu{display:grid;grid-template-columns:1fr;gap:0}
+  @media (min-width:880px){.menu{grid-template-columns:1fr 1fr;column-gap:64px;row-gap:0}}
+  .menu-item{
+    padding:22px 0;border-bottom:1px solid var(--line);
+    transition:padding .35s cubic-bezier(.2,.7,.2,1);
+    position:relative;
+  }
+  .menu-item:hover{padding-left:10px}
+  .menu-head{
+    display:flex;align-items:baseline;gap:10px;margin-bottom:6px;
+  }
+  .menu-head h3{
+    margin:0;font-family:var(--serif);font-weight:500;
+    font-size:clamp(1.15rem,1.7vw,1.35rem);
+    letter-spacing:-.005em;line-height:1.2;color:var(--ink);
+    flex-shrink:0;
+  }
+  .menu-leader{
+    flex:1;border-bottom:1px dotted var(--ink-soft);opacity:.4;
+    transform:translateY(-4px);
+  }
+  .menu-price{
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    font-size:1.05rem;color:var(--accent-deep);
+    font-variant-numeric:oldstyle-nums;flex-shrink:0;
+  }
+  .menu-desc{
+    margin:0;color:var(--ink-soft);font-size:.95rem;line-height:1.55;
+    max-width:54ch;
+  }
+  .menu-flag{
+    display:inline-block;margin-top:8px;
+    font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;
+    text-transform:uppercase;font-weight:600;
+    color:var(--accent-deep);
+    padding:3px 9px;border:1px solid var(--accent-deep);border-radius:999px;
+  }
+  .menu-note{
+    margin:36px 0 0;font-family:var(--sans);font-size:.78rem;
+    color:var(--muted);font-style:italic;max-width:60ch;
+    border-top:1px solid var(--line);padding-top:24px;
+  }
+  /* Add-to-cart button per menu item */
+  .menu-add{
+    appearance:none;margin-top:10px;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:6px 12px 6px 10px;
+    background:transparent;color:var(--ink);
+    border:1px solid var(--line);border-radius:999px;
+    font-family:var(--sans);font-size:.78rem;font-weight:600;
+    letter-spacing:.04em;cursor:pointer;
+    transition:background .2s, color .2s, border-color .2s, transform .2s;
+  }
+  .menu-add:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .menu-add.is-adding{transform:scale(.92)}
+  .menu-add svg{flex-shrink:0}
+  .menu-item.in-cart .menu-add{
+    background:var(--accent-soft);border-color:var(--accent);color:var(--accent-deep);
+  }
+  .menu-item.in-cart .menu-add::after{
+    content:attr(data-qty);font-weight:700;margin-left:4px;
+    background:var(--accent);color:#fff;
+    width:18px;height:18px;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:.7rem;
+  }
+
+  /* ============ CART DRAWER ============ */
+  .cart-fab{
+    position:fixed;left:24px;bottom:24px;z-index:99;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:12px 18px 12px 14px;
+    background:var(--accent);color:#fff;
+    border:0;border-radius:999px;cursor:pointer;
+    font-family:var(--serif);font-weight:600;font-size:.95rem;
+    letter-spacing:.005em;
+    box-shadow:0 14px 32px -10px rgba(184,51,28,.55), 0 4px 10px -2px rgba(0,0,0,.12);
+    transition:transform .2s, box-shadow .2s, opacity .25s, visibility .25s;
+  }
+  .cart-fab:hover{transform:translateY(-2px) scale(1.02)}
+  .cart-fab svg{width:18px;height:18px;flex-shrink:0}
+  .cart-fab.is-empty{opacity:0;visibility:hidden;pointer-events:none}
+  .cart-fab .cart-count{
+    background:#fff;color:var(--accent-deep);
+    min-width:22px;height:22px;padding:0 7px;border-radius:999px;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-family:var(--sans);font-weight:700;font-size:.78rem;
+    font-variant-numeric:tabular-nums;
+  }
+  @media (max-width:520px){.cart-fab{left:16px;bottom:16px}}
+
+  .cart-overlay{
+    position:fixed;inset:0;z-index:200;
+    background:rgba(20,14,10,.4);
+    opacity:0;visibility:hidden;
+    transition:opacity .3s, visibility .3s;
+    backdrop-filter:blur(3px);
+  }
+  .cart-overlay.is-open{opacity:1;visibility:visible}
+  .cart-drawer{
+    position:fixed;top:0;right:0;bottom:0;z-index:201;
+    width:min(440px, 100vw);
+    background:var(--bg);
+    box-shadow:-20px 0 50px -20px rgba(0,0,0,.3);
+    transform:translateX(100%);
+    transition:transform .35s cubic-bezier(.2,.7,.2,1);
+    display:flex;flex-direction:column;
+    font-family:var(--sans);color:var(--ink);
+  }
+  .cart-drawer.is-open{transform:translateX(0)}
+  .cart-head{
+    padding:24px 28px 20px;border-bottom:1px solid var(--line);
+    display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  }
+  .cart-head h2{
+    margin:0;font-family:var(--serif);font-size:1.6rem;font-weight:600;
+    letter-spacing:-.01em;
+  }
+  .cart-head .kicker{
+    display:block;font-family:var(--sans);font-size:.62rem;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+    font-weight:600;margin-bottom:6px;
+  }
+  .cart-close{
+    background:transparent;border:0;cursor:pointer;color:var(--muted);
+    width:36px;height:36px;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    transition:background .2s, color .2s;flex-shrink:0;
+  }
+  .cart-close:hover{background:var(--paper);color:var(--ink)}
+  .cart-body{
+    flex:1;overflow-y:auto;padding:16px 28px;
+  }
+  .cart-empty{
+    text-align:center;padding:40px 20px;color:var(--muted);
+    font-family:var(--serif);font-style:italic;
+  }
+  .cart-empty svg{width:48px;height:48px;opacity:.4;margin-bottom:14px}
+  .cart-empty p{margin:0;font-size:1rem}
+  .cart-list{list-style:none;padding:0;margin:0}
+  .cart-row{
+    display:grid;grid-template-columns:1fr auto;gap:6px 16px;
+    padding:18px 0;border-bottom:1px dotted var(--line);
+    align-items:start;
+  }
+  .cart-row:last-child{border-bottom:0}
+  .cart-row .name{
+    font-family:var(--serif);font-weight:500;font-size:1.05rem;
+    color:var(--ink);margin:0;line-height:1.25;
+  }
+  .cart-row .unit{
+    font-family:var(--sans);font-size:.78rem;color:var(--muted);
+    font-variant-numeric:tabular-nums;
+  }
+  .cart-row .line-total{
+    font-family:var(--serif);font-style:italic;font-size:1.05rem;
+    color:var(--accent-deep);font-variant-numeric:oldstyle-nums;
+    text-align:right;align-self:start;
+  }
+  .qty{
+    grid-column:1/-1;display:inline-flex;align-items:center;gap:0;
+    margin-top:8px;border:1px solid var(--line);border-radius:999px;
+    overflow:hidden;width:fit-content;
+  }
+  .qty button{
+    appearance:none;background:transparent;border:0;cursor:pointer;
+    width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;
+    color:var(--ink);transition:background .2s;
+  }
+  .qty button:hover{background:var(--paper)}
+  .qty button svg{width:12px;height:12px}
+  .qty .v{
+    min-width:28px;text-align:center;
+    font-family:var(--sans);font-weight:600;font-size:.92rem;
+    font-variant-numeric:tabular-nums;color:var(--ink);
+  }
+  .cart-row .remove{
+    grid-column:2;align-self:end;justify-self:end;
+    background:transparent;border:0;cursor:pointer;color:var(--muted);
+    font-family:var(--sans);font-size:.72rem;letter-spacing:.05em;
+    padding:6px 0;text-decoration:underline;
+    transition:color .2s;
+  }
+  .cart-row .remove:hover{color:var(--accent-deep)}
+
+  .cart-form{
+    padding:0 28px 16px;border-top:1px solid var(--line);
+  }
+  .cart-form h3{
+    margin:18px 0 12px;font-family:var(--sans);font-size:.62rem;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+    font-weight:600;
+  }
+  .field{margin-bottom:12px}
+  .field label{
+    display:block;font-family:var(--sans);font-size:.72rem;
+    letter-spacing:.08em;color:var(--ink-soft);font-weight:600;
+    margin-bottom:5px;
+  }
+  .field input, .field select{
+    width:100%;font:inherit;font-family:var(--serif);
+    padding:9px 12px;border:1px solid var(--line);border-radius:8px;
+    background:var(--paper);color:var(--ink);
+    transition:border-color .2s, background .2s;
+  }
+  .field input:focus, .field select:focus{
+    outline:0;border-color:var(--accent);background:var(--bg);
+  }
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .cart-foot{
+    padding:16px 28px 24px;border-top:1px solid var(--line);
+    background:var(--paper);
+  }
+  .cart-totals{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:14px;
+  }
+  .cart-totals .label{
+    font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;
+  }
+  .cart-totals .sum{
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    font-size:1.7rem;color:var(--ink);
+    font-variant-numeric:oldstyle-nums;
+  }
+  .cart-submit{
+    appearance:none;width:100%;
+    padding:14px 18px;background:var(--accent);color:#fff;
+    border:0;border-radius:999px;cursor:pointer;
+    font-family:var(--serif);font-weight:600;font-size:1rem;
+    letter-spacing:.005em;
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    transition:background .2s, transform .2s;
+  }
+  .cart-submit:hover{background:var(--accent-deep)}
+  .cart-submit:disabled{opacity:.5;cursor:not-allowed}
+  .cart-submit svg{width:16px;height:16px}
+  .cart-fineprint{
+    margin:10px 0 0;font-size:.72rem;color:var(--muted);
+    font-style:italic;font-family:var(--serif);text-align:center;
+  }
+
+  .cart-confirmed{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:40px 32px;text-align:center;
+  }
+  .cart-confirmed .seal{
+    width:72px;height:72px;border-radius:50%;
+    background:var(--accent-soft);color:var(--accent-deep);
+    display:inline-flex;align-items:center;justify-content:center;
+    margin-bottom:20px;
+  }
+  .cart-confirmed .seal svg{width:32px;height:32px}
+  .cart-confirmed h3{
+    margin:0 0 8px;font-family:var(--serif);font-size:1.6rem;
+    letter-spacing:-.01em;
+  }
+  .cart-confirmed p{
+    margin:0 0 20px;color:var(--ink-soft);font-family:var(--serif);
+    font-style:italic;font-size:1.02rem;line-height:1.5;
+  }
+  .cart-confirmed .ref{
+    font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--muted);
+    border:1px dashed var(--line);padding:8px 14px;border-radius:6px;
+    margin-bottom:24px;
+  }
+  .cart-confirmed .actions{
+    display:flex;flex-direction:column;gap:10px;width:100%;max-width:280px;
+  }
+  .cart-confirmed .actions a, .cart-confirmed .actions button{
+    width:100%;text-align:center;padding:12px 16px;
+    font-family:var(--serif);font-weight:600;font-size:.95rem;
+    border-radius:999px;text-decoration:none;cursor:pointer;
+    border:1px solid var(--ink);background:var(--ink);color:var(--bg);
+    transition:background .2s, color .2s;
+  }
+  .cart-confirmed .actions .secondary{
+    background:transparent;color:var(--ink);
+  }
+  .cart-confirmed .actions .secondary:hover{background:var(--paper)}
+
+  /* ============ KONTAKT ============ */
+  .visit{display:grid;grid-template-columns:1fr;gap:28px}
+  @media (min-width:880px){.visit{grid-template-columns:1.1fr .9fr;gap:48px;align-items:stretch}}
+  .visit-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:6px;
+    padding:36px;display:flex;flex-direction:column;gap:28px;
+    position:relative;overflow:hidden;
+  }
+  .visit-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:8px;
+    background-image:linear-gradient(90deg, var(--accent) 0 25%, transparent 25% 50%, var(--bay) 50% 75%, transparent 75% 100%);
+    background-size:32px 8px;
+  }
+  .visit-card h3{font-size:1rem;font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;color:var(--accent-deep);font-weight:600;margin:14px 0 8px}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media (max-width:520px){.info-grid{grid-template-columns:1fr}}
+  .info-block .label{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:block;font-weight:600}
+  .info-block .value{font-family:var(--serif);font-size:1.15rem;line-height:1.35;color:var(--ink)}
+  .info-block .value a{color:var(--ink);text-decoration:none}
+  .info-block .value a:hover{color:var(--accent-deep);text-decoration:underline}
+
+  .hours-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+  .hours-table tr{border-bottom:1px dotted var(--line)}
+  .hours-table tr:last-child{border-bottom:0}
+  .hours-table td{padding:10px 0;font-size:.98rem;color:var(--ink-soft)}
+  .hours-table td:first-child{font-family:var(--serif);color:var(--ink);font-weight:500}
+  .hours-table td:last-child{text-align:right;font-feature-settings:"tnum" 1}
+  .hours-table tr.today td{color:var(--accent-deep);font-weight:600}
+  .hours-table tr.today td:first-child{color:var(--accent-deep)}
+  .hours-table tr.closed td:last-child{color:var(--muted);font-style:italic;font-weight:400}
+
+  .map-card{background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+  .map-svg{display:block;width:100%;height:auto;background:#f1e7d3;flex:1}
+  .map-foot{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .map-foot .addr{font-family:var(--serif);font-size:1rem;line-height:1.3}
+  .map-foot a{font-size:.92rem;font-weight:500;color:var(--accent-deep)}
+
+  .visit-cta{margin-top:8px;display:flex;flex-wrap:wrap;gap:12px}
+
+  .social-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+  .social{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 16px;border:1px solid var(--line);border-radius:999px;
+    background:transparent;color:var(--ink);text-decoration:none;font-size:.92rem;
+  }
+  .social:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .social svg{width:16px;height:16px}
+
+  /* ============ FOOTER ============ */
+  footer{padding:56px 0 48px;border-top:1px solid var(--line);background:var(--paper-deep);position:relative;overflow:hidden}
+  footer::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:8px;
+    background-image:linear-gradient(90deg, var(--accent) 0 25%, transparent 25% 50%, var(--bay) 50% 75%, transparent 75% 100%);
+    background-size:32px 8px;opacity:.6;
+  }
+  .foot-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center;padding-top:8px}
+  @media (min-width:760px){.foot-grid{grid-template-columns:auto 1fr auto;gap:32px}}
+  .foot-mark{display:flex;align-items:center;gap:14px}
+  .foot-mark svg{width:38px;height:38px}
+  .foot-mark .t{font-family:var(--serif);font-size:1.1rem;font-weight:600}
+  .foot-mark .t small{display:block;font-family:var(--sans);font-weight:500;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  .badge{
+    display:inline-flex;align-items:center;gap:10px;
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:10px 16px;font-size:.82rem;color:var(--ink-soft);justify-self:start;
+  }
+  @media (min-width:760px){.badge{justify-self:center}}
+  .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(184,51,28,.5);animation:pulse 2.4s ease-out infinite}
+  .credit{font-size:.92rem;color:var(--ink-soft);text-align:left}
+  @media (min-width:760px){.credit{text-align:right}}
+  .credit a{color:var(--ink);font-weight:500}
+
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(184,51,28,.45)}
+    70%{box-shadow:0 0 0 12px rgba(184,51,28,0)}
+    100%{box-shadow:0 0 0 0 rgba(184,51,28,0)}
+  }
+  @keyframes ringpulse{
+    0%{transform:scale(.6);opacity:.5}
+    100%{transform:scale(2.2);opacity:0}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important}
+    html{scroll-behavior:auto}
+    .marquee{animation:none}
+    .reveal{opacity:1;transform:none}
+    .backdrop .layer{transform:none !important}
+  }
+</style>
+<script>
+  // Apply saved theme before paint to avoid flash
+  (function(){
+    try{
+      var t = localStorage.getItem('zpr-theme');
+      if(!t){
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      }
+      if(t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+
+<!-- ============ NAPLES PARALLAX BACKDROP ============ -->
+<div class="backdrop" aria-hidden="true">
+  <div class="layer bd-sky" data-speed="-0.05"></div>
+
+  <!-- Majolica tile pattern (Neapolitan ceramic motif) -->
+  <div class="layer bd-tile" data-speed="-0.15">
+    <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="majolica" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+          <rect width="120" height="120" fill="none"/>
+          <!-- 8-pointed star, terracotta + bay -->
+          <g stroke="#b8331c" stroke-width="1.2" fill="none" opacity=".75">
+            <path d="M60 18 L72 48 L102 60 L72 72 L60 102 L48 72 L18 60 L48 48 Z"/>
+            <circle cx="60" cy="60" r="6"/>
+          </g>
+          <g stroke="#3d6e7e" stroke-width="1" fill="none" opacity=".55">
+            <path d="M60 8 L60 28 M60 92 L60 112 M8 60 L28 60 M92 60 L112 60"/>
+            <circle cx="60" cy="60" r="22"/>
+            <circle cx="0" cy="0" r="6"/>
+            <circle cx="120" cy="0" r="6"/>
+            <circle cx="0" cy="120" r="6"/>
+            <circle cx="120" cy="120" r="6"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="800" height="400" fill="url(#majolica)"/>
+    </svg>
+  </div>
+
+  <!-- Olive-grove silhouette: vertical olive branches drifting up -->
+  <div class="layer bd-vesuv" data-speed="-0.25">
+    <svg viewBox="0 0 1600 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- a single olive branch: trunk + paired leaves + a couple of olives -->
+        <symbol id="olive-branch" viewBox="-60 0 120 320" overflow="visible">
+          <!-- main trunk: subtle s-curve -->
+          <path d="M0 320 C 6 260, -8 200, 4 140 S 10 60, -2 0"
+                stroke="var(--vesuv)" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".95"/>
+          <!-- leaves: lance-shaped ellipses paired along the stem -->
+          <g fill="var(--vesuv)" opacity=".88">
+            <ellipse cx="-22" cy="270" rx="14" ry="3.6" transform="rotate(-32 -22 270)"/>
+            <ellipse cx="22"  cy="258" rx="14" ry="3.6" transform="rotate(32 22 258)"/>
+            <ellipse cx="-26" cy="220" rx="15" ry="3.8" transform="rotate(-28 -26 220)"/>
+            <ellipse cx="24"  cy="208" rx="15" ry="3.8" transform="rotate(34 24 208)"/>
+            <ellipse cx="-22" cy="170" rx="13" ry="3.4" transform="rotate(-30 -22 170)"/>
+            <ellipse cx="22"  cy="158" rx="13" ry="3.4" transform="rotate(30 22 158)"/>
+            <ellipse cx="-18" cy="118" rx="12" ry="3.2" transform="rotate(-26 -18 118)"/>
+            <ellipse cx="18"  cy="108" rx="12" ry="3.2" transform="rotate(28 18 108)"/>
+            <ellipse cx="-14" cy="68"  rx="11" ry="3"   transform="rotate(-22 -14 68)"/>
+            <ellipse cx="14"  cy="58"  rx="11" ry="3"   transform="rotate(24 14 58)"/>
+            <ellipse cx="-9"  cy="22"  rx="9"  ry="2.6" transform="rotate(-16 -9 22)"/>
+            <ellipse cx="9"   cy="14"  rx="9"  ry="2.6" transform="rotate(18 9 14)"/>
+          </g>
+          <!-- a couple of olives -->
+          <g fill="var(--vesuv)">
+            <ellipse cx="-6" cy="240" rx="3" ry="4.4"/>
+            <ellipse cx="8"  cy="190" rx="3" ry="4.4"/>
+          </g>
+        </symbol>
+      </defs>
+
+      <!-- soft horizon shadow at the bottom to ground the grove -->
+      <ellipse cx="800" cy="610" rx="1100" ry="40" fill="var(--vesuv)" opacity=".18"/>
+
+      <!-- back row: smaller, fainter branches -->
+      <g opacity=".42">
+        <use href="#olive-branch" x="60"   y="350" width="90"  height="240"/>
+        <use href="#olive-branch" x="240"  y="370" width="80"  height="220"/>
+        <use href="#olive-branch" x="430"  y="345" width="95"  height="250"/>
+        <use href="#olive-branch" x="640"  y="365" width="85"  height="230"/>
+        <use href="#olive-branch" x="820"  y="350" width="92"  height="245"/>
+        <use href="#olive-branch" x="1010" y="375" width="78"  height="215"/>
+        <use href="#olive-branch" x="1200" y="350" width="90"  height="240"/>
+        <use href="#olive-branch" x="1390" y="365" width="85"  height="225"/>
+        <use href="#olive-branch" x="1540" y="370" width="80"  height="220"/>
+      </g>
+
+      <!-- middle row -->
+      <g opacity=".68">
+        <use href="#olive-branch" x="-20"  y="290" width="120" height="305"/>
+        <use href="#olive-branch" x="160"  y="270" width="130" height="325"/>
+        <use href="#olive-branch" x="350"  y="295" width="115" height="300"/>
+        <use href="#olive-branch" x="540"  y="275" width="125" height="320"/>
+        <use href="#olive-branch" x="730"  y="290" width="120" height="305"/>
+        <use href="#olive-branch" x="920"  y="280" width="125" height="315"/>
+        <use href="#olive-branch" x="1110" y="295" width="115" height="300"/>
+        <use href="#olive-branch" x="1300" y="275" width="130" height="320"/>
+        <use href="#olive-branch" x="1490" y="290" width="120" height="305"/>
+      </g>
+
+      <!-- foreground row: largest, sharpest branches -->
+      <g opacity=".95">
+        <use href="#olive-branch" x="80"   y="220" width="150" height="380"/>
+        <use href="#olive-branch" x="320"  y="195" width="160" height="405"/>
+        <use href="#olive-branch" x="580"  y="215" width="155" height="385"/>
+        <use href="#olive-branch" x="840"  y="200" width="160" height="400"/>
+        <use href="#olive-branch" x="1090" y="220" width="150" height="380"/>
+        <use href="#olive-branch" x="1340" y="195" width="160" height="405"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Bay of Naples waves -->
+  <div class="layer bd-sea" data-speed="-0.35">
+    <svg viewBox="0 0 1600 200" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="waves" x="0" y="0" width="80" height="20" patternUnits="userSpaceOnUse">
+          <path d="M0 12 Q20 4 40 12 T80 12" stroke="var(--bay)" stroke-width="1.2" fill="none" opacity=".5"/>
+        </pattern>
+      </defs>
+      <rect width="1600" height="200" fill="url(#waves)"/>
+    </svg>
+  </div>
+</div>
+
+<!-- paper grain on top of everything -->
+<svg class="grain" aria-hidden="true" focusable="false">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0.07 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grain)"/>
+</svg>
+
+<div class="nav-shell" id="navShell">
+<header class="nav" role="banner">
+  <a class="brand" href="#top" aria-label="Z Pieca Rodem - strona główna">
+    <svg class="mark" viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+      <circle cx="30" cy="30" r="27" fill="#f4ecdf" stroke="#b8331c" stroke-width="1.4"/>
+      <circle cx="30" cy="30" r="22" fill="none" stroke="#b8331c" stroke-width=".8" stroke-dasharray="2 3"/>
+      <!-- tiny Vesuvius inside the seal -->
+      <path d="M14 40 L22 32 L26 28 L29 26 L32 28 L36 32 L46 40 Z" fill="var(--vesuv)"/>
+      <path d="M14 40 L46 40" stroke="var(--bay)" stroke-width="1.2"/>
+      <path d="M30 16 q-3 4 0 8 q3 -4 0 -8 z" fill="#b8331c"/>
+    </svg>
+    <span class="brand-text">
+      Z Pieca Rodem
+      <small>Pizzeria - Szczytno</small>
+    </span>
+  </a>
+  <nav class="navlinks" aria-label="Główna nawigacja">
+    <a href="#o-nas">O nas</a>
+    <a href="#oferta">Oferta</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <a class="nav-call" href="tel:+48572317851" aria-label="Zadzwoń: 572 317 851">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    572 317 851
+  </a>
+  <button class="theme-toggle" type="button" aria-label="Przełącz tryb ciemny" title="Przełącz tryb ciemny" id="themeToggle">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  </button>
+</header>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title" style="padding-top:8px">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="est">Pizza Napoletana</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span>est. Szczytno</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="status-pill" id="status" aria-live="polite">
+        <span class="pulse" aria-hidden="true"></span>
+        <span class="status-text">Sprawdzamy godziny...</span>
+      </span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1 id="hero-title" class="hero-headline reveal">
+          <span class="l1">Z Neapolu,</span>
+          <span class="l2">prosto z pieca.</span>
+        </h1>
+
+        <div class="ribbon reveal delay-1" aria-label="Naples - Szczytno, około 1700 km">
+          <span class="city">Napoli</span>
+          <svg class="arrow" viewBox="0 0 42 14" aria-hidden="true">
+            <path d="M0 7 L36 7 M30 2 L36 7 L30 12" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="0" cy="7" r="2" fill="currentColor"/>
+          </svg>
+          <span class="city">Szczytno</span>
+          <span class="km">~ 1 700 km</span>
+        </div>
+
+        <p class="lede reveal delay-2" style="margin-top:24px">Tradycyjna włoska pizza prosto z Neapolu.</p>
+      </div>
+
+      <!-- Vesuvius card -->
+      <div class="vesuv-card reveal delay-1" aria-hidden="true">
+        <svg viewBox="0 0 480 384" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#e8c79a"/>
+              <stop offset="55%" stop-color="#d99770"/>
+              <stop offset="100%" stop-color="#a8552e"/>
+            </linearGradient>
+            <linearGradient id="bay-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5d8b9b"/>
+              <stop offset="100%" stop-color="#264a58"/>
+            </linearGradient>
+          </defs>
+          <!-- sky -->
+          <rect width="480" height="384" fill="url(#sky)"/>
+          <!-- low sun -->
+          <circle cx="120" cy="160" r="46" fill="#f6d59a" opacity=".9"/>
+          <circle cx="120" cy="160" r="62" fill="#f6d59a" opacity=".25"/>
+          <!-- distant ridge -->
+          <path d="M0 220 L80 210 L160 220 L240 200 L320 220 L380 210 L480 220 L480 260 L0 260 Z" fill="#7a4f4a" opacity=".55"/>
+          <!-- mid hills -->
+          <path d="M0 240 L60 232 L140 244 L220 226 L300 244 L380 230 L480 248 L480 280 L0 280 Z" fill="#5d3636" opacity=".7"/>
+          <!-- Vesuvius -->
+          <path d="M0 280
+                   L160 280
+                   L210 260
+                   L240 248
+                   L260 240
+                   L275 250
+                   L290 244
+                   L310 226
+                   L330 218
+                   L355 226
+                   L380 240
+                   L420 270
+                   L480 280
+                   L480 320 L0 320 Z" fill="var(--vesuv)"/>
+          <!-- sea -->
+          <rect y="280" width="480" height="60" fill="url(#bay-grad)"/>
+          <!-- waves -->
+          <g stroke="#7ea4b1" stroke-width=".8" fill="none" opacity=".55">
+            <path d="M0 296 Q24 290 48 296 T96 296 T144 296 T192 296 T240 296 T288 296 T336 296 T384 296 T432 296 T480 296"/>
+            <path d="M0 308 Q24 302 48 308 T96 308 T144 308 T192 308 T240 308 T288 308 T336 308 T384 308 T432 308 T480 308"/>
+            <path d="M0 320 Q24 314 48 320 T96 320 T144 320 T192 320 T240 320 T288 320 T336 320 T384 320 T432 320 T480 320"/>
+          </g>
+          <!-- foreground - little Naples rooftops -->
+          <g fill="#1a1410">
+            <rect x="0" y="320" width="480" height="64"/>
+          </g>
+          <g fill="#3a2a22">
+            <polygon points="20,320 30,308 40,320"/>
+            <rect x="44" y="312" width="20" height="8"/>
+            <polygon points="68,320 76,310 84,320"/>
+            <rect x="88" y="314" width="24" height="6"/>
+            <polygon points="116,320 128,306 140,320"/>
+            <rect x="144" y="312" width="18" height="8"/>
+            <polygon points="166,320 174,310 182,320"/>
+            <rect x="186" y="314" width="22" height="6"/>
+            <polygon points="212,320 222,308 232,320"/>
+            <rect x="236" y="312" width="20" height="8"/>
+            <polygon points="260,320 270,310 280,320"/>
+            <rect x="284" y="314" width="24" height="6"/>
+            <polygon points="312,320 322,306 332,320"/>
+            <rect x="336" y="312" width="18" height="8"/>
+            <polygon points="358,320 368,310 378,320"/>
+            <rect x="382" y="314" width="22" height="6"/>
+            <polygon points="408,320 418,308 428,320"/>
+            <rect x="432" y="312" width="20" height="8"/>
+            <polygon points="456,320 466,310 476,320"/>
+          </g>
+          <!-- thin warm light along horizon -->
+          <rect x="0" y="278" width="480" height="2" fill="#f6c891" opacity=".7"/>
+        </svg>
+
+        <div class="stamp" aria-hidden="true">
+          <b>Vesuvio</b>
+          <i>40&deg; 49' N</i>
+          <small>Napoli</small>
+        </div>
+
+        <div class="caption">
+          <b>Golfo di Napoli</b><br>
+          <span>widok od strony Posillipo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-meta-row reveal delay-2">
+      <div></div>
+      <div class="meta-block">
+        <span class="label">Adres</span>
+        <span class="value"><b>ul. Piłsudskiego 22</b><br>12-100 Szczytno</span>
+      </div>
+      <div class="meta-block">
+        <span class="label">Godziny</span>
+        <span class="value"><b>wtorek - niedziela</b><br>13:00 - 21:00</span>
+      </div>
+    </div>
+
+    <div class="hero-cta reveal delay-3">
+      <a class="btn btn-primary" href="tel:+48572317851" aria-label="Zadzwoń: 572 317 851">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Zadzwoń: 572 317 851
+      </a>
+      <a class="btn btn-secondary" href="#kontakt">Jak nas znaleźć</a>
+    </div>
+  </div>
+
+  <!-- editorial marquee strip -->
+  <div class="hero-strip" aria-hidden="true">
+    <div class="marquee">
+      <span>
+        <span class="acc">Napoli</span>
+        <span class="dot"></span>
+        Pizza napoletana
+        <span class="dot"></span>
+        <span class="acc">Vesuvio</span>
+        <span class="dot"></span>
+        Z pieca, prosto do Ciebie
+        <span class="dot"></span>
+        <span class="acc">Szczytno</span>
+        <span class="dot"></span>
+        ul. Piłsudskiego 22
+        <span class="dot"></span>
+        wtorek - niedziela
+        <span class="dot"></span>
+      </span>
+      <span>
+        <span class="acc">Napoli</span>
+        <span class="dot"></span>
+        Pizza napoletana
+        <span class="dot"></span>
+        <span class="acc">Vesuvio</span>
+        <span class="dot"></span>
+        Z pieca, prosto do Ciebie
+        <span class="dot"></span>
+        <span class="acc">Szczytno</span>
+        <span class="dot"></span>
+        ul. Piłsudskiego 22
+        <span class="dot"></span>
+        wtorek - niedziela
+        <span class="dot"></span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O NAS ============ -->
+<section id="o-nas" aria-labelledby="onas-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker"><span class="num">01</span><span class="bar"></span> O nas</span>
+      <p class="lead">Pizza neapolitańska - jeden temat, jeden piec, jedno miejsce w Szczytnie.</p>
+    </div>
+
+    <div class="about">
+      <div class="about-body reveal">
+        <h2 id="onas-title">Neapol w sercu Mazur.</h2>
+        <p>Z Pieca Rodem to pizzeria działająca w Szczytnie, przy ul. Piłsudskiego 22. <strong>Specjalizujemy się wyłącznie w pizzy neapolitańskiej</strong> - cienkim cieście wypiekanym w wysokiej temperaturze, zgodnie z tradycją wywodzącą się z Neapolu.</p>
+        <p>Zapraszamy od wtorku do niedzieli, w godzinach od 13:00 do 21:00. W poniedziałki lokal pozostaje nieczynny. Bieżące nowości z kuchni publikujemy na Instagramie oraz Facebooku — znajdziesz tam zdjęcia, informacje o dniu pracy i najprostszą drogę do kontaktu z naszym zespołem.</p>
+      </div>
+
+      <aside class="about-aside reveal delay-1" aria-label="Najważniejsze informacje">
+        <div class="h">W skrócie</div>
+        <div class="row"><span class="k">Specjalność</span><span class="v">pizza neapolitańska</span></div>
+        <div class="row"><span class="k">Inspiracja</span><span class="v">Napoli, Italia</span></div>
+        <div class="row"><span class="k">Miasto</span><span class="v">Szczytno</span></div>
+        <div class="row"><span class="k">Region</span><span class="v">Warmia i Mazury</span></div>
+        <div class="row closed"><span class="k">Poniedziałek</span><span class="v">nieczynne</span></div>
+        <div class="row"><span class="k">Wtorek - niedziela</span><span class="v">13:00 - 21:00</span></div>
+        <div class="row"><span class="k">Telefon</span><span class="v">572 317 851</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFERTA ============ -->
+<section id="oferta" aria-labelledby="oferta-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker"><span class="num">02</span><span class="bar"></span> Karta</span>
+      <p class="lead">Krótka, sezonowa karta. Każda pizza wypiekana 60-90 sekund w temperaturze 450°C.</p>
+    </div>
+
+    <h2 id="oferta-title" class="reveal" style="max-width:18ch;margin-bottom:48px">Co dziś z pieca.</h2>
+
+    <div class="menu" role="list">
+      <article class="menu-item reveal" role="listitem" data-item-id="margherita" data-item-name="Margherita" data-item-price="38">
+        <div class="menu-head">
+          <h3>Margherita</h3>
+          <span class="menu-leader" aria-hidden="true"></span>
+          <span class="menu-price">38 zł</span>
+        </div>
+        <p class="menu-desc">Sos z pomidorów San Marzano D.O.P., fior di latte, świeża bazylia, oliwa extra vergine.</p>
+        <span class="menu-flag">klasyk</span>
+              <button class="menu-add" type="button" data-add-id="margherita" aria-label="Dodaj Margherita do zamówienia">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Dodaj
+        </button>
+      </article>
+
+      <article class="menu-item reveal" role="listitem" data-item-id="margherita-bufala" data-item-name="Margherita Bufala" data-item-price="48">
+        <div class="menu-head">
+          <h3>Margherita Bufala</h3>
+          <span class="menu-leader" aria-hidden="true"></span>
+          <span class="menu-price">48 zł</span>
+        </div>
+        <p class="menu-desc">San Marzano D.O.P., mozzarella di bufala campana, bazylia, oliwa extra vergine.</p>
+              <button class="menu-add" type="button" data-add-id="margherita-bufala" aria-label="Dodaj Margherita Bufala do zamówienia">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Dodaj
+        </button>
+      </article>
+
+      <article class="menu-item reveal" role="listitem" data-item-id="marinara" data-item-name="Marinara" data-item-price="34">
+        <div class="menu-head">
+          <h3>Marinara</h3>
+          <span class="menu-leader" aria-hidden="true"></span>
+          <span class="menu-price">34 zł</span>
+        </div>
+        <p class="menu-desc">San Marzano D.O.P., czosnek, oregano, oliwa extra vergine. Bez sera - tak jak w Neapolu.</p>
+        <span class="menu-flag">vegan</span>
+              <button class="menu-add" type="button" data-add-id="marinara" aria-label="Dodaj Marinara do zamówienia">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Dodaj
+        </button>
+      </article>
+
+      <article class="menu-item reveal" role="listitem" data-item-id="diavola" data-item-name="Diavola" data-item-price="46">
+        <div class="menu-head">
+          <h3>Diavola</h3>
+          <span class="menu-leader" aria-hidden="true"></span>
+          <span class="menu-price">46 zł</span>
+        </div>
+        <p class="menu-desc">San Marzano D.O.P., fior di latte, salami piccante, oregano, oliwa.</p>
+              <button class="menu-add" type="button" data-add-id="diavola" aria-label="Dodaj Diavola do zamówienia">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Dodaj
+        </button>
+      </article>
+
+      <article class="menu-item reveal" role="listitem" data-item-id="capricciosa" data-item-name="Capricciosa" data-item-price="52">
+        <div class="menu-head">
+          <h3>Capricciosa</h3>
+          <span class="menu-leader" aria-hidden="true"></span>
+          <span class="menu-price">52 zł</span>
+        </div>
+        <p class="menu-desc">San Marzano D.O.P., fior di latte, szynka prosciutto cotto, pieczarki, karczochy, oliwki Taggiasca.</p>
+              <button class="menu-add" type="button" data-add-id="capricciosa" aria-label="Dodaj Capricciosa do zamówienia">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Dodaj
+        </button>
+      </article>
+
+      <article class="menu-item reveal" role="listitem" data-item-id="prosciutto-rucola" data-item-name="Prosciutto e Rucola" data-item-price="54">
+        <div class="menu-head">
+          <h3>Prosciutto e Rucola</h3>
+          <span class="menu-leader" aria-hidden="true"></span>
+          <span class="menu-price">54 zł</span>
+        </div>
+        <p class="menu-desc">San Marzano D.O.P., fior di latte, prosciutto crudo 24 mies., rukola, płatki Grana Padano.</p>
+              <button class="menu-add" type="button" data-add-id="prosciutto-rucola" aria-label="Dodaj Prosciutto e Rucola do zamówienia">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Dodaj
+        </button>
+      </article>
+
+      <article class="menu-item reveal" role="listitem" data-item-id="quattro-formaggi" data-item-name="Quattro Formaggi" data-item-price="52">
+        <div class="menu-head">
+          <h3>Quattro Formaggi</h3>
+          <span class="menu-leader" aria-hidden="true"></span>
+          <span class="menu-price">52 zł</span>
+        </div>
+        <p class="menu-desc">Fior di latte, gorgonzola D.O.P., Grana Padano, scamorza affumicata, miód, świeży tymianek.</p>
+              <button class="menu-add" type="button" data-add-id="quattro-formaggi" aria-label="Dodaj Quattro Formaggi do zamówienia">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Dodaj
+        </button>
+      </article>
+
+      <article class="menu-item reveal" role="listitem" data-item-id="vesuvio" data-item-name="Vesuvio" data-item-price="56">
+        <div class="menu-head">
+          <h3>Vesuvio</h3>
+          <span class="menu-leader" aria-hidden="true"></span>
+          <span class="menu-price">56 zł</span>
+        </div>
+        <p class="menu-desc">San Marzano D.O.P., 'nduja z Kalabrii, fior di latte, cebula karmelizowana, czosnek, oliwa pikantna.</p>
+        <span class="menu-flag">specjalność</span>
+              <button class="menu-add" type="button" data-add-id="vesuvio" aria-label="Dodaj Vesuvio do zamówienia">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Dodaj
+        </button>
+      </article>
+    </div>
+
+    <p class="menu-note reveal">Wszystkie pizze średnica 30 cm. Karta zmienia się sezonowo - pełna lista alergenów dostępna w lokalu i u personelu.</p>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section id="kontakt" aria-labelledby="kontakt-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker"><span class="num">03</span><span class="bar"></span> Kontakt</span>
+      <p class="lead">Telefon, adres i prosta mapa - wszystko, czego potrzebujesz, by do nas trafić.</p>
+    </div>
+
+    <h2 id="kontakt-title" class="reveal" style="max-width:20ch;margin-bottom:48px">Zapraszamy do Szczytna.</h2>
+
+    <div class="visit">
+      <div class="visit-card reveal">
+        <h3>Wizytówka lokalu</h3>
+
+        <div class="info-grid">
+          <div class="info-block">
+            <span class="label">Telefon</span>
+            <span class="value"><a href="tel:+48572317851" aria-label="Zadzwoń pod numer 572 317 851">+48 572 317 851</a></span>
+          </div>
+          <div class="info-block">
+            <span class="label">Adres</span>
+            <span class="value">ul. Piłsudskiego 22<br>12-100 Szczytno</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="label" style="display:block;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-weight:600">Godziny otwarcia</span>
+          <table class="hours-table" id="hours-table" aria-label="Godziny otwarcia lokalu">
+            <tbody>
+              <tr data-day="1" class="closed"><td>Poniedziałek</td><td>nieczynne</td></tr>
+              <tr data-day="2"><td>Wtorek</td><td>13:00 - 21:00</td></tr>
+              <tr data-day="3"><td>Środa</td><td>13:00 - 21:00</td></tr>
+              <tr data-day="4"><td>Czwartek</td><td>13:00 - 21:00</td></tr>
+              <tr data-day="5"><td>Piątek</td><td>13:00 - 21:00</td></tr>
+              <tr data-day="6"><td>Sobota</td><td>13:00 - 21:00</td></tr>
+              <tr data-day="0"><td>Niedziela</td><td>13:00 - 21:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="visit-cta">
+          <a class="btn btn-primary" href="tel:+48572317851" aria-label="Zadzwoń: 572 317 851">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Zadzwoń teraz
+          </a>
+          <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Z%20Pieca%20Rodem%20Pizzeria%20Szczytno" target="_blank" rel="noopener" aria-label="Otwórz lokalizację w Mapach Google">
+            Mapy Google
+          </a>
+        </div>
+
+        <div class="social-row" aria-label="Profile w mediach społecznościowych">
+          <a class="social" href="https://www.instagram.com/zpiecarodem.pizza/" target="_blank" rel="noopener" aria-label="Instagram zpiecarodem.pizza">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></svg>
+            Instagram
+          </a>
+          <a class="social" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook Z Pieca Rodem">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7.5C13 6.4 13.3 6 14.5 6H17V2.2C16.5 2.1 15.2 2 14 2c-3 0-5 1.8-5 5v3H6v4h3v8h4z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <div class="map-card reveal delay-1" aria-label="Mapa okolicy lokalu">
+        <svg class="map-svg" viewBox="0 0 480 520" role="img" aria-label="Mapa - ul. Piłsudskiego 22, Szczytno">
+          <defs>
+            <pattern id="mapgrain" width="6" height="6" patternUnits="userSpaceOnUse">
+              <rect width="6" height="6" fill="#f1e7d3"/>
+              <circle cx="1" cy="1" r=".4" fill="#d6c8b0" opacity=".5"/>
+            </pattern>
+          </defs>
+          <rect width="480" height="520" fill="url(#mapgrain)"/>
+          <path d="M30 60 L150 50 L160 170 L40 180 Z" fill="#cdd9b8" opacity=".7"/>
+          <text x="65" y="120" font-family="ui-serif, serif" font-style="italic" font-size="14" fill="#5e6b48">park</text>
+          <path d="M340 380 Q420 360 470 410 L470 520 L300 520 Q310 440 340 380 Z" fill="#bcd0d8" opacity=".7"/>
+          <text x="370" y="470" font-family="ui-serif, serif" font-style="italic" font-size="14" fill="#446070">jezioro Domowe</text>
+          <g stroke="#fff" stroke-width="14" stroke-linecap="round" fill="none">
+            <path d="M0 240 L480 230"/>
+            <path d="M240 0 L260 520"/>
+            <path d="M0 380 L320 360"/>
+            <path d="M120 0 L140 240"/>
+            <path d="M380 0 L400 230"/>
+          </g>
+          <g stroke="#1c1612" stroke-width="1" stroke-linecap="round" fill="none" stroke-dasharray="3 4" opacity=".25">
+            <path d="M0 240 L480 230"/>
+            <path d="M240 0 L260 520"/>
+            <path d="M0 380 L320 360"/>
+          </g>
+          <text x="14" y="222" font-family="system-ui, sans-serif" font-size="11" fill="#7a6a5a" letter-spacing="1.5">UL. PIŁSUDSKIEGO</text>
+          <text x="270" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#7a6a5a" letter-spacing="1.5" transform="rotate(90 270 60)">UL. WARSZAWSKA</text>
+          <text x="20" y="372" font-family="system-ui, sans-serif" font-size="11" fill="#7a6a5a" letter-spacing="1.5">UL. POLSKA</text>
+          <g fill="#e3d6bd" stroke="#c8b896" stroke-width="1">
+            <rect x="170" y="180" width="60" height="40"/>
+            <rect x="280" y="180" width="50" height="40"/>
+            <rect x="170" y="260" width="50" height="60"/>
+            <rect x="280" y="260" width="60" height="40"/>
+            <rect x="50" y="260" width="60" height="50"/>
+            <rect x="280" y="320" width="40" height="40"/>
+          </g>
+          <g transform="translate(240 220)">
+            <circle r="40" fill="#b8331c" opacity=".08"/>
+            <circle r="26" fill="#b8331c" opacity=".15"/>
+            <g transform="translate(0 -8)">
+              <path d="M0 -22 C-12 -22 -20 -14 -20 -3 C-20 9 0 28 0 28 C0 28 20 9 20 -3 C20 -14 12 -22 0 -22 Z" fill="#b8331c" stroke="#7d2010" stroke-width="1.2"/>
+              <circle cx="0" cy="-3" r="6" fill="#fff"/>
+            </g>
+            <text x="32" y="0" font-family="ui-serif, serif" font-weight="600" font-size="13" fill="#1c1612">Z Pieca Rodem</text>
+            <text x="32" y="16" font-family="system-ui, sans-serif" font-size="11" fill="#7a6a5a">ul. Piłsudskiego 22</text>
+          </g>
+          <g transform="translate(430 60)" font-family="ui-serif, serif">
+            <circle r="22" fill="#fff" stroke="#c8b896" stroke-width="1"/>
+            <path d="M0 -18 L4 0 L0 18 L-4 0 Z" fill="#1c1612"/>
+            <path d="M0 -18 L4 0 L0 0 Z" fill="#b8331c"/>
+            <text y="-26" text-anchor="middle" font-size="10" fill="#1c1612" font-weight="600">N</text>
+          </g>
+          <g transform="translate(30 490)" font-family="system-ui, sans-serif" font-size="10" fill="#7a6a5a">
+            <line x1="0" y1="0" x2="80" y2="0" stroke="#1c1612" stroke-width="1.5"/>
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="#1c1612" stroke-width="1.5"/>
+            <line x1="40" y1="-3" x2="40" y2="3" stroke="#1c1612" stroke-width="1.2"/>
+            <line x1="80" y1="-4" x2="80" y2="4" stroke="#1c1612" stroke-width="1.5"/>
+            <text x="0" y="18">0</text>
+            <text x="80" y="18" text-anchor="end">200 m</text>
+          </g>
+        </svg>
+        <div class="map-foot">
+          <span class="addr"><b>ul. Piłsudskiego 22</b><br>12-100 Szczytno</span>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Z%20Pieca%20Rodem%20Pizzeria%20Szczytno" target="_blank" rel="noopener" aria-label="Otwórz lokalizację w Mapach Google">Otwórz w Mapach Google &rsaquo;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="wrap foot-grid">
+    <div class="foot-mark">
+      <svg viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+        <circle cx="30" cy="30" r="27" fill="#fff" stroke="#b8331c" stroke-width="1.4"/>
+        <circle cx="30" cy="30" r="22" fill="none" stroke="#b8331c" stroke-width=".8" stroke-dasharray="2 3"/>
+        <path d="M14 40 L22 32 L26 28 L29 26 L32 28 L36 32 L46 40 Z" fill="var(--vesuv)"/>
+        <path d="M14 40 L46 40" stroke="var(--bay)" stroke-width="1.2"/>
+        <path d="M30 16 q-3 4 0 8 q3 -4 0 -8 z" fill="#b8331c"/>
+      </svg>
+      <div class="t">
+        Z Pieca Rodem
+        <small>Napoli - Szczytno</small>
+      </div>
+    </div>
+    <span class="badge"><span class="pulse" aria-hidden="true"></span> podgląd roboczy - nie jest finalnym projektem</span>
+    <span class="credit">Projekt strony: <a href="https://adrianantosiak.pl" rel="noopener">Adrian Antosiak</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Sticky header — reactive backdrop after scroll
+  var shell = document.getElementById('navShell');
+  if(shell){
+    var onScroll = function(){
+      if((window.scrollY||0) > 24){
+        shell.classList.add('is-scrolled');
+      } else {
+        shell.classList.remove('is-scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  }
+
+  // Theme toggle
+  var btn = document.getElementById('themeToggle');
+  if(btn){
+    btn.addEventListener('click', function(){
+      var root = document.documentElement;
+      var isDark = root.getAttribute('data-theme') === 'dark';
+      if(isDark){
+        root.removeAttribute('data-theme');
+        try{ localStorage.setItem('zpr-theme','light'); }catch(e){}
+        btn.setAttribute('aria-label','Przełącz tryb ciemny');
+        btn.setAttribute('title','Przełącz tryb ciemny');
+      } else {
+        root.setAttribute('data-theme','dark');
+        try{ localStorage.setItem('zpr-theme','dark'); }catch(e){}
+        btn.setAttribute('aria-label','Przełącz tryb jasny');
+        btn.setAttribute('title','Przełącz tryb jasny');
+      }
+    });
+  }
+})();
+(function(){
+  // Live opening status + highlight today's row
+  var pill = document.getElementById('status');
+  var text = pill ? pill.querySelector('.status-text') : null;
+  var table = document.getElementById('hours-table');
+
+  function updateStatus(){
+    if(!pill || !text) return;
+    var now = new Date();
+    var d = now.getDay();
+    var hours = now.getHours();
+    var mins = now.getMinutes();
+    var current = hours + mins/60;
+
+    if(table){
+      table.querySelectorAll('tr').forEach(function(tr){
+        tr.classList.remove('today');
+        if(parseInt(tr.getAttribute('data-day'),10) === d) tr.classList.add('today');
+      });
+    }
+
+    var open = (d !== 1) && (current >= 13) && (current < 21);
+    var openSoon = (d !== 1) && (current >= 12) && (current < 13);
+
+    pill.classList.remove('open','closed');
+    if(open){
+      pill.classList.add('open');
+      text.textContent = 'Otwarte teraz, do 21:00';
+    } else if(openSoon){
+      pill.classList.add('closed');
+      text.textContent = 'Otwieramy o 13:00';
+    } else if(d === 1){
+      pill.classList.add('closed');
+      text.textContent = 'Poniedziałek - nieczynne';
+    } else if(current < 13){
+      pill.classList.add('closed');
+      text.textContent = 'Zamknięte - dziś od 13:00';
+    } else {
+      pill.classList.add('closed');
+      var nextOpen = (d === 0 || d === 1) ? 'wtorek' : 'jutro';
+      text.textContent = 'Zamknięte - ' + nextOpen + ' od 13:00';
+    }
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
+
+  // Reveal on scroll
+  var revealEls = document.querySelectorAll('.reveal');
+  // Immediately reveal anything already in the initial viewport so the hero
+  // doesn't sit invisible if the IntersectionObserver's first callback is
+  // delayed for any reason.
+  function revealInitiallyVisible(){
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    revealEls.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if(r.top < vh * 0.95 && r.bottom > 0){
+        el.classList.add('in');
+      }
+    });
+  }
+  revealInitiallyVisible();
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    revealEls.forEach(function(el){
+      if(!el.classList.contains('in')) io.observe(el);
+    });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+  // Final safety net — guarantee everything is visible after 1.2s
+  // even if the observer never fires.
+  setTimeout(function(){
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }, 1200);
+
+  // Parallax backdrop layers
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduced){
+    var layers = document.querySelectorAll('.backdrop .layer');
+    var ticking = false;
+    function update(){
+      var y = window.scrollY || window.pageYOffset;
+      layers.forEach(function(layer){
+        var s = parseFloat(layer.getAttribute('data-speed') || '0');
+        layer.style.transform = 'translate3d(0,' + (y * s).toFixed(1) + 'px,0)';
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, {passive:true});
+    update();
+  }
+})();
+</script>
+
+<!-- ============ ORDER SYSTEM (cart) ============ -->
+<button class="cart-fab is-empty" id="cartFab" type="button" aria-label="Otwórz koszyk zamówień">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.5L22 7H6"/>
+    <circle cx="9" cy="20" r="1.2"/>
+    <circle cx="18" cy="20" r="1.2"/>
+  </svg>
+  <span>Koszyk</span>
+  <span class="cart-count" id="cartCount">0</span>
+</button>
+
+<div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-labelledby="cart-heading" aria-hidden="true">
+  <div id="cartView">
+    <div class="cart-head">
+      <div>
+        <span class="kicker">Twoje zamówienie</span>
+        <h2 id="cart-heading">Z pieca, prosto do Ciebie</h2>
+      </div>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Zamknij koszyk">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.5L22 7H6"/>
+          <circle cx="9" cy="20" r="1.2"/>
+          <circle cx="18" cy="20" r="1.2"/>
+        </svg>
+        <p>Koszyk jest jeszcze pusty.<br>Wybierz pizzę z karty.</p>
+      </div>
+      <ul class="cart-list" id="cartList" hidden></ul>
+    </div>
+
+    <form class="cart-form" id="cartForm" autocomplete="on" hidden>
+      <h3>Dane do zamówienia</h3>
+      <div class="field">
+        <label for="cf-name">Imię</label>
+        <input id="cf-name" name="name" type="text" required autocomplete="given-name" placeholder="Jak Cię zawołać przy odbiorze">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="cf-phone">Telefon</label>
+          <input id="cf-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="572 123 456" pattern="[0-9 +\-]{9,}">
+        </div>
+        <div class="field">
+          <label for="cf-time">Odbiór</label>
+          <select id="cf-time" name="pickup" required>
+            <option value="asap">Jak najszybciej</option>
+            <option value="30">Za 30 minut</option>
+            <option value="45">Za 45 minut</option>
+            <option value="60">Za godzinę</option>
+            <option value="90">Za 1,5 godz.</option>
+            <option value="120">Za 2 godz.</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cf-notes">Uwagi (opcjonalnie)</label>
+        <input id="cf-notes" name="notes" type="text" placeholder="np. bez bazylii, dodatkowe sztućce">
+      </div>
+    </form>
+
+    <div class="cart-foot" id="cartFoot" hidden>
+      <div class="cart-totals">
+        <span class="label">Razem</span>
+        <span class="sum" id="cartSum">0 zł</span>
+      </div>
+      <button class="cart-submit" id="cartSubmit" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Złóż zamówienie
+      </button>
+      <p class="cart-fineprint">Płatność przy odbiorze. Po wysłaniu zadzwonimy w razie pytań.</p>
+    </div>
+  </div>
+
+  <div class="cart-confirmed" id="cartConfirmed" hidden>
+    <div class="seal" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
+    <h3>Zamówienie przyjęte</h3>
+    <p id="confirmedMsg">Dziękujemy! Skontaktujemy się telefonicznie, by potwierdzić godzinę odbioru.</p>
+    <div class="ref" id="confirmedRef">Numer: —</div>
+    <div class="actions">
+      <a href="tel:+48572317851">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Zadzwoń teraz
+      </a>
+      <button class="secondary" type="button" id="cartReset">Złóż kolejne zamówienie</button>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var cart = {};
+  try{
+    var stored = JSON.parse(localStorage.getItem('zpr-cart') || '{}');
+    if(stored && typeof stored === 'object') cart = stored;
+  }catch(e){}
+
+  var fab = document.getElementById('cartFab');
+  var fabCount = document.getElementById('cartCount');
+  var overlay = document.getElementById('cartOverlay');
+  var drawer = document.getElementById('cartDrawer');
+  var closeBtn = document.getElementById('cartClose');
+  var listEl = document.getElementById('cartList');
+  var emptyEl = document.getElementById('cartEmpty');
+  var formEl = document.getElementById('cartForm');
+  var footEl = document.getElementById('cartFoot');
+  var sumEl = document.getElementById('cartSum');
+  var submitBtn = document.getElementById('cartSubmit');
+  var viewEl = document.getElementById('cartView');
+  var confirmedEl = document.getElementById('cartConfirmed');
+  var confirmedRef = document.getElementById('confirmedRef');
+  var confirmedMsg = document.getElementById('confirmedMsg');
+  var resetBtn = document.getElementById('cartReset');
+
+  function totalQty(){var n=0;for(var k in cart){n+=cart[k].qty;}return n;}
+  function totalSum(){var s=0;for(var k in cart){s+=cart[k].qty*cart[k].price;}return s;}
+  function persist(){try{localStorage.setItem('zpr-cart',JSON.stringify(cart));}catch(e){}}
+  function fmt(n){return n+' zł';}
+
+  function render(){
+    var qty = totalQty();
+    fabCount.textContent = qty;
+    fab.classList.toggle('is-empty', qty === 0);
+
+    document.querySelectorAll('.menu-item').forEach(function(item){
+      var id = item.getAttribute('data-item-id');
+      if(!id) return;
+      var entry = cart[id];
+      var btn = item.querySelector('.menu-add');
+      if(entry && entry.qty > 0){
+        item.classList.add('in-cart');
+        if(btn) btn.setAttribute('data-qty', entry.qty);
+      } else {
+        item.classList.remove('in-cart');
+        if(btn) btn.removeAttribute('data-qty');
+      }
+    });
+
+    if(qty === 0){
+      emptyEl.hidden = false;
+      listEl.hidden = true;
+      formEl.hidden = true;
+      footEl.hidden = true;
+      return;
+    }
+    emptyEl.hidden = true;
+    listEl.hidden = false;
+    formEl.hidden = false;
+    footEl.hidden = false;
+
+    var html = '';
+    for(var k in cart){
+      var it = cart[k];
+      if(it.qty <= 0) continue;
+      html += '<li class="cart-row" data-row="'+it.id+'">'
+        + '<div><p class="name">'+it.name+'</p>'
+        + '<span class="unit">'+fmt(it.price)+' &middot; szt.</span></div>'
+        + '<span class="line-total">'+fmt(it.price*it.qty)+'</span>'
+        + '<div class="qty" role="group" aria-label="Ilość '+it.name+'">'
+        +   '<button type="button" data-act="dec" data-id="'+it.id+'" aria-label="Mniej"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg></button>'
+        +   '<span class="v">'+it.qty+'</span>'
+        +   '<button type="button" data-act="inc" data-id="'+it.id+'" aria-label="Więcej"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>'
+        + '</div>'
+        + '<button class="remove" type="button" data-act="rm" data-id="'+it.id+'">Usuń</button>'
+        + '</li>';
+    }
+    listEl.innerHTML = html;
+    sumEl.textContent = fmt(totalSum());
+  }
+
+  function addItem(id){
+    var article = document.querySelector('[data-item-id="'+id+'"]');
+    if(!article) return;
+    var name = article.getAttribute('data-item-name');
+    var price = parseFloat(article.getAttribute('data-item-price'));
+    if(!cart[id]) cart[id] = {id:id,name:name,price:price,qty:0};
+    cart[id].qty++;
+    persist(); render();
+  }
+  function changeQty(id, delta){
+    if(!cart[id]) return;
+    cart[id].qty += delta;
+    if(cart[id].qty <= 0) delete cart[id];
+    persist(); render();
+  }
+  function removeItem(id){ delete cart[id]; persist(); render(); }
+
+  document.querySelectorAll('.menu-add').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = btn.getAttribute('data-add-id');
+      addItem(id);
+      btn.classList.add('is-adding');
+      setTimeout(function(){ btn.classList.remove('is-adding'); }, 220);
+    });
+  });
+
+  listEl.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-act]');
+    if(!b) return;
+    var act = b.getAttribute('data-act');
+    var id = b.getAttribute('data-id');
+    if(act === 'inc') changeQty(id, +1);
+    else if(act === 'dec') changeQty(id, -1);
+    else if(act === 'rm') removeItem(id);
+  });
+
+  function openCart(){
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden','false');
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCart(){
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden','true');
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  fab.addEventListener('click', openCart);
+  closeBtn.addEventListener('click', closeCart);
+  overlay.addEventListener('click', closeCart);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')) closeCart();
+  });
+
+  submitBtn.addEventListener('click', function(){
+    if(!formEl.reportValidity()) return;
+    var name = document.getElementById('cf-name').value.trim();
+    var phone = document.getElementById('cf-phone').value.trim();
+    var pickup = document.getElementById('cf-time').value;
+    var notes = document.getElementById('cf-notes').value.trim();
+    var pickupLabels = {
+      'asap':'jak najszybciej', '30':'za 30 minut', '45':'za 45 minut',
+      '60':'za godzinę', '90':'za 1,5 godz.', '120':'za 2 godz.'
+    };
+    var ref = 'ZPR-' + (new Date()).toISOString().slice(2,10).replace(/-/g,'') + '-' +
+              Math.floor(Math.random()*900+100);
+
+    var lines = [];
+    for(var k in cart){
+      var it = cart[k];
+      if(it.qty <= 0) continue;
+      lines.push('- '+it.name+' x'+it.qty+' ('+fmt(it.price*it.qty)+')');
+    }
+    var summary = 'Zamówienie '+ref+' - '+name+' ('+phone+')\n'+
+                  'Odbiór: '+pickupLabels[pickup]+'\n'+
+                  lines.join('\n')+'\n'+
+                  'Razem: '+fmt(totalSum())+
+                  (notes?('\nUwagi: '+notes):'');
+
+    try{
+      localStorage.setItem('zpr-last-order', JSON.stringify({
+        ref:ref,name:name,phone:phone,pickup:pickup,notes:notes,
+        items:cart,total:totalSum(),summary:summary,at:Date.now()
+      }));
+    }catch(e){}
+
+    confirmedRef.textContent = 'Numer: ' + ref;
+    confirmedMsg.innerHTML =
+      'Dziękujemy, '+(name.split(' ')[0]||'gościu')+'!<br>'+
+      'Pizza będzie gotowa <strong>'+pickupLabels[pickup]+'</strong>. '+
+      'W razie pytań zadzwonimy pod <strong>'+phone+'</strong>.';
+    viewEl.hidden = true;
+    confirmedEl.hidden = false;
+
+    cart = {};
+    persist();
+    render();
+  });
+
+  resetBtn.addEventListener('click', function(){
+    confirmedEl.hidden = true;
+    viewEl.hidden = false;
+    closeCart();
+    formEl.reset();
+  });
+
+  render();
+})();
+</script>
+
+<!-- ============ TWEAKS PANEL ============ -->
+<button class="tweaks-toggle-fab" id="tweaksFab" type="button" aria-label="Otwórz panel Tweaks" title="Tweaks">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+  </svg>
+</button>
+
+<aside class="tweaks-panel" id="tweaksPanel" role="dialog" aria-labelledby="tweaks-heading" aria-hidden="true">
+  <div class="tweaks-head">
+    <div class="tweaks-title" id="tweaks-heading">
+      <small>Tweaks</small>
+      Atmosfera lokalu
+    </div>
+    <button class="tweaks-close" id="tweaksClose" type="button" aria-label="Zamknij">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="tweaks-body">
+    <div class="tweak-group">
+      <span class="tweak-label">Pora dnia</span>
+      <div class="tweak-segments" role="group" aria-label="Pora dnia" data-tweak="mood">
+        <button type="button" data-value="mattino">Mattino</button>
+        <button type="button" data-value="pomeriggio">Pomeriggio</button>
+        <button type="button" data-value="sera">Sera</button>
+      </div>
+    </div>
+    <div class="tweak-group">
+      <span class="tweak-label">Charakter tła</span>
+      <div class="tweak-segments" role="group" aria-label="Charakter tła" data-tweak="backdrop">
+        <button type="button" data-value="spokojne">Spokojne</button>
+        <button type="button" data-value="wywazone">Wyważone</button>
+        <button type="button" data-value="wulkaniczne">Wulkaniczne</button>
+      </div>
+    </div>
+    <div class="tweak-group">
+      <span class="tweak-label">Głos typografii</span>
+      <div class="tweak-segments" role="group" aria-label="Głos typografii" data-tweak="voice">
+        <button type="button" data-value="editoriale">Editoriale</button>
+        <button type="button" data-value="trattoria">Trattoria</button>
+        <button type="button" data-value="moderno">Moderno</button>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "mood": "mattino",
+    "backdrop": "wywazone",
+    "voice": "trattoria"
+  }/*EDITMODE-END*/;
+
+  // Load saved values
+  var saved = {};
+  try{ saved = JSON.parse(localStorage.getItem('zpr-tweaks') || '{}'); }catch(e){}
+  var state = Object.assign({}, TWEAK_DEFAULTS, saved);
+
+  var root = document.documentElement;
+
+  function applyState(){
+    // mood: only set attr if not "pomeriggio" (which is default light palette)
+    if(state.mood && state.mood !== 'pomeriggio'){
+      root.setAttribute('data-mood', state.mood);
+    } else {
+      root.removeAttribute('data-mood');
+    }
+    // backdrop: only set if non-default
+    if(state.backdrop && state.backdrop !== 'wywazone'){
+      root.setAttribute('data-backdrop', state.backdrop);
+    } else {
+      root.removeAttribute('data-backdrop');
+    }
+    // voice: only set if non-default
+    if(state.voice && state.voice !== 'editoriale'){
+      root.setAttribute('data-voice', state.voice);
+    } else {
+      root.removeAttribute('data-voice');
+    }
+    // Update segment button pressed states
+    document.querySelectorAll('.tweak-segments').forEach(function(group){
+      var key = group.getAttribute('data-tweak');
+      group.querySelectorAll('button').forEach(function(b){
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-value') === state[key]));
+      });
+    });
+  }
+
+  function setTweak(key, value){
+    state[key] = value;
+    applyState();
+    try{ localStorage.setItem('zpr-tweaks', JSON.stringify(state)); }catch(e){}
+    // Inform host so the on-disk EDITMODE block can be updated
+    try{
+      window.parent.postMessage({type:'__edit_mode_set_keys', edits:{[key]:value}}, '*');
+    }catch(e){}
+  }
+
+  // Wire segment buttons
+  document.querySelectorAll('.tweak-segments').forEach(function(group){
+    var key = group.getAttribute('data-tweak');
+    group.addEventListener('click', function(e){
+      var btn = e.target.closest('button[data-value]');
+      if(!btn) return;
+      setTweak(key, btn.getAttribute('data-value'));
+    });
+  });
+
+  // Apply initial state on load
+  applyState();
+
+  // Panel open/close
+  var panel = document.getElementById('tweaksPanel');
+  var fab = document.getElementById('tweaksFab');
+  var closeBtn = document.getElementById('tweaksClose');
+  var open = false;
+
+  function showPanel(){
+    open = true;
+    panel.classList.add('is-open');
+    panel.setAttribute('aria-hidden','false');
+    fab.classList.add('is-open');
+  }
+  function hidePanel(){
+    open = false;
+    panel.classList.remove('is-open');
+    panel.setAttribute('aria-hidden','true');
+    fab.classList.remove('is-open');
+    try{ window.parent.postMessage({type:'__edit_mode_dismissed'}, '*'); }catch(e){}
+  }
+
+  fab.addEventListener('click', showPanel);
+  closeBtn.addEventListener('click', hidePanel);
+
+  // Host edit-mode protocol
+  window.addEventListener('message', function(e){
+    var d = e && e.data;
+    if(!d || typeof d !== 'object') return;
+    if(d.type === '__activate_edit_mode') showPanel();
+    if(d.type === '__deactivate_edit_mode') hidePanel();
+  });
+  try{ window.parent.postMessage({type:'__edit_mode_available'}, '*'); }catch(e){}
+})();
+</script>
+
+</body>
+</html>
